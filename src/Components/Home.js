@@ -11,6 +11,7 @@ import { winnersData } from "./WinnersData";
 import Why from "./Why";
 import Experience from "./Experience";
 import GameProvider from "./GameProvider";
+import Footer from "./Footer";
 
 const Home = () => {
   let settings = {
@@ -108,6 +109,9 @@ const Home = () => {
 
       {/* gameprovider */}
       <GameProvider />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

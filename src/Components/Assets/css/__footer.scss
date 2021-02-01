@@ -1,0 +1,132 @@
+@import "__variable";
+
+footer {
+  background-color: $black;
+  padding: 100px 0;
+  .heading {
+    margin-bottom: 30px;
+    h3 {
+      @include heading;
+      color: $golden;
+    }
+  }
+  .para {
+    p {
+      color: #999;
+      font-size: $paraFont;
+    }
+  }
+  .person {
+    float: right;
+    text-align: right;
+    .content {
+      float: right;
+      p {
+        font-weight: $fontWeight;
+        color: $white;
+        text-transform: capitalize;
+        font-size: $paraFont;
+        margin: 0;
+      }
+      span {
+        display: block;
+        color: #ddd;
+        text-transform: capitalize;
+        font-size: $paraFont;
+      }
+    }
+    img {
+      width: 70px;
+      display: inline-block !important;
+      float: right;
+      margin-left: 10px;
+    }
+  }
+
+  form {
+    background: $lightBlack;
+    padding: 30px;
+    .heading {
+      h3 {
+        @include heading;
+      }
+      margin: 0 !important;
+    }
+    .form-group {
+      margin: 15px 0;
+    }
+    input {
+      background: #252525 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .btns {
+      margin-bottom: 0 !important;
+      button {
+        background: $golden;
+        color: $lightBlack;
+        font-weight: $fontWeight;
+        font-size: $menuFont;
+        padding: 6px 20px;
+        text-transform: capitalize;
+        // margin-right: 10px;
+        border: none;
+      }
+      a {
+        color: $white;
+        margin: 0px 20px;
+        text-decoration: underline !important;
+        font-size: $menuFont;
+        &:last-child {
+          margin: 0 !important;
+        }
+      }
+      img {
+        width: 40px;
+      }
+    }
+  }
+}
+
+.btm__footer {
+  background-color: $lightBlack;
+  padding: 20px 0;
+  .foot {
+    margin-top: 10px;
+    &.last {
+      margin-top: 70px;
+    }
+    img {
+      margin-bottom: 15px;
+      width: 150px;
+    }
+    h3 {
+      color: #999;
+      font-size: $headingFont;
+      margin-top: 45px;
+      text-transform: capitalize;
+    }
+    p {
+      color: #999;
+      font-size: $paraFont;
+      margin: 0;
+      text-transform: capitalize;
+      &:last-child {
+        margin-top: 20px;
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        margin: 7px 0;
+        a {
+          color: #999;
+          font-size: $paraFont;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

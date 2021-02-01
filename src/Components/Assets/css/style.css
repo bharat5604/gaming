@@ -9,6 +9,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @font-face {
   font-family: hekou;
   src: url(../fonts/Hikou/HikouRough.otf);
@@ -375,6 +377,172 @@ header .navbar-nav i {
 
 .gameprovider .sliders img {
   width: 270px !important;
+}
+
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+footer {
+  background-color: #030303;
+  padding: 100px 0;
+}
+
+footer .heading {
+  margin-bottom: 30px;
+}
+
+footer .heading h3 {
+  font-size: 26px;
+  font-family: hekou;
+  text-transform: uppercase;
+  color: #ffffff;
+  color: #ffd978;
+}
+
+footer .para p {
+  color: #999;
+  font-size: 14px;
+}
+
+footer .person {
+  float: right;
+  text-align: right;
+}
+
+footer .person .content {
+  float: right;
+}
+
+footer .person .content p {
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-size: 14px;
+  margin: 0;
+}
+
+footer .person .content span {
+  display: block;
+  color: #ddd;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+footer .person img {
+  width: 70px;
+  display: inline-block !important;
+  float: right;
+  margin-left: 10px;
+}
+
+footer form {
+  background: #1d1d1d;
+  padding: 30px;
+}
+
+footer form .heading {
+  margin: 0 !important;
+}
+
+footer form .heading h3 {
+  font-size: 26px;
+  font-family: hekou;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+footer form .form-group {
+  margin: 15px 0;
+}
+
+footer form input {
+  background: #252525 !important;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+footer form .btns {
+  margin-bottom: 0 !important;
+}
+
+footer form .btns button {
+  background: #ffd978;
+  color: #1d1d1d;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 6px 20px;
+  text-transform: capitalize;
+  border: none;
+}
+
+footer form .btns a {
+  color: #ffffff;
+  margin: 0px 20px;
+  text-decoration: underline !important;
+  font-size: 16px;
+}
+
+footer form .btns a:last-child {
+  margin: 0 !important;
+}
+
+footer form .btns img {
+  width: 40px;
+}
+
+.btm__footer {
+  background-color: #1d1d1d;
+  padding: 20px 0;
+}
+
+.btm__footer .foot {
+  margin-top: 10px;
+}
+
+.btm__footer .foot.last {
+  margin-top: 70px;
+}
+
+.btm__footer .foot img {
+  margin-bottom: 15px;
+  width: 150px;
+}
+
+.btm__footer .foot h3 {
+  color: #999;
+  font-size: 26px;
+  margin-top: 45px;
+  text-transform: capitalize;
+}
+
+.btm__footer .foot p {
+  color: #999;
+  font-size: 14px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.btm__footer .foot p:last-child {
+  margin-top: 20px;
+}
+
+.btm__footer .foot ul {
+  margin: 0;
+  padding: 0;
+}
+
+.btm__footer .foot ul li {
+  list-style: none;
+  margin: 7px 0;
+}
+
+.btm__footer .foot ul li a {
+  color: #999;
+  font-size: 14px;
+  text-transform: capitalize;
 }
 
 * {
