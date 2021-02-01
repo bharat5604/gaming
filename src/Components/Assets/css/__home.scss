@@ -1,0 +1,119 @@
+@import "__variable";
+
+.home {
+  //***** banner
+  .home__banner {
+    background: url(../img/hero.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 100px 0;
+    .slots {
+      h1 {
+        font-size: 56px;
+        font-family: $hekouFont;
+        font-weight: $fontWeight;
+        text-transform: uppercase;
+        color: $white !important;
+      }
+      span {
+        color: #999;
+        text-transform: capitalize;
+        font-size: $headingFont;
+      }
+      .icons {
+        display: flex;
+        margin-top: 30px;
+      }
+      .item {
+        margin: 5px 10px;
+        display: flex;
+        padding: 0px 10px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-width: 100px;
+        height: 120px;
+        background: rgba(0, 0, 0, 0.651);
+        border-radius: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+        img {
+          width: 30px;
+        }
+        span {
+          font-size: 11px;
+          margin-top: 10px;
+          color: #999;
+          b {
+            color: $white !important;
+          }
+        }
+      }
+    }
+  }
+  // ***** banner end
+
+  // ************** winning
+  .winning {
+    background: url(../img/winning/backgound.jpg) no-repeat center center;
+    padding: 100px 0;
+    .video {
+      background-color: $lightBlack;
+      .videoImg {
+      }
+      .video__content {
+        padding: 10px 0;
+        h3 {
+          @include heading;
+        }
+        span {
+          color: $golden;
+          font-size: $paraFont;
+        }
+        p {
+          color: #999;
+          font-size: $paraFont;
+          margin: 20px 0 0 0;
+        }
+      }
+    } // end
+    .winnings__days {
+      h3 {
+        @include heading;
+        color: $golden;
+      }
+      .item {
+        display: flex;
+        margin: 10px 0;
+        img {
+          width: 60px;
+          object-fit: contain;
+          margin-right: 10px;
+        }
+        span {
+          color: $white;
+          font-size: $paraFont;
+          font-family: $roboto;
+          text-transform: capitalize;
+        }
+        div {
+          line-height: 1.2;
+        }
+        .winning__price {
+          span {
+            // font-size: $paraFont;
+            color: #f9bb22;
+            font-family: $hekouFont;
+            b {
+              color: $white;
+              font-weight: inherit !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

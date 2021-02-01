@@ -1,0 +1,41 @@
+@import "__variable";
+
+// ******************* experience
+.experience {
+  background: url(../img/experience/Background.jpg) no-repeat center bottom;
+  background-size: cover;
+  padding: 100px 0;
+  .heading {
+    @include heading;
+    text-align: center;
+    span {
+      background: $golden;
+      font-size: 13px;
+      letter-spacing: 0;
+      padding: 3px 10px;
+      border-radius: 6px;
+      text-transform: initial;
+      border: 1px solid $black;
+      font-family: $monteSerrat;
+      color: $black;
+    }
+  }
+
+  .images {
+    margin-top: 60px;
+    .images__in {
+      position: relative;
+      text-align: center;
+      a {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 40px;
+        color: $white;
+        text-transform: uppercase;
+        text-decoration: underline !important;
+        z-index: 9;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+// **************** Imports ***********
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "__variable";
+@import "__header";
+@import "__home";
+@import "__why";
+@import "__experience";
+@import "__gameprovider";
+* {
+  text-decoration: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $monteSerrat;
+  //   font-weight: $fontWeight;
+  letter-spacing: 1.3px;
+}

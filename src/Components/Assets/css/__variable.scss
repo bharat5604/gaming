@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+$golden: #ffd978;
+$black: #030303;
+$lightBlack: #1d1d1d;
+$white: #ffffff;
+$menuFont: 16px;
+$hekouFont: hekou;
+$headingFont: 26px;
+$paraFont: 14px;
+$roboto: "Roboto", sans-serif;
+$monteSerrat: "Montserrat", sans-serif;
+$fontWeight: 800;
+
+@mixin heading {
+  font-size: $headingFont;
+  font-family: $hekouFont;
+  text-transform: uppercase;
+  color: $white;
+}

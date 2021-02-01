@@ -1,0 +1,47 @@
+@import "__variable";
+
+// *************** hedaer
+header {
+  background-color: $black;
+  display: flex;
+  justify-content: left;
+  z-index: 999;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  .navbar-brand {
+    img {
+      max-width: 150px;
+    }
+  }
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+    font-family: $roboto;
+    a {
+      color: #ddd !important;
+      text-transform: capitalize;
+      margin: 0 6px;
+      font-size: $menuFont;
+    }
+    button {
+      background: transparent;
+      border: 2px solid $golden;
+      padding: 6px 10px !important;
+      min-width: 100px;
+      text-transform: capitalize;
+      font-size: $paraFont;
+      border-radius: 20px;
+      color: $white;
+      font-weight: $fontWeight;
+    }
+    .signup {
+      background-color: $white;
+      color: $black;
+    }
+    i {
+      color: $golden;
+    }
+  }
+}

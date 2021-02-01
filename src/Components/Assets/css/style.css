@@ -1,0 +1,390 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+header {
+  background-color: #030303;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  z-index: 999;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+header .navbar-brand img {
+  max-width: 150px;
+}
+
+header .navbar-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 60px;
+  font-family: "Roboto", sans-serif;
+}
+
+header .navbar-nav a {
+  color: #ddd !important;
+  text-transform: capitalize;
+  margin: 0 6px;
+  font-size: 16px;
+}
+
+header .navbar-nav button {
+  background: transparent;
+  border: 2px solid #ffd978;
+  padding: 6px 10px !important;
+  min-width: 100px;
+  text-transform: capitalize;
+  font-size: 14px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+header .navbar-nav .signup {
+  background-color: #ffffff;
+  color: #030303;
+}
+
+header .navbar-nav i {
+  color: #ffd978;
+}
+
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+.home .home__banner {
+  background: url(../img/hero.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 100px 0;
+}
+
+.home .home__banner .slots h1 {
+  font-size: 56px;
+  font-family: hekou;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+
+.home .home__banner .slots span {
+  color: #999;
+  text-transform: capitalize;
+  font-size: 26px;
+}
+
+.home .home__banner .slots .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+}
+
+.home .home__banner .slots .item {
+  margin: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 100px;
+  height: 120px;
+  background: rgba(0, 0, 0, 0.651);
+  border-radius: 10px;
+}
+
+.home .home__banner .slots .item:last-child {
+  margin-right: 0;
+}
+
+.home .home__banner .slots .item:first-child {
+  margin-left: 0;
+}
+
+.home .home__banner .slots .item img {
+  width: 30px;
+}
+
+.home .home__banner .slots .item span {
+  font-size: 11px;
+  margin-top: 10px;
+  color: #999;
+}
+
+.home .home__banner .slots .item span b {
+  color: #ffffff !important;
+}
+
+.home .winning {
+  background: url(../img/winning/backgound.jpg) no-repeat center center;
+  padding: 100px 0;
+}
+
+.home .winning .video {
+  background-color: #1d1d1d;
+}
+
+.home .winning .video .video__content {
+  padding: 10px 0;
+}
+
+.home .winning .video .video__content h3 {
+  font-size: 26px;
+  font-family: hekou;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.home .winning .video .video__content span {
+  color: #ffd978;
+  font-size: 14px;
+}
+
+.home .winning .video .video__content p {
+  color: #999;
+  font-size: 14px;
+  margin: 20px 0 0 0;
+}
+
+.home .winning .winnings__days h3 {
+  font-size: 26px;
+  font-family: hekou;
+  text-transform: uppercase;
+  color: #ffffff;
+  color: #ffd978;
+}
+
+.home .winning .winnings__days .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+}
+
+.home .winning .winnings__days .item img {
+  width: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 10px;
+}
+
+.home .winning .winnings__days .item span {
+  color: #ffffff;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+}
+
+.home .winning .winnings__days .item div {
+  line-height: 1.2;
+}
+
+.home .winning .winnings__days .item .winning__price span {
+  color: #f9bb22;
+  font-family: hekou;
+}
+
+.home .winning .winnings__days .item .winning__price span b {
+  color: #ffffff;
+  font-weight: inherit !important;
+}
+
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+.why {
+  background: url("../img/why/background.jpg") no-repeat center center;
+  padding: 100px 0;
+}
+
+.why .tabs nav {
+  border: none;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #030303), color-stop(90%, #1d1d1d));
+  background: linear-gradient(#030303 20%, #1d1d1d 90%);
+}
+
+.why .tabs nav a {
+  color: #999;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+  width: calc(100% / 6);
+  font-family: "Roboto", sans-serif;
+}
+
+.why .tabs nav a.active {
+  background: #030303;
+  border: none;
+  color: #ffd978;
+}
+
+.why .tabs nav a:hover {
+  border: none;
+}
+
+.why .tabs .images {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.why .why__us .heading {
+  font-size: 26px;
+  font-family: hekou;
+  text-transform: uppercase;
+  color: #ffffff;
+  color: #ffd978;
+  padding: 15px 0;
+}
+
+.why .why__us .img {
+  margin-top: 30px;
+}
+
+.why .why__us .img .img__in {
+  position: relative;
+  text-align: center;
+}
+
+.why .why__us .img .img__in img {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.why .why__us .img .img__in .title {
+  font-family: "Roboto", sans-serif;
+  border: 1px solid #030303;
+  text-align: center;
+  background: #3b3a39;
+  text-transform: capitalize;
+  position: relative;
+  top: -30px;
+}
+
+.why .why__us .img .img__in .title span {
+  color: #ddd;
+  font-size: 13px;
+}
+
+.why .why__us .img .img__in .title h4 {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+.experience {
+  background: url(../img/experience/Background.jpg) no-repeat center bottom;
+  background-size: cover;
+  padding: 100px 0;
+}
+
+.experience .heading {
+  font-size: 26px;
+  font-family: hekou;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+}
+
+.experience .heading span {
+  background: #ffd978;
+  font-size: 13px;
+  letter-spacing: 0;
+  padding: 3px 10px;
+  border-radius: 6px;
+  text-transform: initial;
+  border: 1px solid #030303;
+  font-family: "Montserrat", sans-serif;
+  color: #030303;
+}
+
+.experience .images {
+  margin-top: 60px;
+}
+
+.experience .images .images__in {
+  position: relative;
+  text-align: center;
+}
+
+.experience .images .images__in a {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: underline !important;
+  z-index: 9;
+}
+
+.gameprovider {
+  margin: 100px 0;
+}
+
+.gameprovider .sliders .slick-slide {
+  margin: 0px 0px !important;
+}
+
+.gameprovider .sliders img {
+  width: 270px !important;
+}
+
+* {
+  text-decoration: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1.3px;
+}
+/*# sourceMappingURL=style.css.map */
