@@ -60,6 +60,10 @@ header .navbar-nav a {
   font-size: 16px;
 }
 
+header .navbar-nav a img {
+  max-width: 100%;
+}
+
 header .navbar-nav button {
   background: transparent;
   border: 2px solid #ffd978;
@@ -79,6 +83,217 @@ header .navbar-nav .signup {
 
 header .navbar-nav i {
   color: #ffd978;
+}
+
+.login {
+  font-family: "Roboto", sans-serif;
+}
+
+.login .mainFlag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login .mainFlag .flag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #999;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.login .mainFlag .flag select {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  border-bottom: 1px solid #cccc;
+  margin-left: 10px;
+  outline: none;
+}
+
+.login .modal-header {
+  border-color: #444;
+}
+
+.login .login__with {
+  padding-bottom: 20px;
+}
+
+.login .login__with .heading {
+  text-align: center;
+  border-bottom: 1px solid #444;
+  position: relative;
+}
+
+.login .login__with .heading h3 {
+  text-transform: capitalize;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  font-size: 16px;
+  right: 0;
+  top: -8px;
+}
+
+.login .login__with .heading h3 span {
+  padding: 0px 20px;
+  background: #1d1d1d;
+  color: #ffd978;
+}
+
+.login .login__with .apis {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.login .login__with .apis a {
+  margin-top: 10px;
+  display: block;
+  text-transform: capitalize;
+}
+
+.login .signup {
+  border-top: 1px solid #444;
+  padding: 20px 0;
+  margin-top: 30px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+
+.login .signup img {
+  width: 30px;
+}
+
+.login .signup p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.login .signup a {
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: underline !important;
+  font-size: hekou !important;
+  font-size: 19px;
+  font-weight: 800;
+  display: block;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.login .signup a.signin {
+  color: #ffd978;
+}
+
+.login .modal-title {
+  color: #ffd978;
+  font-size: 26px;
+  font-family: hekou;
+}
+
+.login .modal-content {
+  background-color: #1d1d1d;
+  width: 400px;
+  right: -250px;
+  color: #ffffff;
+}
+
+.login .modal-body {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.login .modal-body form .form-group {
+  position: relative;
+  margin: 30px 0;
+}
+
+.login .modal-body form label {
+  display: block;
+  font-size: 14px;
+}
+
+.login .modal-body form input {
+  background: transparent;
+  border: 1px solid #999;
+  padding: 0 0 0 10px;
+  outline: none;
+  height: 40px;
+  width: 100%;
+  caret-color: #ffd978;
+  color: #ffffff;
+}
+
+.login .modal-body form input::-webkit-input-placeholder {
+  color: #1d1d1d;
+  display: none !important;
+  font-size: 14px;
+}
+
+.login .modal-body form input:-ms-input-placeholder {
+  color: #1d1d1d;
+  display: none !important;
+  font-size: 14px;
+}
+
+.login .modal-body form input::-ms-input-placeholder {
+  color: #1d1d1d;
+  display: none !important;
+  font-size: 14px;
+}
+
+.login .modal-body form input::placeholder {
+  color: #1d1d1d;
+  display: none !important;
+  font-size: 14px;
+}
+
+.login .modal-body form button {
+  display: block;
+  width: 100%;
+  background: #ffd978;
+  border: none;
+  text-transform: uppercase;
+  color: #030303;
+  font-family: hekou;
+  font-family: 26px;
+  padding: 7px 0;
+  border-radius: 4px;
+}
+
+.login .modal-body form .forget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.login .modal-body form .forget p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.login .modal-body form .forget p:last-child a {
+  color: #ffd978;
+}
+
+.login .modal-body form .forget input {
+  margin-right: 5px;
+  width: 15px;
 }
 
 @font-face {
@@ -348,7 +563,8 @@ header .navbar-nav i {
 }
 
 .experience .images {
-  margin-top: 60px;
+  width: 80%;
+  margin: 60px auto 0 auto;
 }
 
 .experience .images .images__in {
