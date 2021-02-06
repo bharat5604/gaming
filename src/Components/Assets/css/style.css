@@ -53,6 +53,37 @@ header .navbar-nav {
   font-family: "Roboto", sans-serif;
 }
 
+header .navbar-nav .wallet img {
+  display: block;
+  margin: 0 auto;
+  width: 20px;
+}
+
+header .navbar-nav .wallet span {
+  font-size: 16px;
+}
+
+header .navbar-nav .dropdown .dropdown-menu {
+  background: #1d1d1d !important;
+}
+
+header .navbar-nav .dropdown .dropdown-menu a {
+  margin: 0;
+}
+
+header .navbar-nav .dropdown .dropdown-menu a:hover {
+  background: #030303;
+}
+
+header .navbar-nav .dropdown .dropdown-menu a i {
+  margin-right: 10px;
+}
+
+header .navbar-nav img {
+  width: 20px;
+  margin: 0px 5px;
+}
+
 header .navbar-nav a {
   color: #ddd !important;
   text-transform: capitalize;
@@ -267,6 +298,10 @@ header .navbar-nav i {
   border-radius: 4px;
 }
 
+.login .modal-body form button a {
+  color: #030303;
+}
+
 .login .modal-body form .forget {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -377,6 +412,15 @@ header .navbar-nav i {
   padding: 100px 0;
 }
 
+.home .winning#winners {
+  background: url("../img/why/background.jpg") no-repeat center center;
+}
+
+.home .winning#winners .video {
+  position: relative;
+  top: 60px;
+}
+
 .home .winning .video {
   background-color: #1d1d1d;
 }
@@ -446,6 +490,50 @@ header .navbar-nav i {
   font-weight: inherit !important;
 }
 
+.home .whyus .heading h3 {
+  font-size: 26px;
+  font-family: hekou;
+  text-transform: uppercase;
+  color: #ffffff;
+  color: #ffd978;
+  text-align: center;
+}
+
+.home .whyus .img {
+  margin-top: 30px;
+}
+
+.home .whyus .img .img__in {
+  position: relative;
+  text-align: center;
+}
+
+.home .whyus .img .img__in img {
+  max-width: 55%;
+  margin: 0 auto;
+}
+
+.home .whyus .img .img__in .title {
+  font-family: "Roboto", sans-serif;
+  border: 1px solid #030303;
+  text-align: center;
+  background: #3b3a39;
+  text-transform: capitalize;
+  position: relative;
+  top: -30px;
+}
+
+.home .whyus .img .img__in .title span {
+  color: #ddd;
+  font-size: 13px;
+}
+
+.home .whyus .img .img__in .title h4 {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
 @font-face {
   font-family: hekou;
   src: url(../fonts/Hikou/HikouRough.otf);
@@ -454,6 +542,11 @@ header .navbar-nav i {
 .why {
   background: url("../img/why/background.jpg") no-repeat center center;
   padding: 100px 0;
+}
+
+.why#after {
+  background: none;
+  padding: 10px 0;
 }
 
 .why .tabs nav {
@@ -529,6 +622,78 @@ header .navbar-nav i {
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
+}
+
+.why .loggedRight {
+  background: #1d1d1d;
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.why .loggedRight .rpb img {
+  width: 40px;
+}
+
+.why .loggedRight .rpb span {
+  font-size: 16px;
+  display: block;
+  color: #ffffff;
+  margin: 15px 0;
+  font-weight: 800;
+}
+
+.why .loggedRight .rpb h3 {
+  font-size: 22px;
+  font-family: hekou;
+  color: #ffd978;
+}
+
+.why .loggedRight .level {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 50px 0;
+}
+
+.why .loggedRight .level img {
+  width: 70px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.why .loggedRight .level .level__content {
+  margin-left: 13px;
+}
+
+.why .loggedRight .level .level__content h3 {
+  text-align: left;
+  font-family: hekou;
+  color: #ffd978;
+}
+
+.why .loggedRight .level .level__content p {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.why .loggedRight .level .level__content p img {
+  width: 20px;
+}
+
+.why .loggedRight .wallet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.why .loggedRight .wallet a {
+  color: #ffd978;
+  text-transform: uppercase;
+  border-bottom: 1px solid #999;
+  font-size: 14px;
 }
 
 @font-face {

@@ -60,6 +60,13 @@
   .winning {
     background: url(../img/winning/backgound.jpg) no-repeat center center;
     padding: 100px 0;
+    &#winners {
+      background: url("../img/why/background.jpg") no-repeat center center;
+      .video {
+        position: relative;
+        top: 60px;
+      }
+    }
     .video {
       background-color: $lightBlack;
       .videoImg {
@@ -111,6 +118,45 @@
               color: $white;
               font-weight: inherit !important;
             }
+          }
+        }
+      }
+    }
+  }
+  .whyus {
+    .heading {
+      h3 {
+        @include heading;
+        color: $golden;
+        text-align: center;
+      }
+    }
+    .img {
+      margin-top: 30px;
+      .img__in {
+        position: relative;
+        text-align: center;
+        img {
+          max-width: 55%;
+          margin: 0 auto;
+        }
+        .title {
+          font-family: $roboto;
+          border: 1px solid $black;
+          text-align: center;
+          background: #3b3a39;
+          text-transform: capitalize;
+          position: relative;
+          top: -30px;
+
+          span {
+            color: #ddd;
+            font-size: 13px;
+          }
+          h4 {
+            color: $white;
+            font-size: 13px;
+            font-weight: 600;
           }
         }
       }

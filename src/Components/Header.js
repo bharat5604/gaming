@@ -15,6 +15,9 @@ const Header = () => {
   const handleShow = () => setShow(true);
   const handleSignUp = () => setSignup(true);
   const handleSignClose = () => setSignup(false);
+  const handleLogin = (e) => {
+    // setShow(false);
+  };
   return (
     <header>
       <Navbar expand="lg">
@@ -72,12 +75,13 @@ const Header = () => {
           backdrop="static"
           keyboard={false}
           className="login"
+          data-dismiss="modal"
         >
           <Modal.Header closeButton>
             <Modal.Title>Sign in</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form action="">
+            <form action="" method="post">
               <div className="form-group">
                 <label htmlFor="username">UserName *</label>
                 <input
@@ -97,7 +101,9 @@ const Header = () => {
                 />
               </div>
               <div className="form-group">
-                <button type="submit">log in</button>
+                <button type="submit" onClick={handleLogin}>
+                  <Link to="/home">log in</Link>
+                </button>
               </div>
               <div className="form-group forget">
                 <p>
@@ -215,7 +221,11 @@ const Header = () => {
           <div className="signup">
             <img src={user} alt="" />
             <p>already registerd with us?</p>
-            <Link to="" className="signin">
+            <Link
+              to=""
+              className="signin"
+              onClick={(handleSignClose, handleShow)}
+            >
               sign in
             </Link>
           </div>
