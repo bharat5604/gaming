@@ -6,6 +6,8 @@ import HeroBanner from "./HeroBanner";
 import LoggedHeader from "./LoggedHeader";
 import Why from "./Why";
 import WinnersList from "./WinnersList";
+import Testimonial from "./Testimonial";
+
 const HomeAfter = () => {
   return (
     <div className="home">
@@ -21,7 +23,7 @@ const HomeAfter = () => {
 
       <Experience />
       <GameProvider />
-
+      <Testimonial />
       <Footer />
     </div>
   );

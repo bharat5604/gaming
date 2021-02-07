@@ -52,7 +52,9 @@ const LoggedHeader = () => {
                 </Link>
               </Nav.Link>
               <NavDropdown title="bharat" id="basic-nav-dropdown">
-                <NavDropdown.Item>Action</NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to="/wallet">Wallet</Link>
+                </NavDropdown.Item>
                 <NavDropdown.Item>Another action</NavDropdown.Item>
                 <NavDropdown.Item>Something</NavDropdown.Item>
                 <NavDropdown.Divider />

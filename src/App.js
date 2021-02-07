@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import HomeAfter from "./Components/HomeAfter";
+import ProfileWallet from "./Components/ProfileWallet";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         <Switch>
           <Route path="/home">
             <HomeAfter />
+          </Route>
+          <Route path="/wallet">
+            <ProfileWallet />
           </Route>
           <Route path="/">
             <Header />

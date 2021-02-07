@@ -7,6 +7,7 @@ import GameProvider from "./GameProvider";
 import Footer from "./Footer";
 import HeroBanner from "./HeroBanner";
 import WinnersList from "./WinnersList";
+import Testimonial from "./Testimonial";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
       <GameProvider />
 
       {/* Footer */}
+      <Testimonial />
       <Footer />
     </div>
   );

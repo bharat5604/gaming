@@ -11,6 +11,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @font-face {
   font-family: hekou;
   src: url(../fonts/Hikou/HikouRough.otf);
@@ -22,7 +26,7 @@
 }
 
 header {
-  background-color: #030303;
+  background-color: #151515;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,7 +76,7 @@ header .navbar-nav .dropdown .dropdown-menu a {
 }
 
 header .navbar-nav .dropdown .dropdown-menu a:hover {
-  background: #030303;
+  background: #151515;
 }
 
 header .navbar-nav .dropdown .dropdown-menu a i {
@@ -109,7 +113,7 @@ header .navbar-nav button {
 
 header .navbar-nav .signup {
   background-color: #ffffff;
-  color: #030303;
+  color: #151515;
 }
 
 header .navbar-nav i {
@@ -291,7 +295,7 @@ header .navbar-nav i {
   background: #ffd978;
   border: none;
   text-transform: uppercase;
-  color: #030303;
+  color: #151515;
   font-family: hekou;
   font-family: 26px;
   padding: 7px 0;
@@ -299,7 +303,7 @@ header .navbar-nav i {
 }
 
 .login .modal-body form button a {
-  color: #030303;
+  color: #151515;
 }
 
 .login .modal-body form .forget {
@@ -336,10 +340,148 @@ header .navbar-nav i {
   src: url(../fonts/Hikou/HikouRough.otf);
 }
 
+.background {
+  background: #1d1d1d url(../img/wallet/db-banner2.jpg) no-repeat center bottom;
+  background-size: cover;
+  padding: 100px 0 350px;
+}
+
+.banner {
+  background: #1d1d1d url(../img/wallet/db-banner.jpg) no-repeat center bottom;
+  background-position: 50% 70% !important;
+  padding: 100px 0 0;
+  position: relative;
+  top: 0;
+}
+
+.banner .mainTabs {
+  background: #151515;
+  margin-top: 200px;
+}
+
+.banner .mainTabs .nav-item a {
+  background: #1d1d1d;
+  padding: 40px 20px;
+  border-radius: 0;
+  text-align: center;
+  margin-top: 2px;
+  color: #ffd978;
+}
+
+.banner .mainTabs .nav-item a img {
+  display: block;
+  margin: 0 auto;
+  width: 60px;
+}
+
+.banner .mainTabs .nav-item a span {
+  font-size: 22px;
+  font-family: hekou;
+  border-bottom: 1px solid #999;
+}
+
+.banner .mainTabs .nav-item a.active {
+  background-color: #151515;
+  color: #ffffff;
+}
+
+.banner .mainTabs .nav-item a.active img {
+  width: 50px;
+  margin: 0 auto;
+}
+
+.banner .mainTabs .nav-item a.active span {
+  border-bottom: none;
+}
+
+.banner .mainTabs .profile {
+  margin: 90px 0 0;
+  width: 70%;
+}
+
+.banner .mainTabs .profile .ppicture img {
+  width: 70px;
+  margin-right: 20px;
+}
+
+.banner .mainTabs .profile .ppicture span {
+  background: #fadb9b;
+  color: #151515;
+  text-transform: capitalize;
+  padding: 8px 20px;
+  font-weight: 800;
+  font-family: "Roboto", sans-serif;
+}
+
+.banner .mainTabs .profile .ppicture p {
+  color: #ffd978;
+  text-transform: capitalize;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.banner .mainTabs .profile .updates {
+  margin-top: 40px;
+}
+
+.banner .mainTabs .profile .updates button {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  color: #ffd978;
+  font-size: 14px;
+  position: relative;
+  top: 10px;
+  padding: 0;
+}
+
+.banner .mainTabs .profile .updates .item {
+  border-bottom: 1px solid #1d1d1d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 10px;
+}
+
+.banner .mainTabs .profile .updates .item:first-child {
+  border-top: 1px solid #1d1d1d;
+}
+
+.banner .mainTabs .profile .updates .item:nth-child(even) i {
+  color: #666;
+}
+
+.banner .mainTabs .profile .updates .item span {
+  width: 250px;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+.banner .mainTabs .profile .updates .item span:nth-child(1) {
+  width: 150px;
+  font-weight: 800;
+}
+
+.banner .mainTabs .profile .updates .item i {
+  color: #ffd978;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+
 .home .home__banner {
   background: url(../img/hero.jpg) no-repeat center center;
   background-size: cover;
   padding: 100px 0;
+  background-color: #1d1d1d;
 }
 
 .home .home__banner .slots h1 {
@@ -515,7 +657,7 @@ header .navbar-nav i {
 
 .home .whyus .img .img__in .title {
   font-family: "Roboto", sans-serif;
-  border: 1px solid #030303;
+  border: 1px solid #151515;
   text-align: center;
   background: #3b3a39;
   text-transform: capitalize;
@@ -539,6 +681,384 @@ header .navbar-nav i {
   src: url(../fonts/Hikou/HikouRough.otf);
 }
 
+.wallet1 {
+  position: relative;
+  top: -60px;
+}
+
+.wallet1 .nav-tabs {
+  border: none;
+}
+
+.wallet1 .nav-tabs a {
+  border: none;
+  background: #1d1d1d;
+  text-transform: capitalize;
+  font-size: 16px;
+  color: #ffd978;
+  padding: 20px 0;
+  border-right: 2px solid #151515;
+  border-radius: 0 !important;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  width: calc(100% / 4);
+}
+
+.wallet1 .nav-tabs a:last-child {
+  border: none;
+}
+
+.wallet1 .nav-tabs a.active {
+  background: #151515;
+  border: none;
+  color: #ffffff;
+}
+
+.wallet1 .nav-tabs a:hover {
+  border-color: #151515;
+}
+
+.wallet1 .balance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #0f0f0f;
+  padding: 30px 20px 30px 40px;
+  margin: 60px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wallet1 .balance h3 {
+  font-size: 16px;
+  color: #ffd978;
+  text-transform: capitalize;
+}
+
+.wallet1 .balance h3 span {
+  color: #ffffff;
+}
+
+.wallet1 .balance button {
+  background: #ffd978;
+  padding: 8px 20px;
+  margin-left: 60px;
+  border: none;
+  color: #151515;
+  text-transform: capitalize;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wallet1 .balance button img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.wallet1 .filter {
+  margin: 30px 0;
+}
+
+.wallet1 .filter .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wallet1 .filter select {
+  display: block;
+  width: 100%;
+  background: transparent;
+  height: 40px;
+  color: #ffffff;
+  padding: 0 0 0 10px;
+  outline: none;
+}
+
+.wallet1 .filter label {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.wallet1 .filter .last {
+  visibility: hidden;
+  display: block;
+}
+
+.wallet1 .filter button {
+  background: transparent;
+  height: 40px;
+  padding: 0px 30px;
+  border: 1px solid #ffd978;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+}
+
+.wallet1 table {
+  margin: 0;
+}
+
+.wallet1 table thead {
+  margin-bottom: 20px;
+}
+
+.wallet1 table thead tr {
+  border-top: 1px solid #1d1d1d !important;
+  border-bottom: 1px solid #1d1d1d !important;
+  margin-bottom: 30px !important;
+}
+
+.wallet1 table thead th {
+  color: #ffd978;
+  font-size: 14px !important;
+  font-size: 16px;
+  border: none;
+}
+
+.wallet1 table tbody tr {
+  border-bottom: 1px solid #1d1d1d;
+}
+
+.wallet1 table tbody tr td {
+  border: none;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-size: 14px !important;
+}
+
+.wallet1 table tbody tr td.success {
+  font-weight: 800;
+  color: green;
+}
+
+.wallet1 .deposit {
+  margin: 60px 0;
+}
+
+.wallet1 .deposit .amount label {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.wallet1 .deposit .amount input {
+  height: 40px;
+  background: #111;
+  border: 1px solid #555;
+  outline: none;
+  width: 40%;
+  caret-color: #ffd978;
+  padding: 0px 0px 0px 10px;
+  margin: 0px 10px;
+}
+
+.wallet1 .deposit .amount span {
+  color: #8f6e1c;
+  font-weight: 800;
+  margin-left: 20px;
+  font-family: hekou;
+}
+
+.wallet1 .deposit .upis {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+}
+
+.wallet1 .deposit .upis .leftupi {
+  width: 70%;
+  background: #1d1d1d;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  margin: 0;
+  border-bottom: 1px solid #555;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group:nth-child(3) {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group input,
+.wallet1 .deposit .upis .leftupi .form-group select {
+  background: #222222;
+  color: #999;
+  padding: 0 0 0 10px;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group input::-webkit-input-placeholder,
+.wallet1 .deposit .upis .leftupi .form-group select::-webkit-input-placeholder {
+  color: #999;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group input:-ms-input-placeholder,
+.wallet1 .deposit .upis .leftupi .form-group select:-ms-input-placeholder {
+  color: #999;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group input::-ms-input-placeholder,
+.wallet1 .deposit .upis .leftupi .form-group select::-ms-input-placeholder {
+  color: #999;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group input::placeholder,
+.wallet1 .deposit .upis .leftupi .form-group select::placeholder {
+  color: #999;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group.merg {
+  padding-bottom: 0 !important;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group.boreder {
+  border: none;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group .checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group .checkbox input {
+  width: 20px;
+  background: #1d1d1d !important;
+  margin-right: 10px;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group .debit {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group .debit.bank input {
+  margin: 10px 0;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group .debit.bank input:first-child {
+  margin-top: 0;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group .debit.bank input:last-child {
+  width: 50%;
+  margin: 0;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group .debit input:nth-child(2) {
+  margin: 10px 0;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group .debit .expiry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group .debit .expiry input {
+  margin: 0 0 0 10px !important;
+}
+
+.wallet1 .deposit .upis .leftupi .form-group .arrow {
+  cursor: pointer;
+  width: 30px;
+}
+
+.wallet1 .deposit .upis .leftupi label {
+  color: #ffd978;
+  font-size: 14px;
+  margin: 0;
+  text-transform: capitalize;
+  width: 25%;
+}
+
+.wallet1 .deposit .upis .rightupi {
+  margin-left: 30px;
+  width: 30%;
+}
+
+.wallet1 .deposit .upis .rightupi h3 {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.wallet1 .deposit .upis .rightupi .item {
+  background: #1d1d1d;
+  padding: 10px 0;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.wallet1 .deposit .upis .rightupi .item:last-child {
+  margin-bottom: 0;
+}
+
+.wallet1 .deposit .upis .rightupi .item img {
+  width: 70px;
+}
+
+.wallet1 .deposit .proceed {
+  text-align: center;
+  position: relative;
+}
+
+.wallet1 .deposit .proceed img {
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+
 .why {
   background: url("../img/why/background.jpg") no-repeat center center;
   padding: 100px 0;
@@ -551,8 +1071,8 @@ header .navbar-nav i {
 
 .why .tabs nav {
   border: none;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #030303), color-stop(90%, #1d1d1d));
-  background: linear-gradient(#030303 20%, #1d1d1d 90%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #151515), color-stop(90%, #1d1d1d));
+  background: linear-gradient(#151515 20%, #1d1d1d 90%);
 }
 
 .why .tabs nav a {
@@ -566,7 +1086,7 @@ header .navbar-nav i {
 }
 
 .why .tabs nav a.active {
-  background: #030303;
+  background: #151515;
   border: none;
   color: #ffd978;
 }
@@ -605,7 +1125,7 @@ header .navbar-nav i {
 
 .why .why__us .img .img__in .title {
   font-family: "Roboto", sans-serif;
-  border: 1px solid #030303;
+  border: 1px solid #151515;
   text-align: center;
   background: #3b3a39;
   text-transform: capitalize;
@@ -722,9 +1242,9 @@ header .navbar-nav i {
   padding: 3px 10px;
   border-radius: 6px;
   text-transform: initial;
-  border: 1px solid #030303;
+  border: 1px solid #151515;
   font-family: "Montserrat", sans-serif;
-  color: #030303;
+  color: #151515;
 }
 
 .experience .images {
@@ -766,7 +1286,7 @@ header .navbar-nav i {
 }
 
 footer {
-  background-color: #030303;
+  background-color: #151515;
   padding: 100px 0;
 }
 

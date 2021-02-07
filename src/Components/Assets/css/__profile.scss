@@ -1,0 +1,129 @@
+@import "__variable";
+// ******************* banner ************
+.background {
+  background: $lightBlack url(../img/wallet/db-banner2.jpg) no-repeat center
+    bottom;
+  background-size: cover;
+  padding: 100px 0 350px;
+}
+.banner {
+  background: $lightBlack url(../img/wallet/db-banner.jpg) no-repeat center
+    bottom;
+  // background-size: cover;
+  background-position: 50% 70% !important;
+  padding: 100px 0 0;
+  position: relative;
+  top: 0;
+
+  .mainTabs {
+    background: $black;
+    margin-top: 200px;
+    // position: absolute;
+    //nav-item
+
+    .nav-item {
+      a {
+        background: $lightBlack;
+        padding: 40px 20px;
+        border-radius: 0;
+        text-align: center;
+        margin-top: 2px;
+        color: $golden;
+        img {
+          display: block;
+          margin: 0 auto;
+          width: 60px;
+        }
+        span {
+          font-size: 22px;
+          font-family: $hekouFont;
+          border-bottom: 1px solid #999;
+        }
+        &.active {
+          background-color: $black;
+          color: $white;
+          img {
+            width: 50px;
+            margin: 0 auto;
+          }
+          span {
+            border-bottom: none;
+          }
+        }
+      }
+    } //nav-item
+
+    //profile{
+    .profile {
+      margin: 90px 0 0;
+      width: 70%;
+      .ppicture {
+        img {
+          width: 70px;
+          margin-right: 20px;
+        }
+        span {
+          background: #fadb9b;
+          color: $black;
+          text-transform: capitalize;
+          padding: 8px 20px;
+          font-weight: $fontWeight;
+          font-family: $roboto;
+        }
+        p {
+          color: $golden;
+          text-transform: capitalize;
+          margin-top: 10px;
+          font-size: $paraFont;
+        }
+      } //
+
+      //updates
+      .updates {
+        margin-top: 40px;
+        button {
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid $white;
+          color: $golden;
+          font-size: $paraFont;
+          position: relative;
+          top: 10px;
+          padding: 0;
+        }
+        .item {
+          &:first-child {
+            border-top: 1px solid $lightBlack;
+          }
+          &:nth-child(even) {
+            i {
+              color: #666;
+            }
+          }
+
+          border-bottom: 1px solid $lightBlack;
+          display: flex;
+          justify-content: space-between;
+          // padding-bottom: 6px;
+          padding: 10px 10px;
+
+          span {
+            width: 250px;
+            color: $white;
+            text-transform: capitalize;
+            font-family: $roboto;
+            font-size: $paraFont;
+            &:nth-child(1) {
+              width: 150px;
+              font-weight: $fontWeight;
+            }
+          }
+          i {
+            color: $golden;
+            cursor: pointer;
+          }
+        }
+      } //updates
+    } //profile}
+  }
+}
