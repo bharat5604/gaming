@@ -1,27 +1,49 @@
-import React, { useState } from "react";
-import { Navbar, Nav, Modal } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "./Assets/img/logo.png";
 import { Link } from "react-router-dom";
-import facebook from "./Assets/img/facebook.png";
-import google from "./Assets/img/google.png";
-import user from "./Assets/img/user.png";
-import flag from "./Assets/img/flag.png";
-
+import LoginSignup from "./LoginSignup";
 const Header = () => {
-  const [show, setShow] = useState(false);
-  const [signup, setSignup] = useState(false);
+  const [status, setStatus] = useState("open");
+  const [open, setOpen] = useState("");
+  const [text, setText] = useState();
+  useEffect(() => {
+    // if (open == "active") {
+    //   let b = (document.body.style.overflow = "hidden");
+    // } else {
+    //   document.body.style.overflowY = "scroll";
+    // }
+  });
+  const handleShow = (e) => {
+    setText(e.target.textContent);
+    switch (status) {
+      case "open":
+        setOpen("active");
+        setStatus("close");
+        break;
+      case "close":
+        setOpen("");
+        setStatus("open");
+        break;
+    }
+  };
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const handleSignUp = () => setSignup(true);
-  const handleSignClose = () => setSignup(false);
-  const handleLogin = (e) => {
-    // setShow(false);
+  const handleClose = () => {
+    switch (status) {
+      case "open":
+        setOpen("");
+        setStatus("close");
+        break;
+      case "close":
+        setOpen("");
+        setStatus("open");
+        break;
+    }
   };
   return (
     <header>
       <Navbar expand="lg">
-        <div className="container-fluid">
+        <Container fluid>
           <Navbar.Brand>
             <Link to="/">
               <img src={logo} alt="" />
@@ -29,7 +51,7 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav className="ml-auto">
               <Nav.Link>
                 <Link to="/">Home</Link>
               </Nav.Link>
@@ -57,179 +79,24 @@ const Header = () => {
                 </button>
               </Nav.Link>
               <Nav.Link>
-                <button className="signup" type="button" onClick={handleSignUp}>
+                <button className="signup" type="button" onClick={handleShow}>
                   sign up
                 </button>
               </Nav.Link>
-              <Nav.Link>
+              {/* <Nav.Link>
                 <i className="fa fa-bars"></i>
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
-        </div>
+        </Container>
       </Navbar>
-      <div className="loginMain">
-        <Modal
-          show={show}
-          onHide={handleClose}
-          backdrop="static"
-          keyboard={false}
-          className="login"
-          data-dismiss="modal"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>Sign in</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <form action="" method="post">
-              <div className="form-group">
-                <label htmlFor="username">UserName *</label>
-                <input
-                  type="text"
-                  placeholder="UserName"
-                  name="username"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password *</label>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <button type="submit" onClick={handleLogin}>
-                  <Link to="/home">log in</Link>
-                </button>
-              </div>
-              <div className="form-group forget">
-                <p>
-                  <input type="checkbox" /> remember me
-                </p>
-                <p>
-                  <Link to="">Forgot Your password?</Link>
-                </p>
-              </div>
-            </form>
-          </Modal.Body>
-          <div className="login__with">
-            <div className="heading">
-              <h3>
-                <span>or login with</span>
-              </h3>
-            </div>
-            <div className="apis">
-              <Link to="">
-                <img src={facebook} alt="" />
-              </Link>
-              <Link to="">
-                <img src={google} alt="" />
-              </Link>
-            </div>
-          </div>
-          <div className="signup">
-            <img src={user} alt="" />
-            <p>No Account Yet?</p>
-            <Link to="">Create An Account</Link>
-          </div>
-        </Modal>
-      </div>
-      <div className="signup">
-        <Modal
-          show={signup}
-          onHide={handleSignClose}
-          backdrop="static"
-          keyboard={false}
-          className="login"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>Sign up</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <form action="">
-              <div className="form-group">
-                <label htmlFor="username">UserName *</label>
-                <input
-                  type="text"
-                  placeholder="UserName"
-                  name="username"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Email *</label>
-                <input type="email" placeholder="Email" name="email" required />
-              </div>
-              <div className="form-group number">
-                <label htmlFor="phone">Phone Number *</label>
-                <div className="mainFlag">
-                  <div className="flag">
-                    <img src={flag} alt="" />
-                    <select name="number" id="">
-                      <option value="91">+91</option>
-                    </select>
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Phone"
-                    name="password"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password *</label>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="cpassword">Confirm Password *</label>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  name="cpassword"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <button type="submit">sign up</button>
-              </div>
-            </form>
-          </Modal.Body>
-          <div className="login__with">
-            <div className="heading">
-              <h3>
-                <span>or signup with</span>
-              </h3>
-            </div>
-            <div className="apis">
-              <Link to="">
-                <img src={facebook} alt="" />
-              </Link>
-              <Link to="">
-                <img src={google} alt="" />
-              </Link>
-            </div>
-          </div>
-          <div className="signup">
-            <img src={user} alt="" />
-            <p>already registerd with us?</p>
-            <Link
-              to=""
-              className="signin"
-              onClick={(handleSignClose, handleShow)}
-            >
-              sign in
-            </Link>
-          </div>
-        </Modal>
+      {/* login signup */}
+      <div className="loginsignup" id={open}>
+        <div className="heading">
+          <h3>{text}</h3>
+          <i className="fa fa-close" onClick={handleClose}></i>
+        </div>
+        <LoginSignup sign={text === "sign in"} />
       </div>
     </header>
   );

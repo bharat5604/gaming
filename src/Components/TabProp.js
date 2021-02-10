@@ -5,6 +5,10 @@ const TabProp = (props) => {
     <div>
       <div className="images">
         <img src={props.games} alt="" />
+        <img src={props.games} alt="" />
+        <img src={props.games} alt="" />
+        <img src={props.games} alt="" />
+        <img src={props.games} alt="" />
       </div>
     </div>
   );

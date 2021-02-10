@@ -5,12 +5,17 @@
   font-family: hekou;
   src: url(../fonts/Hikou/HikouRough.otf);
 }
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
+}
 $golden: #ffd978;
 $black: #151515;
 $lightBlack: #1d1d1d;
 $white: #ffffff;
 $menuFont: 16px;
 $hekouFont: hekou;
+$embrima: embrima;
 $headingFont: 26px;
 $paraFont: 14px;
 $roboto: "Roboto", sans-serif;

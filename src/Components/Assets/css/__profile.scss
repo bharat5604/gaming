@@ -4,20 +4,23 @@
   background: $lightBlack url(../img/wallet/db-banner2.jpg) no-repeat center
     bottom;
   background-size: cover;
-  padding: 100px 0 350px;
+  padding: 100px 0 550px;
 }
 .banner {
-  background: $lightBlack url(../img/wallet/db-banner.jpg) no-repeat center
-    bottom;
-  // background-size: cover;
-  background-position: 50% 70% !important;
+  background: $lightBlack url(../img/wallet/db-banner.jpg) no-repeat center;
+  background-size: cover;
   padding: 100px 0 0;
+  margin-top: -100px;
   position: relative;
   top: 0;
 
   .mainTabs {
     background: $black;
-    margin-top: 200px;
+    // margin-top: 200px;
+    position: relative;
+    top: 300px;
+    min-height: 680px;
+    max-height: 680px;
     // position: absolute;
     //nav-item
 

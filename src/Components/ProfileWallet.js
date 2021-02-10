@@ -2,14 +2,12 @@ import React from "react";
 import LoggedHeader from "./LoggedHeader";
 import { Tab, Row, Nav } from "react-bootstrap";
 import walletWhite from "./Assets/img/wallet/wallet-white.png";
-import walletYellow from "./Assets/img/wallet/wallet-icon.png";
 import messageYellow from "./Assets/img/wallet/messages-icon.png";
 import profileYellow from "./Assets/img/wallet/profile.png";
 import accountYellow from "./Assets/img/wallet/account.png";
 import Wallet from "./Wallet";
-import dbBanner from "./Assets/img/wallet/db-banner.jpg";
 import dummyprofile from "./Assets/img/dummyprofile.png";
-import dbBanner2 from "./Assets/img/wallet/db-banner2.jpg";
+
 import Footer from "./Footer";
 
 const ProfileWallet = () => {

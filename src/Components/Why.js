@@ -9,6 +9,12 @@ import whyImg3 from "./Assets/img/why/Badge-3.png";
 import whyImg4 from "./Assets/img/why/Badge-4.png";
 import rpb from "./Assets/img/rpb.png";
 import level from "./Assets/img/level.png";
+import pr1 from "./Assets/img/pr1.jpg";
+import pr2 from "./Assets/img/pr2.jpg";
+import pr3 from "./Assets/img/pr3.jpg";
+import pr4 from "./Assets/img/pr4.jpg";
+import pr5 from "./Assets/img/pr5.jpg";
+import pr6 from "./Assets/img/pr6.jpg";
 
 const Why = (props) => {
   return (
@@ -19,10 +25,23 @@ const Why = (props) => {
             <div className="tabs">
               <Tabs defaultActiveKey="all" id="uncontrolled-tab-example">
                 <Tab eventKey="all" title="All">
-                  <Tabprop games={games} />
+                  <div className="all">
+                    <img src={pr1} alt="" />
+                    <img src={pr2} alt="" />
+                    <img src={pr3} alt="" />
+                  </div>
+                  <div className="all">
+                    <img src={pr4} alt="" />
+                    <img src={pr5} alt="" />
+                    <img src={pr6} alt="" />
+                  </div>
                 </Tab>
                 <Tab eventKey="poker" title="Poker">
-                  <Tabprop games={games} />
+                  <div className="all">
+                    <img src={pr1} alt="" />
+                    <img src={pr2} alt="" />
+                    <img src={pr3} alt="" />
+                  </div>
                 </Tab>
                 <Tab eventKey="roulette" title="Roulette"></Tab>
                 <Tab eventKey="dragon" title="Dragon Tiger"></Tab>

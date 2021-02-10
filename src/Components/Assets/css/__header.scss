@@ -9,6 +9,43 @@ header {
   align-items: center;
   position: sticky;
   top: 0;
+  font-family: $embrima !important;
+  .dropdown-menu {
+    margin-left: -70px !important;
+    a {
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 3px;
+      align-items: center;
+    }
+  }
+  .navbar {
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      .barnotification {
+        margin-left: 30px;
+        button {
+          background: transparent;
+          // border-radius: 50%;
+          border: none;
+          i {
+            color: #999;
+            background: $lightBlack;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+
+            font-size: $paraFont;
+          }
+        }
+      }
+    }
+    width: 100%;
+  }
   .navbar-brand {
     img {
       max-width: 150px;
@@ -52,6 +89,7 @@ header {
       text-transform: capitalize;
       margin: 0 6px;
       font-size: $menuFont;
+      font-family: $embrima;
       img {
         max-width: 100%;
       }
@@ -77,165 +115,79 @@ header {
   }
 }
 
-//login
-.login {
-  font-family: $roboto;
-  .mainFlag {
-    display: flex;
-    .flag {
-      display: flex;
-      border: 1px solid #999;
-      padding: 10px;
-      box-sizing: border-box;
-      height: 40px;
-      margin-right: 20px;
-      select {
-        background: transparent;
-        border: none;
-        color: $white;
-        border-bottom: 1px solid #cccc;
-        margin-left: 10px;
-        outline: none;
-        // padding-bottom: 3px;
-      }
-    }
-  }
-  // top: -20px;
-  .modal-header {
-    border-color: #444;
-  }
-  .login__with {
-    .heading {
-      text-align: center;
-      border-bottom: 1px solid #444;
-      position: relative;
-      h3 {
-        text-transform: capitalize;
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        font-size: $menuFont;
-        right: 0;
-        top: -8px;
-        span {
-          padding: 0px 20px;
-          background: $lightBlack;
-          color: $golden;
-        }
-      }
-    }
-    padding-bottom: 20px;
-    .apis {
-      text-align: center;
-      margin-top: 40px;
-      a {
-        margin-top: 10px;
-        display: block;
-        text-transform: capitalize;
-      }
-    }
-  } // login
-  //signup
-  .signup {
-    border-top: 1px solid #444;
-    padding: 20px 0;
-    margin-top: 30px;
-    text-align: center;
-    border-bottom: 1px solid #444;
-    img {
-      width: 30px;
-    }
-    p {
-      margin: 10px 0 0 0;
-      font-size: $paraFont;
-      text-transform: capitalize;
-    }
-    a {
-      font-size: $menuFont;
-      color: $white;
-      text-decoration: underline !important;
-      font-size: $hekouFont !important;
-      font-size: 19px;
-      font-weight: $fontWeight;
-      display: block;
-      margin-top: 10px;
-      text-transform: uppercase;
-      &.signin {
-        color: $golden;
-      }
-    }
-  }
-  .modal-title {
-    color: $golden;
-    font-size: $headingFont;
-    font-family: $hekouFont;
-  }
-  .modal-content {
-    background-color: $lightBlack;
-    width: 400px;
-    right: -250px;
-    color: $white;
-  }
-  .modal-body {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    form {
-      .form-group {
-        position: relative;
-        margin: 30px 0;
-      }
-      label {
-        display: block;
-        font-size: $paraFont;
-      }
-      input {
-        background: transparent;
-        border: 1px solid #999;
-        padding: 0 0 0 10px;
-        outline: none;
-        height: 40px;
-        // border-radius: 4px;
-        width: 100%;
-        caret-color: $golden;
-        color: $white;
-        &::placeholder {
-          color: $lightBlack;
-          display: none !important;
-          font-size: $paraFont;
-        }
-      }
-      button {
-        display: block;
-        width: 100%;
-        background: $golden;
-        border: none;
-        text-transform: uppercase;
-        color: $black;
-        font-family: $hekouFont;
-        font-family: $headingFont;
-        padding: 7px 0;
-        border-radius: 4px;
-        a {
-          color: $black;
-        }
-      }
-      .forget {
-        display: flex;
-        justify-content: space-between;
-        p {
+//****************** bars
+.bars-main {
+  .modal-dialog {
+    margin: 0rem !important;
+    .modal-content {
+      min-height: 100vh !important;
+      border-radius: 0;
+      border: none;
+      width: 300px;
+      background: $black;
+      .modal-body {
+        background: $lightBlack;
+        padding: 30px 60px;
+        //lists
+        .lists {
           display: flex;
-          align-items: center;
-          text-transform: capitalize;
-          font-size: $paraFont;
-          &:last-child {
+          align-items: flex-start;
+          margin: 30px 0;
+          &:first-child {
+            margin-top: 0;
+          }
+
+          img {
+            width: 30px;
+          }
+          a {
+            color: $golden;
+            font-size: $menuFont;
+            border-bottom: 1px solid #999;
+            margin-left: 10px;
+            padding: 0;
+            font-family: $hekouFont;
+            display: inline-block;
+          }
+          //dropdown
+          .dropdown-menu {
+            background: transparent;
+            border: none;
+            position: inherit !important;
+            margin-top: -10px !important;
+            transition: 0.3s;
             a {
-              color: $golden;
+              border: none;
+              font-family: $roboto;
+              padding: 0px !important;
+              text-transform: capitalize;
+              margin-left: 4px !important;
+              &:hover {
+                background: transparent;
+                color: #999;
+              }
+              &::after {
+                border-bottom-color: $white;
+              }
             }
           }
         }
-        input {
-          margin-right: 5px;
-          width: 15px;
+      }
+      //user{
+      .user {
+        text-align: center;
+        display: block;
+        width: 100%;
+        padding: 30px 0;
+        img {
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 10px !important;
+          width: 60px;
+        }
+        span {
+          color: $white;
+          font-size: $paraFont;
         }
       }
     }

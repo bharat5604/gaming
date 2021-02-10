@@ -15,348 +15,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @font-face {
   font-family: hekou;
   src: url(../fonts/Hikou/HikouRough.otf);
 }
 
 @font-face {
-  font-family: hekou;
-  src: url(../fonts/Hikou/HikouRough.otf);
-}
-
-header {
-  background-color: #151515;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  z-index: 999;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-}
-
-header .navbar-brand img {
-  max-width: 150px;
-}
-
-header .navbar-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: 60px;
-  font-family: "Roboto", sans-serif;
-}
-
-header .navbar-nav .wallet img {
-  display: block;
-  margin: 0 auto;
-  width: 20px;
-}
-
-header .navbar-nav .wallet span {
-  font-size: 16px;
-}
-
-header .navbar-nav .dropdown .dropdown-menu {
-  background: #1d1d1d !important;
-}
-
-header .navbar-nav .dropdown .dropdown-menu a {
-  margin: 0;
-}
-
-header .navbar-nav .dropdown .dropdown-menu a:hover {
-  background: #151515;
-}
-
-header .navbar-nav .dropdown .dropdown-menu a i {
-  margin-right: 10px;
-}
-
-header .navbar-nav img {
-  width: 20px;
-  margin: 0px 5px;
-}
-
-header .navbar-nav a {
-  color: #ddd !important;
-  text-transform: capitalize;
-  margin: 0 6px;
-  font-size: 16px;
-}
-
-header .navbar-nav a img {
-  max-width: 100%;
-}
-
-header .navbar-nav button {
-  background: transparent;
-  border: 2px solid #ffd978;
-  padding: 6px 10px !important;
-  min-width: 100px;
-  text-transform: capitalize;
-  font-size: 14px;
-  border-radius: 20px;
-  color: #ffffff;
-  font-weight: 800;
-}
-
-header .navbar-nav .signup {
-  background-color: #ffffff;
-  color: #151515;
-}
-
-header .navbar-nav i {
-  color: #ffd978;
-}
-
-.login {
-  font-family: "Roboto", sans-serif;
-}
-
-.login .mainFlag {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.login .mainFlag .flag {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border: 1px solid #999;
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: 40px;
-  margin-right: 20px;
-}
-
-.login .mainFlag .flag select {
-  background: transparent;
-  border: none;
-  color: #ffffff;
-  border-bottom: 1px solid #cccc;
-  margin-left: 10px;
-  outline: none;
-}
-
-.login .modal-header {
-  border-color: #444;
-}
-
-.login .login__with {
-  padding-bottom: 20px;
-}
-
-.login .login__with .heading {
-  text-align: center;
-  border-bottom: 1px solid #444;
-  position: relative;
-}
-
-.login .login__with .heading h3 {
-  text-transform: capitalize;
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  font-size: 16px;
-  right: 0;
-  top: -8px;
-}
-
-.login .login__with .heading h3 span {
-  padding: 0px 20px;
-  background: #1d1d1d;
-  color: #ffd978;
-}
-
-.login .login__with .apis {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.login .login__with .apis a {
-  margin-top: 10px;
-  display: block;
-  text-transform: capitalize;
-}
-
-.login .signup {
-  border-top: 1px solid #444;
-  padding: 20px 0;
-  margin-top: 30px;
-  text-align: center;
-  border-bottom: 1px solid #444;
-}
-
-.login .signup img {
-  width: 30px;
-}
-
-.login .signup p {
-  margin: 10px 0 0 0;
-  font-size: 14px;
-  text-transform: capitalize;
-}
-
-.login .signup a {
-  font-size: 16px;
-  color: #ffffff;
-  text-decoration: underline !important;
-  font-size: hekou !important;
-  font-size: 19px;
-  font-weight: 800;
-  display: block;
-  margin-top: 10px;
-  text-transform: uppercase;
-}
-
-.login .signup a.signin {
-  color: #ffd978;
-}
-
-.login .modal-title {
-  color: #ffd978;
-  font-size: 26px;
-  font-family: hekou;
-}
-
-.login .modal-content {
-  background-color: #1d1d1d;
-  width: 400px;
-  right: -250px;
-  color: #ffffff;
-}
-
-.login .modal-body {
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-.login .modal-body form .form-group {
-  position: relative;
-  margin: 30px 0;
-}
-
-.login .modal-body form label {
-  display: block;
-  font-size: 14px;
-}
-
-.login .modal-body form input {
-  background: transparent;
-  border: 1px solid #999;
-  padding: 0 0 0 10px;
-  outline: none;
-  height: 40px;
-  width: 100%;
-  caret-color: #ffd978;
-  color: #ffffff;
-}
-
-.login .modal-body form input::-webkit-input-placeholder {
-  color: #1d1d1d;
-  display: none !important;
-  font-size: 14px;
-}
-
-.login .modal-body form input:-ms-input-placeholder {
-  color: #1d1d1d;
-  display: none !important;
-  font-size: 14px;
-}
-
-.login .modal-body form input::-ms-input-placeholder {
-  color: #1d1d1d;
-  display: none !important;
-  font-size: 14px;
-}
-
-.login .modal-body form input::placeholder {
-  color: #1d1d1d;
-  display: none !important;
-  font-size: 14px;
-}
-
-.login .modal-body form button {
-  display: block;
-  width: 100%;
-  background: #ffd978;
-  border: none;
-  text-transform: uppercase;
-  color: #151515;
-  font-family: hekou;
-  font-family: 26px;
-  padding: 7px 0;
-  border-radius: 4px;
-}
-
-.login .modal-body form button a {
-  color: #151515;
-}
-
-.login .modal-body form .forget {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.login .modal-body form .forget p {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-transform: capitalize;
-  font-size: 14px;
-}
-
-.login .modal-body form .forget p:last-child a {
-  color: #ffd978;
-}
-
-.login .modal-body form .forget input {
-  margin-right: 5px;
-  width: 15px;
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
 }
 
 @font-face {
   font-family: hekou;
   src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
 }
 
 .background {
   background: #1d1d1d url(../img/wallet/db-banner2.jpg) no-repeat center bottom;
   background-size: cover;
-  padding: 100px 0 350px;
+  padding: 100px 0 550px;
 }
 
 .banner {
-  background: #1d1d1d url(../img/wallet/db-banner.jpg) no-repeat center bottom;
-  background-position: 50% 70% !important;
+  background: #1d1d1d url(../img/wallet/db-banner.jpg) no-repeat center;
+  background-size: cover;
   padding: 100px 0 0;
+  margin-top: -100px;
   position: relative;
   top: 0;
 }
 
 .banner .mainTabs {
   background: #151515;
-  margin-top: 200px;
+  position: relative;
+  top: 300px;
+  min-height: 680px;
+  max-height: 680px;
 }
 
 .banner .mainTabs .nav-item a {
@@ -475,6 +176,11 @@ header .navbar-nav i {
 @font-face {
   font-family: hekou;
   src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
 }
 
 .home .home__banner {
@@ -681,9 +387,14 @@ header .navbar-nav i {
   src: url(../fonts/Hikou/HikouRough.otf);
 }
 
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
+}
+
 .wallet1 {
   position: relative;
-  top: -60px;
+  top: -64px;
 }
 
 .wallet1 .nav-tabs {
@@ -1059,6 +770,261 @@ header .navbar-nav i {
   src: url(../fonts/Hikou/HikouRough.otf);
 }
 
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
+}
+
+.loginsignup {
+  height: 100%;
+  position: fixed;
+  background: #101010;
+  overflow-y: scroll;
+  right: -100px;
+  top: 0;
+  width: 0px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+}
+
+.loginsignup#active {
+  visibility: visible;
+  opacity: 1;
+  right: 0px;
+  width: 400px;
+}
+
+.loginsignup .heading {
+  border-bottom: 1px solid #555;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+
+.loginsignup .heading h3 {
+  color: #ffd978;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.loginsignup .heading i {
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  background: #151515;
+  font-weight: 100 !important;
+  cursor: pointer;
+}
+
+.loginsignup .loginBody {
+  padding: 30px 20px;
+}
+
+.loginsignup .loginBody .form-group {
+  margin-top: 40px;
+}
+
+.loginsignup .loginBody .form-group:first-child {
+  margin-top: 20px;
+}
+
+.loginsignup .loginBody .form-group label {
+  color: #ffffff;
+  font-size: 14px;
+  display: block;
+}
+
+.loginsignup .loginBody .form-group input {
+  border: 1px solid #666;
+  width: 100%;
+  background: transparent;
+  height: 35px;
+  outline: none;
+  padding: 0 0 0 10px;
+  caret-color: #ffd978;
+  color: #ffffff;
+}
+
+.loginsignup .loginBody .form-group button {
+  width: 100%;
+  background: #fae18f;
+  padding: 8px;
+  border: none;
+  color: #151515;
+  font-size: 18px;
+  font-family: hekou;
+}
+
+.loginsignup .loginBody .form-group button a {
+  color: #151515;
+}
+
+.loginsignup .loginBody .form-group .phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.loginsignup .loginBody .form-group .phone .sel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+  height: 35px;
+  border: 1px solid #555;
+  padding: 10px 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loginsignup .loginBody .form-group .phone .sel select {
+  margin-left: 10px;
+  background: transparent;
+  color: #ffffff;
+  height: 20px;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  outline: none;
+}
+
+.loginsignup .loginBody .form-group .phone input {
+  width: 68%;
+}
+
+.loginsignup .loginBody .remember {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.loginsignup .loginBody .remember .rememberme p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+.loginsignup .loginBody .remember .rememberme p input[type="checkbox"] {
+  margin-right: 4px;
+  opacity: 000000.1;
+}
+
+.loginsignup .loginBody .remember .rememberme p input[type="checkbox"]:checked {
+  opacity: 1;
+}
+
+.loginsignup .loginBody .remember a {
+  font-size: 14px;
+  color: #ffd978;
+  text-transform: capitalize;
+}
+
+.loginsignup .loginwith {
+  margin-top: 20px;
+  border-bottom: 1px solid #555;
+  margin-bottom: 20px;
+}
+
+.loginsignup .loginwith .heading {
+  text-align: center;
+  position: relative;
+}
+
+.loginsignup .loginwith .heading h3 {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffd978;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -18px;
+}
+
+.loginsignup .loginwith .heading h3 span {
+  background: #101010;
+  padding: 0px 10px;
+}
+
+.loginsignup .loginwith .images {
+  padding: 20px;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.loginsignup .loginwith .images img {
+  margin: 10px 0;
+}
+
+.loginsignup .accout {
+  padding: 20px 20px 40px;
+  border-bottom: 1px solid #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.loginsignup .accout img {
+  width: 50px;
+}
+
+.loginsignup .accout p {
+  text-transform: capitalize;
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.loginsignup .accout a {
+  color: #ffffff;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
+}
+
 .why {
   background: url("../img/why/background.jpg") no-repeat center center;
   padding: 100px 0;
@@ -1069,10 +1035,41 @@ header .navbar-nav i {
   padding: 10px 0;
 }
 
+.why .tabs .all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+.why .tabs .all img {
+  width: 150px;
+  margin: 20px 10px;
+  height: 150px !important;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 150px;
+}
+
+.why .tabs .all img:nth-child(1) {
+  width: 300px !important;
+  -o-object-fit: fill;
+     object-fit: fill;
+  height: 160px !important;
+}
+
+.why .tabs .all img:nth-child(2) {
+  height: 150px;
+  width: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .why .tabs nav {
   border: none;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #151515), color-stop(90%, #1d1d1d));
   background: linear-gradient(#151515 20%, #1d1d1d 90%);
+  margin-bottom: 30px;
 }
 
 .why .tabs nav a {
@@ -1119,7 +1116,7 @@ header .navbar-nav i {
 }
 
 .why .why__us .img .img__in img {
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -1221,6 +1218,11 @@ header .navbar-nav i {
   src: url(../fonts/Hikou/HikouRough.otf);
 }
 
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
+}
+
 .experience {
   background: url(../img/experience/Background.jpg) no-repeat center bottom;
   background-size: cover;
@@ -1283,6 +1285,11 @@ header .navbar-nav i {
 @font-face {
   font-family: hekou;
   src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
 }
 
 footer {
@@ -1444,6 +1451,260 @@ footer form .btns img {
   color: #999;
   font-size: 14px;
   text-transform: capitalize;
+}
+
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
+}
+
+header {
+  background-color: #151515;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  z-index: 999;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  font-family: embrima !important;
+}
+
+header .dropdown-menu {
+  margin-left: -70px !important;
+}
+
+header .dropdown-menu a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 3px 3px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .navbar {
+  width: 100%;
+}
+
+header .navbar .navbar-brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .navbar .navbar-brand .barnotification {
+  margin-left: 30px;
+}
+
+header .navbar .navbar-brand .barnotification button {
+  background: transparent;
+  border: none;
+}
+
+header .navbar .navbar-brand .barnotification button i {
+  color: #999;
+  background: #1d1d1d;
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+header .navbar-brand img {
+  max-width: 150px;
+}
+
+header .navbar-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 60px;
+  font-family: "Roboto", sans-serif;
+}
+
+header .navbar-nav .wallet img {
+  display: block;
+  margin: 0 auto;
+  width: 20px;
+}
+
+header .navbar-nav .wallet span {
+  font-size: 16px;
+}
+
+header .navbar-nav .dropdown .dropdown-menu {
+  background: #1d1d1d !important;
+}
+
+header .navbar-nav .dropdown .dropdown-menu a {
+  margin: 0;
+}
+
+header .navbar-nav .dropdown .dropdown-menu a:hover {
+  background: #151515;
+}
+
+header .navbar-nav .dropdown .dropdown-menu a i {
+  margin-right: 10px;
+}
+
+header .navbar-nav img {
+  width: 20px;
+  margin: 0px 5px;
+}
+
+header .navbar-nav a {
+  color: #ddd !important;
+  text-transform: capitalize;
+  margin: 0 6px;
+  font-size: 16px;
+  font-family: embrima;
+}
+
+header .navbar-nav a img {
+  max-width: 100%;
+}
+
+header .navbar-nav button {
+  background: transparent;
+  border: 2px solid #ffd978;
+  padding: 6px 10px !important;
+  min-width: 100px;
+  text-transform: capitalize;
+  font-size: 14px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+header .navbar-nav .signup {
+  background-color: #ffffff;
+  color: #151515;
+}
+
+header .navbar-nav i {
+  color: #ffd978;
+}
+
+.bars-main .modal-dialog {
+  margin: 0rem !important;
+}
+
+.bars-main .modal-dialog .modal-content {
+  min-height: 100vh !important;
+  border-radius: 0;
+  border: none;
+  width: 300px;
+  background: #151515;
+}
+
+.bars-main .modal-dialog .modal-content .modal-body {
+  background: #1d1d1d;
+  padding: 30px 60px;
+}
+
+.bars-main .modal-dialog .modal-content .modal-body .lists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 30px 0;
+}
+
+.bars-main .modal-dialog .modal-content .modal-body .lists:first-child {
+  margin-top: 0;
+}
+
+.bars-main .modal-dialog .modal-content .modal-body .lists img {
+  width: 30px;
+}
+
+.bars-main .modal-dialog .modal-content .modal-body .lists a {
+  color: #ffd978;
+  font-size: 16px;
+  border-bottom: 1px solid #999;
+  margin-left: 10px;
+  padding: 0;
+  font-family: hekou;
+  display: inline-block;
+}
+
+.bars-main .modal-dialog .modal-content .modal-body .lists .dropdown-menu {
+  background: transparent;
+  border: none;
+  position: inherit !important;
+  margin-top: -10px !important;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.bars-main .modal-dialog .modal-content .modal-body .lists .dropdown-menu a {
+  border: none;
+  font-family: "Roboto", sans-serif;
+  padding: 0px !important;
+  text-transform: capitalize;
+  margin-left: 4px !important;
+}
+
+.bars-main .modal-dialog .modal-content .modal-body .lists .dropdown-menu a:hover {
+  background: transparent;
+  color: #999;
+}
+
+.bars-main .modal-dialog .modal-content .modal-body .lists .dropdown-menu a::after {
+  border-bottom-color: #ffffff;
+}
+
+.bars-main .modal-dialog .modal-content .user {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.bars-main .modal-dialog .modal-content .user img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px !important;
+  width: 60px;
+}
+
+.bars-main .modal-dialog .modal-content .user span {
+  color: #ffffff;
+  font-size: 14px;
 }
 
 * {

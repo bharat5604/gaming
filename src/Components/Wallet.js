@@ -10,11 +10,9 @@ import proceed from "./Assets/img/wallet/procced-Cta.png";
 
 const Wallet = () => {
   const url = "https://jsonplaceholder.typicode.com/users";
-  const [error, setError] = useState(null);
-  const [isLoaded, setLoaded] = useState(false);
+
   const [items, setItems] = useState([]);
-  const [activePage, setActivePage] = useState(1);
-  const currentPage = 5;
+
   useEffect(() => {
     const test = fetch(url, {
       headers: {
@@ -25,13 +23,9 @@ const Wallet = () => {
       .then((res) => res.json())
       .then(
         (result) => {
-          setLoaded(true);
           setItems(result);
         },
-        (error) => {
-          setLoaded(true);
-          setError(error);
-        }
+        (error) => {}
       );
     console.log(test);
   }, []);
