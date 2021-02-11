@@ -7,21 +7,30 @@ import Header from "./Components/Header";
 import Home from "./Components/Home";
 import HomeAfter from "./Components/HomeAfter";
 import ProfileWallet from "./Components/ProfileWallet";
+import Hoc from './Components/Hoc';
+import LoggedHeader from "./Components/LoggedHeader";
 
 function App() {
+  let auth = JSON.parse(localStorage.getItem("auth"))
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route path="/home">
             <HomeAfter />
+            {/* <Hoc comp={HomeAfter}/> */}
+            
           </Route>
+          
           <Route path="/wallet">
             <ProfileWallet />
           </Route>
           <Route path="/">
-            <Header />
-            <Home />
+            {
+              !auth ? <Home /> : <HomeAfter />
+            }
+            {/* <Hoc comp={Home}/> */}
+            {/* <Home /> */}
           </Route>
         </Switch>
       </Router>

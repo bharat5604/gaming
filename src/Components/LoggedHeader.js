@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import {Redirect, useHistory } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown, Modal, Button } from "react-bootstrap";
 import logo from "./Assets/img/logo.png";
 import { Link } from "react-router-dom";
@@ -11,12 +12,33 @@ import profileYellow from "./Assets/img/wallet/profile.png";
 import accountYellow from "./Assets/img/wallet/account.png";
 import user from "./Assets/img/dummyprofile.png";
 const LoggedHeader = () => {
+  let history = useHistory();
   const [show, setShow] = useState(false);
+  const [user, setUser] = useState();
   const handleClose = () => setShow(false);
   const handleOpen = () => setShow(true);
   const handleCloseMain = (e) => {
     e.target.tagName == "A" ? setShow(false) : setShow(true);
   };
+  const handleLogout = () =>{
+    localStorage.removeItem("auth")
+    history.push('')
+  }
+
+  //fetch user details
+  useEffect(()=>{
+    let auth = localStorage.getItem("auth")
+    console.log(auth);
+    fetch("https://5f4bdb2dea007b0016b1dc8b.mockapi.io/login").then((result)=>{
+      result.json().then((res)=>{
+          res.map((user)=>{
+            if(user.id == auth){
+              setUser(user.userName)
+            }
+          })
+      })
+    })
+  }, [])
   return (
     <header>
       <Navbar expand="lg">
@@ -41,22 +63,22 @@ const LoggedHeader = () => {
                 <Link to="/home">Home</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">live casino</Link>
+                <Link to="/home">live casino</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">poker</Link>
+                <Link to="/home">poker</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">roulette</Link>
+                <Link to="/home">roulette</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">bingo</Link>
+                <Link to="/home">bingo</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">sports</Link>
+                <Link to="/home">sports</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">cards</Link>
+                <Link to="/home">cards</Link>
               </Nav.Link>
               <Nav.Link className="wallet">
                 <img src={rp} alt="" />
@@ -69,7 +91,7 @@ const LoggedHeader = () => {
                   <img src={plus} alt="" />
                 </Link>
               </Nav.Link>
-              <NavDropdown title="bharat" id="basic-nav-dropdown">
+              <NavDropdown title={"Bharat"} id="basic-nav-dropdown">
                 <NavDropdown.Item>
                   <Link to="/wallet">
                     <img src={walletYellow} alt="" />
@@ -95,7 +117,7 @@ const LoggedHeader = () => {
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
-                  <Link to="/">
+                  <Link to="/" onClick={handleLogout}>
                     <i className="fa fa-power-off"></i>
                     Logout
                   </Link>

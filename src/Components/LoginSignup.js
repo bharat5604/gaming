@@ -1,12 +1,82 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import facebook from "./Assets/img/facebook.png";
 import google from "./Assets/img/google.png";
 import user from "./Assets/img/user.png";
 import flag from "./Assets/img/flag.png";
+import Home from "./Home";
 
 const LoginSignup = (props) => {
-  console.log(props);
+  let history = useHistory();
+  const [user, setUser] = useState({});
+  const [email, setEmail] = useState({});
+  const [phone, setPhone] = useState({});
+  const [cpassword, setCpassword] = useState({});
+  const [invalid, setInvalid] = useState()
+  const [login, setLogin] = useState(false)
+  const [password, setPassword] = useState({});
+  const users = {userName:user.UserName, Password:password.Password}
+  const register=  {userName:user.UserName, Password:password.Password, email:email.email, phone:phone.phone, cpassword:cpassword.cpassword}
+  const handleLogin = (e) => {
+    // fetching the url
+    fetch("https://5f4bdb2dea007b0016b1dc8b.mockapi.io/login",{
+      method:"GET",
+      headers:{
+        "Content-type":"application/json",
+        "Accept":"application/json"
+      },
+      // body:JSON.stringify(users)
+    }).then((result)=>{
+      result.json().then((res)=>{
+        res.map(persons =>{
+          if(user.UserName==persons.userName && password.Password== persons.Password){
+            setLogin(true)
+            history.push('/home')
+            localStorage.setItem('auth', persons.id)
+            localStorage.setItem("user", persons.userName)
+          } else{
+            setLogin(false)
+            setInvalid("Your userid & password does  not match")
+          }
+        })
+      })
+      })
+    
+      e.preventDefault()
+      
+    };
+  
+    //register
+    const handleRegister = (e) =>{
+      fetch("https://5f4bdb2dea007b0016b1dc8b.mockapi.io/login",{
+      method:"POST",
+      headers:{
+        "Content-type":"application/json",
+        "Accept":"application/json"
+      },
+      body:JSON.stringify(register)
+    })
+
+    e.preventDefault()
+
+    }
+
+    useEffect(()=>{
+      if(invalid !== undefined){
+        setTimeout(() => {
+            setInvalid()
+        }, 3000);
+      };
+
+      if(password.Password !== cpassword.cpassword){
+        setTimeout(() => {
+          setInvalid("password and confrim password does not match")
+        }, 2000);
+      } else{
+        setInvalid()
+      }
+    })
+  // use effect for api calling
   return (
     <div className="mainBody">
       {props.sign ? (
@@ -14,16 +84,29 @@ const LoginSignup = (props) => {
           <div className="loginBody">
             <form action="">
               <div className="form-group">
-                <label htmlFor="username">Username *</label>
-                <input type="text" />
+                <label htmlFor="UserName">Username *</label>
+                <input
+                  type="text"
+                  name="UserName"
+                  onChange={(e) => {
+                    setUser({ [e.target.name]: e.target.value });
+                  }}
+                />
               </div>
               <div className="form-group">
-                <label htmlFor="username">Password *</label>
-                <input type="password" />
+                <label htmlFor="password">Password *</label>
+                <input
+                  type="password"
+                  name="Password"
+                  onChange={(e) => {
+                    setPassword({ [e.target.name]: e.target.value });
+                  }}
+                />
+                <p>{invalid}</p>
               </div>
               <div className="form-group">
-                <button type="submit">
-                  <Link to="/home">log in</Link>
+                <button type="submit" onClick={handleLogin}>
+                  log in
                 </button>
               </div>
               <div className="remember">
@@ -59,11 +142,11 @@ const LoginSignup = (props) => {
             <form action="">
               <div className="form-group">
                 <label htmlFor="username">Username *</label>
-                <input type="text" />
+                <input type="text" name="UserName" onChange={(e)=> {setUser({ [e.target.name]: e.target.value })}} required />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email *</label>
-                <input type="email" />
+                <input type="email" name="email" onChange={(e)=> {setEmail({ [e.target.name]: e.target.value })}} required />
               </div>
               <div className="form-group">
                 <label htmlFor="phone">Phone *</label>
@@ -74,20 +157,21 @@ const LoginSignup = (props) => {
                       <option value="">+91</option>
                     </select>
                   </div>
-                  <input type="text" />
+                  <input type="text" name="phone" onChange={(e)=> {setPhone({ [e.target.name]: e.target.value })}} required/>
                 </div>
               </div>
               <div className="form-group">
                 <label htmlFor="password">Password *</label>
-                <input type="password" />
+                <input type="password" name="Password" onChange={(e)=> {setPassword({ [e.target.name]: e.target.value })}} required/>
               </div>
               <div className="form-group">
                 <label htmlFor="cpassword">Confirm Password *</label>
-                <input type="password" />
+                <input type="password" name="cpassword" onChange={(e)=> {setCpassword({ [e.target.name]: e.target.value })}} required />
+                <p>{invalid}</p>
               </div>
               <div className="form-group">
-                <button type="submit">
-                  <Link to="/home">sign up</Link>
+                <button type="submit" onClick={handleRegister}>
+                  <Link>sign up</Link>
                 </button>
               </div>
               <div className="remember">

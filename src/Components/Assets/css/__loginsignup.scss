@@ -49,6 +49,12 @@
   .loginBody {
     padding: 30px 20px;
     .form-group {
+      p{
+        color: #c00;
+        font-size: 13px;
+        margin: 10px 0;
+        height: 10px;
+      }
       margin-top: 40px;
       &:first-child {
         margin-top: 20px;

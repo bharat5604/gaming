@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "./Assets/img/logo.png";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 import LoginSignup from "./LoginSignup";
 const Header = () => {
   const [status, setStatus] = useState("open");

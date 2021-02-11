@@ -843,6 +843,13 @@
   margin-top: 40px;
 }
 
+.loginsignup .loginBody .form-group p {
+  color: #c00;
+  font-size: 13px;
+  margin: 10px 0;
+  height: 10px;
+}
+
 .loginsignup .loginBody .form-group:first-child {
   margin-top: 20px;
 }
@@ -1588,7 +1595,7 @@ header .navbar-nav a {
   color: #ddd !important;
   text-transform: capitalize;
   margin: 0 6px;
-  font-size: 16px;
+  font-size: 14px;
   font-family: embrima;
 }
 

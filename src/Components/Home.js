@@ -8,10 +8,12 @@ import Footer from "./Footer";
 import HeroBanner from "./HeroBanner";
 import WinnersList from "./WinnersList";
 import Testimonial from "./Testimonial";
+import Header from "./Header";
 
 const Home = () => {
   return (
     <div className="home">
+    <Header />
       <HeroBanner />
       <WinnersList />
 
