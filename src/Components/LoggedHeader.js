@@ -22,7 +22,8 @@ const LoggedHeader = () => {
   };
   const handleLogout = () =>{
     localStorage.removeItem("auth")
-    history.push('')
+    history.push("/")
+    window.location.reload()
   }
 
   //fetch user details

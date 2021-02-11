@@ -33,7 +33,7 @@ const LoginSignup = (props) => {
             setLogin(true)
             history.push('/home')
             localStorage.setItem('auth', persons.id)
-            localStorage.setItem("user", persons.userName)
+            // localStorage.setItem("user", persons.userName)
           } else{
             setLogin(false)
             setInvalid("Your userid & password does  not match")
@@ -55,10 +55,12 @@ const LoginSignup = (props) => {
         "Accept":"application/json"
       },
       body:JSON.stringify(register)
+      
     })
-
+    history.push('/home')
+    localStorage.setItem('auth', "1234")
     e.preventDefault()
-
+    console.log(email.email);
     }
 
     useEffect(()=>{
@@ -68,13 +70,13 @@ const LoginSignup = (props) => {
         }, 3000);
       };
 
-      if(password.Password !== cpassword.cpassword){
-        setTimeout(() => {
-          setInvalid("password and confrim password does not match")
-        }, 2000);
-      } else{
-        setInvalid()
-      }
+      // if(password.Password !== cpassword.cpassword){
+      //   setTimeout(() => {
+      //     setInvalid("password and confrim password does not match")
+      //   }, 2000);
+      // } else{
+        
+      // }
     })
   // use effect for api calling
   return (
