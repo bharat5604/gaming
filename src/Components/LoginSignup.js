@@ -165,7 +165,7 @@ const LoginSignup = (props) => {
     callback={responseFacebook} />
               {/* <img src={google} alt="" /> */}
               <GoogleLogin
-    clientId="687002067674-7il5m6nj87n6im42uburlvb9nhtciksa.apps.googleusercontent.com"
+    clientId="687002067674-ese70qh4fmckv9aghjlb19dv7ttd892b.apps.googleusercontent.com"
     buttonText="Login With Google"
     onSuccess={responseGoogle}
     onFailure={responseGoogle}
