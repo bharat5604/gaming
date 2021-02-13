@@ -3,10 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Context from './Components/Context';
+import useGlobalState from './Components/globalUseState';
 
+const Index = () =>{
+  const store  = useGlobalState()
+  return(
+    <Context.Provider value={store}>
+      <App/>
+    </Context.Provider>
+  )
+
+
+}
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Index />
   </React.StrictMode>,
   document.getElementById('root')
 );

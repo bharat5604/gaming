@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import facebook from "./Assets/img/facebook.png";
 import google from "./Assets/img/google.png";
-import user from "./Assets/img/user.png";
 import flag from "./Assets/img/flag.png";
-import Home from "./Home";
+import FacebookLogin from 'react-facebook-login';
+import GoogleLogin from 'react-google-login';
 
 const LoginSignup = (props) => {
   let history = useHistory();
@@ -16,29 +16,25 @@ const LoginSignup = (props) => {
   const [login, setLogin] = useState(false)
   const [password, setPassword] = useState({});
   const users = {userName:user.UserName, Password:password.Password}
-  const register=  {userName:user.UserName, Password:password.Password, email:email.email, phone:phone.phone, cpassword:cpassword.cpassword}
+  const register=  {userName:user.UserName, Password:password.Password, email:email.email, phone:phone.phone}
   const handleLogin = (e) => {
     // fetching the url
-    fetch("https://5f4bdb2dea007b0016b1dc8b.mockapi.io/login",{
-      method:"GET",
+    fetch("http://gamepitara.globaldigitaz.com/api/login",{
+      method:"POST",
       headers:{
         "Content-type":"application/json",
         "Accept":"application/json"
       },
-      // body:JSON.stringify(users)
+      body:JSON.stringify(users)
     }).then((result)=>{
       result.json().then((res)=>{
-        res.map(persons =>{
-          if(user.UserName==persons.userName && password.Password== persons.Password){
-            setLogin(true)
-            history.push('/home')
-            localStorage.setItem('auth', persons.id)
-            // localStorage.setItem("user", persons.userName)
-          } else{
-            setLogin(false)
-            setInvalid("Your userid & password does  not match")
-          }
-        })
+        if(res.UserName){
+          history.push("/home")
+          localStorage.setItem("auth", res.RegId)
+          
+        } else{
+          setInvalid("Invalid userName or Password")
+        }
       })
       })
     
@@ -48,7 +44,7 @@ const LoginSignup = (props) => {
   
     //register
     const handleRegister = (e) =>{
-      fetch("https://5f4bdb2dea007b0016b1dc8b.mockapi.io/login",{
+      fetch("http://gamepitara.globaldigitaz.com/api/register",{
       method:"POST",
       headers:{
         "Content-type":"application/json",
@@ -56,11 +52,20 @@ const LoginSignup = (props) => {
       },
       body:JSON.stringify(register)
       
+    }).then((result)=>{
+      result.json()
+      .then(res=>{
+        console.log(res);
+      })
     })
-    history.push('/home')
-    localStorage.setItem('auth', "1234")
     e.preventDefault()
-    console.log(email.email);
+      if(user.UserName !=="" && email.email !==""){
+        // history.push('/home')
+        // localStorage.setItem('auth', "1234")
+        
+      } else{
+        console.log('please enter password');
+      }
     }
 
     useEffect(()=>{
@@ -79,6 +84,26 @@ const LoginSignup = (props) => {
       // }
     })
   // use effect for api calling
+
+  //facebook login
+  const responseFacebook = (response) => {
+    if(response.accessToken){
+      history.push("/home")
+      localStorage.setItem("auth", response.id)
+    }
+  }
+  const componentClicked = (data) =>{ 
+    console.log(data);
+  }
+
+  //google login
+  const responseGoogle = (response) => {
+    console.log(response);
+    if(response.accessToken){
+      history.push("/home")
+      localStorage.setItem("auth", response.googleId)
+    }
+  }
   return (
     <div className="mainBody">
       {props.sign ? (
@@ -128,8 +153,23 @@ const LoginSignup = (props) => {
               </h3>
             </div>
             <div className="images">
+              {/* <div class="fb-login-button" data-width="100px" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false">
               <img src={facebook} alt="" />
-              <img src={google} alt="" />
+              </div> */}
+              <FacebookLogin
+    appId="451496726209512"
+    autoLoad={false}
+    fields="name,email,picture"
+    onClick={componentClicked}
+    callback={responseFacebook} />
+              {/* <img src={google} alt="" /> */}
+              <GoogleLogin
+    clientId="687002067674-7il5m6nj87n6im42uburlvb9nhtciksa.apps.googleusercontent.com"
+    buttonText="Login With Google"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />
             </div>
           </div>
           <div className="accout">
@@ -172,8 +212,8 @@ const LoginSignup = (props) => {
                 <p>{invalid}</p>
               </div>
               <div className="form-group">
-                <button type="submit" onClick={handleRegister}>
-                  <Link>sign up</Link>
+                <button type="submit"   onClick={handleRegister}>
+                  sign up
                 </button>
               </div>
               <div className="remember">

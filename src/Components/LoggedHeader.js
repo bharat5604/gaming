@@ -92,7 +92,7 @@ const LoggedHeader = () => {
                   <img src={plus} alt="" />
                 </Link>
               </Nav.Link>
-              <NavDropdown title={"Bharat"} id="basic-nav-dropdown">
+              <NavDropdown title={"User"} id="basic-nav-dropdown">
                 <NavDropdown.Item>
                   <Link to="/wallet">
                     <img src={walletYellow} alt="" />

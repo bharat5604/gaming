@@ -881,6 +881,10 @@
   font-family: hekou;
 }
 
+.loginsignup .loginBody .form-group button:disabled {
+  background: #999;
+}
+
 .loginsignup .loginBody .form-group button a {
   color: #151515;
 }
@@ -991,8 +995,28 @@
   text-align: center;
 }
 
-.loginsignup .loginwith .images img {
-  margin: 10px 0;
+.loginsignup .loginwith .images button {
+  margin: 10px auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  font-family: "Roboto", sans-serif !important;
+  font-size: 14px !important;
+}
+
+.loginsignup .loginwith .images button:first-child {
+  background: #3b5998;
+  font-weight: inherit;
+}
+
+.loginsignup .loginwith .images button:last-child {
+  background: #4285f4 !important;
+  text-align: center !important;
+}
+
+.loginsignup .loginwith .images button:last-child span {
+  width: 100%;
+  color: #ffffff;
 }
 
 .loginsignup .accout {

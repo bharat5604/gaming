@@ -82,6 +82,9 @@
         color: $black;
         font-size: 18px;
         font-family: $hekouFont;
+        &:disabled{
+          background: #999;
+        }
         a {
           color: $black;
         }
@@ -170,8 +173,28 @@
       padding: 20px;
       margin: 30px 0;
       text-align: center;
-      img {
-        margin: 10px 0;
+      button {
+        margin: 10px auto;
+        display: block;
+        width: 80%;
+        // height: 40px;
+        text-align: center;
+        font-family: $roboto !important;
+        font-size: $paraFont !important;
+        &:first-child{
+          background: #3b5998;
+          font-weight: inherit;
+        }
+        &:last-child{
+          background: #4285f4 !important;
+          text-align: center !important;
+          span{
+            width: 100%;
+            color: $white;
+          }
+    
+        }
+
       }
     }
   } //loginwith
