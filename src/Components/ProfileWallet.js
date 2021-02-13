@@ -7,6 +7,7 @@ import profileYellow from "./Assets/img/wallet/profile.png";
 import accountYellow from "./Assets/img/wallet/account.png";
 import Wallet from "./Wallet";
 import dummyprofile from "./Assets/img/dummyprofile.png";
+import Message from './Message';
 
 import Footer from "./Footer";
 
@@ -56,7 +57,7 @@ const ProfileWallet = () => {
                         <Wallet />
                       </Tab.Pane>
                       <Tab.Pane eventKey="message">
-                        <h3>second</h3>
+                        <Message />
                       </Tab.Pane>
                       <Tab.Pane eventKey="profile">
                         <div className="profile">

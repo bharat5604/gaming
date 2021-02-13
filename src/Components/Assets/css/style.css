@@ -397,6 +397,29 @@
   top: -64px;
 }
 
+.wallet1.message .nav-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.wallet1.message .table {
+  margin-top: 70px;
+}
+
+.wallet1.message .table .success {
+  text-align: center;
+  font-size: 22px !important;
+  color: #ffffff;
+}
+
+.wallet1.message .table th:last-child {
+  text-align: center;
+}
+
 .wallet1 .nav-tabs {
   border: none;
 }

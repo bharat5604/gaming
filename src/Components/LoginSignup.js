@@ -13,7 +13,6 @@ const LoginSignup = (props) => {
   const [phone, setPhone] = useState({});
   const [cpassword, setCpassword] = useState({});
   const [invalid, setInvalid] = useState()
-  const [login, setLogin] = useState(false)
   const [password, setPassword] = useState({});
   const users = {userName:user.UserName, Password:password.Password}
   const register=  {userName:user.UserName, Password:password.Password, email:email.email, phone:phone.phone}
@@ -90,6 +89,7 @@ const LoginSignup = (props) => {
     if(response.accessToken){
       history.push("/home")
       localStorage.setItem("auth", response.id)
+      localStorage.setItem("name", response.name)
     }
   }
   const componentClicked = (data) =>{ 
@@ -98,10 +98,11 @@ const LoginSignup = (props) => {
 
   //google login
   const responseGoogle = (response) => {
-    console.log(response);
+    // console.log(response);
     if(response.accessToken){
       history.push("/home")
       localStorage.setItem("auth", response.googleId)
+      localStorage.setItem("name", response.profileObj.name)
     }
   }
   return (

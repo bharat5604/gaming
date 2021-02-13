@@ -2,6 +2,25 @@
 .wallet1 {
   position: relative;
   top: -64px;
+  &.message{
+    .nav-tabs{
+      display: flex;
+      justify-content: flex-end;
+    }
+    .table{
+      margin-top: 70px;
+      .success{
+        text-align: center;
+        font-size: 22px !important;
+        color: $white;
+      }
+      th{
+        &:last-child{
+          text-align: center;
+        }
+      }
+    }
+  }
   .nav-tabs {
     border: none;
     a {

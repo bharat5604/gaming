@@ -22,6 +22,8 @@ const LoggedHeader = () => {
   };
   const handleLogout = () =>{
     localStorage.removeItem("auth")
+    if(localStorage.getItem("name")){ localStorage.removeItem("name") }
+    
     history.push("/")
     window.location.reload()
   }
@@ -92,7 +94,7 @@ const LoggedHeader = () => {
                   <img src={plus} alt="" />
                 </Link>
               </Nav.Link>
-              <NavDropdown title={"User"} id="basic-nav-dropdown">
+              <NavDropdown title={!localStorage.getItem("name") ? "user" : localStorage.getItem("name").split(" ")[0]} id="basic-nav-dropdown">
                 <NavDropdown.Item>
                   <Link to="/wallet">
                     <img src={walletYellow} alt="" />
