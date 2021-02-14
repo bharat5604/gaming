@@ -873,6 +873,10 @@
   height: 10px;
 }
 
+.loginsignup .loginBody .form-group p .success {
+  color: lawngreen;
+}
+
 .loginsignup .loginBody .form-group:first-child {
   margin-top: 20px;
 }

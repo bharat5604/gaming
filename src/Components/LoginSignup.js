@@ -12,10 +12,16 @@ const LoginSignup = (props) => {
   const [email, setEmail] = useState({});
   const [phone, setPhone] = useState({});
   const [cpassword, setCpassword] = useState({});
+  const [SocialId, setSocial] = useState(1);
+  const [RegBy, setRegBy] = useState("");
+  const [RegId, setRegId] = useState(1);
+  const [CountryCode, setCountryCode] = useState(+91);
   const [invalid, setInvalid] = useState()
   const [password, setPassword] = useState({});
+  const [already, setAlready] = useState("");
+  const [checkPassword, setCheckPassword] =useState("")
   const users = {userName:user.UserName, Password:password.Password}
-  const register=  {userName:user.UserName, Password:password.Password, email:email.email, phone:phone.phone}
+  const register=  {userName:user.UserName, Password:password.Password, Email:email.email, Mobile:phone.phone, SocialId, CountryCode, RegBy, RegId}
   const handleLogin = (e) => {
     // fetching the url
     fetch("http://gamepitara.globaldigitaz.com/api/login",{
@@ -43,7 +49,15 @@ const LoginSignup = (props) => {
   
     //register
     const handleRegister = (e) =>{
-      fetch("http://gamepitara.globaldigitaz.com/api/register",{
+      let url;
+      if(password.Password === cpassword.cpassword){
+          url = "http://gamepitara.globaldigitaz.com/api/register";
+          setCheckPassword("")
+      } else{
+        url = null;
+        setCheckPassword("password and confirm passowrd does not match");
+      }
+      fetch(url,{
       method:"POST",
       headers:{
         "Content-type":"application/json",
@@ -55,16 +69,19 @@ const LoginSignup = (props) => {
       result.json()
       .then(res=>{
         console.log(res);
+        setAlready(res.Result)
+        if(res.Result=="Success" & password.Password == cpassword.cpassword){
+          history.push('/home')
+          localStorage.setItem('auth', res.RegId)
+        } else{
+          
+        }
+        
       })
     })
     e.preventDefault()
-      if(user.UserName !=="" && email.email !==""){
-        // history.push('/home')
-        // localStorage.setItem('auth', "1234")
-        
-      } else{
-        console.log('please enter password');
-      }
+      
+      console.log(password.Password == cpassword.cpassword);
     }
 
     useEffect(()=>{
@@ -119,6 +136,7 @@ const LoginSignup = (props) => {
                   onChange={(e) => {
                     setUser({ [e.target.name]: e.target.value });
                   }}
+                  onBlur={localStorage.setItem("name", user.UserName)}
                 />
               </div>
               <div className="form-group">
@@ -185,11 +203,12 @@ const LoginSignup = (props) => {
             <form action="">
               <div className="form-group">
                 <label htmlFor="username">Username *</label>
-                <input type="text" name="UserName" onChange={(e)=> {setUser({ [e.target.name]: e.target.value })}} required />
+                <input type="text" name="UserName" onChange={(e)=> {setUser({ [e.target.name]: e.target.value })}} onBlur={localStorage.setItem("name", user.UserName)} required />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email *</label>
                 <input type="email" name="email" onChange={(e)=> {setEmail({ [e.target.name]: e.target.value })}} required />
+                
               </div>
               <div className="form-group">
                 <label htmlFor="phone">Phone *</label>
@@ -210,7 +229,8 @@ const LoginSignup = (props) => {
               <div className="form-group">
                 <label htmlFor="cpassword">Confirm Password *</label>
                 <input type="password" name="cpassword" onChange={(e)=> {setCpassword({ [e.target.name]: e.target.value })}} required />
-                <p>{invalid}</p>
+                <p>{already !=="Success" ? already : <span className="success">{already}</span> }</p>
+                <p>{checkPassword}</p>
               </div>
               <div className="form-group">
                 <button type="submit"   onClick={handleRegister}>
