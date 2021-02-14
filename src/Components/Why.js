@@ -1,8 +1,6 @@
 import React from "react";
 import { Tabs, Tab } from "react-bootstrap";
-// import Tabprop from "./TabProp";
 import { Link } from "react-router-dom";
-// import games from "./Assets/img/winning/sld1.png";
 import whyImg1 from "./Assets/img/why/Badge-1.png";
 import whyImg2 from "./Assets/img/why/Badge-2.png";
 import whyImg3 from "./Assets/img/why/Badge-3.png";

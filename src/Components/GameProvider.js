@@ -7,7 +7,6 @@ import game2 from "./Assets/img/gameprovider/gane-providers-2.jpg";
 import game3 from "./Assets/img/gameprovider/gane-providers-3.jpg";
 import game4 from "./Assets/img/gameprovider/gane-providers-4.jpg";
 import game5 from "./Assets/img/gameprovider/gane-providers-5.jpg";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const GameProvider = () => {
   let settings = {
