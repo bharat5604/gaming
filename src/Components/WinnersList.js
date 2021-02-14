@@ -7,7 +7,6 @@ import whyImg1 from "./Assets/img/why/Badge-1.png";
 import whyImg2 from "./Assets/img/why/Badge-2.png";
 import whyImg3 from "./Assets/img/why/Badge-3.png";
 import whyImg4 from "./Assets/img/why/Badge-4.png";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const WinnersList = (props) => {
   let settings = {
@@ -29,11 +28,8 @@ const WinnersList = (props) => {
               <div className="video">
                 <div className="row">
                   <div className="col-md-7">
-                    <LazyLoadImage
-                      src={videoImage}
-                      className="img-fluid videoImg"
-                      effect="blur"
-                    />
+                  <img src={videoImage} className="img-fluid" alt=""/>
+                   
                   </div>
                   <div className="col-md-5">
                     <div className="video__content">
