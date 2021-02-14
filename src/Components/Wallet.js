@@ -9,10 +9,25 @@ import logo3 from "./Assets/img/wallet/Skrill.png";
 import proceed from "./Assets/img/wallet/procced-Cta.png";
 
 const Wallet = () => {
-  const url = "https://jsonplaceholder.typicode.com/users";
+  const url = "https://jsonplaceholder.typicode.com/albums";
 
   const [items, setItems] = useState([]);
+  const [showPerpage, setShowPerpage] = useState(5);
+  const [counter, setCounter] = useState(1);
+  const [pagination, setPagination] = useState({
+    start:0,
+    end:showPerpage
+  })
 
+ const onPaginationChnage = (start, end) =>{
+    setPagination({start:start, end:end})
+ }
+
+  //handlePagination
+  useEffect(()=>{
+    const value = showPerpage * counter
+    onPaginationChnage(value - showPerpage, value)
+  }, [counter, showPerpage])
   useEffect(() => {
     const test = fetch(url, {
       headers: {
@@ -82,18 +97,26 @@ const Wallet = () => {
                 </tr>
               </thead>
               <tbody>
-                {items.slice(0, 5).map((item) => (
+                {items.slice(pagination.start, pagination.end).map((item) => (
                   <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>2021 - 01 - 04</td>
                     <td>deposit</td>
                     <td className="success">sucess</td>
                     <td>1,000.00</td>
+                    
                   </tr>
+                  
                 ))}
               </tbody>
             </table>
             {/* tables end */}
+            <div className="pagination">
+              <div className="buttons">
+                  <button type="button" disabled={pagination.start < 5} onClick={() => setCounter(counter - 1)}><i className="fa fa-chevron-left"></i><i className="fa fa-chevron-left"></i> Previous</button>
+                  <button type="button" disabled={items.length - pagination.end < 5} onClick={() => setCounter(counter + 1)}>Next <i className="fa fa-chevron-right"></i><i className="fa fa-chevron-right"></i> </button>
+              </div>
+            </div>
           </div>
         </Tab>
         <Tab eventKey="deposit" title="Deposit">

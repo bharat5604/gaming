@@ -152,6 +152,28 @@
     }
   }
 
+    //pagination
+    .pagination{
+      display: flex;
+      justify-content: flex-end;
+      .buttons{
+        position: relative;
+        top: 10px;
+        button{
+          background: transparent;
+          color: $golden;
+          border: none;
+          font-size: $paraFont;
+          &:disabled{
+            color: #999;
+          }
+          i{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
   //deposit{
   .deposit {
     margin: 60px 0;

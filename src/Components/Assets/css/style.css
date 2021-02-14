@@ -577,6 +577,35 @@
   color: green;
 }
 
+.wallet1 .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.wallet1 .pagination .buttons {
+  position: relative;
+  top: 10px;
+}
+
+.wallet1 .pagination .buttons button {
+  background: transparent;
+  color: #ffd978;
+  border: none;
+  font-size: 14px;
+}
+
+.wallet1 .pagination .buttons button:disabled {
+  color: #999;
+}
+
+.wallet1 .pagination .buttons button i {
+  font-size: 12px;
+}
+
 .wallet1 .deposit {
   margin: 60px 0;
 }
