@@ -5,6 +5,10 @@ import google from "./Assets/img/google.png";
 import flag from "./Assets/img/flag.png";
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
+import Days from "./Days";
+import FbGoogle2ndStep from './FbGoogle2ndStep';
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
 const LoginSignup = (props) => {
   let history = useHistory();
@@ -13,15 +17,23 @@ const LoginSignup = (props) => {
   const [phone, setPhone] = useState({});
   const [cpassword, setCpassword] = useState({});
   const [SocialId, setSocial] = useState(1);
-  const [RegBy, setRegBy] = useState("");
+  const [RegBy, setRegBy] = useState("manual");
   const [RegId, setRegId] = useState(1);
-  const [CountryCode, setCountryCode] = useState(+91);
+  const [CountryCode, setCountryCode] = useState();
   const [invalid, setInvalid] = useState()
   const [password, setPassword] = useState({});
+  const [day, setDay] = useState({})
+  const [month, setMonth] = useState({})
+  const [year, setYear] = useState({})
   const [already, setAlready] = useState("");
   const [checkPassword, setCheckPassword] =useState("")
+  const [fb2nd, setFb2nd] = useState("");
+  let dobs = `${year.year}-${month.month}-${day.day}`;
   const users = {userName:user.UserName, Password:password.Password}
-  const register=  {userName:user.UserName, Password:password.Password, Email:email.email, Mobile:phone.phone, SocialId, CountryCode, RegBy, RegId}
+  const register=  {userName:user.UserName, Password:password.Password, Email:email.email, Mobile:phone.phone, SocialId, CountryCode, RegBy, DOB:dobs, RegId}
+  // console.log(dob);
+
+
   const handleLogin = (e) => {
     // fetching the url
     fetch("http://gamepitara.globaldigitaz.com/api/login",{
@@ -35,7 +47,9 @@ const LoginSignup = (props) => {
       result.json().then((res)=>{
         if(res.UserName){
           history.push("/home")
-          localStorage.setItem("auth", res.RegId)
+          if(typeof window !=='undefined'){
+            localStorage.setItem("auth", res.RegId)
+          }
           
         } else{
           setInvalid("Invalid userName or Password")
@@ -49,6 +63,7 @@ const LoginSignup = (props) => {
   
     //register
     const handleRegister = (e) =>{
+      console.log(register);
       let url;
       if(password.Password === cpassword.cpassword){
           url = "http://gamepitara.globaldigitaz.com/api/register";
@@ -72,7 +87,9 @@ const LoginSignup = (props) => {
         setAlready(res.Result)
         if(res.Result=="Success" & password.Password == cpassword.cpassword){
           history.push('/home')
-          localStorage.setItem('auth', res.RegId)
+          if(typeof window !=='undefined'){
+            localStorage.setItem('auth', res.RegId)
+          }
         } else{
           
         }
@@ -90,36 +107,37 @@ const LoginSignup = (props) => {
             setInvalid()
         }, 3000);
       };
-
-      // if(password.Password !== cpassword.cpassword){
-      //   setTimeout(() => {
-      //     setInvalid("password and confrim password does not match")
-      //   }, 2000);
-      // } else{
-        
-      // }
+  
     })
   // use effect for api calling
 
   //facebook login
   const responseFacebook = (response) => {
     if(response.accessToken){
-      history.push("/home")
-      localStorage.setItem("auth", response.id)
-      localStorage.setItem("name", response.name)
+      // history.push("/home")
+      // console.log(response);
+      // localStorage.setItem("auth", response.id)
+      // localStorage.setItem("name", response.name)
+      
     }
   }
   const componentClicked = (data) =>{ 
     console.log(data);
+    setRegBy("Facebook")
+    setFb2nd("show2nd")
   }
 
   //google login
   const responseGoogle = (response) => {
-    // console.log(response);
+    console.log(response);
+    setRegBy("Google")
+    console.log(RegBy);
     if(response.accessToken){
       history.push("/home")
-      localStorage.setItem("auth", response.googleId)
+      if(typeof window !=='undefined'){
+        localStorage.setItem("auth", response.googleId)
       localStorage.setItem("name", response.profileObj.name)
+      }
     }
   }
   return (
@@ -136,7 +154,8 @@ const LoginSignup = (props) => {
                   onChange={(e) => {
                     setUser({ [e.target.name]: e.target.value });
                   }}
-                  onBlur={localStorage.setItem("name", user.UserName)}
+                  onBlur={typeof window !=='undefined' ?localStorage.setItem("name", user.UserName) : null}
+                  required
                 />
               </div>
               <div className="form-group">
@@ -147,6 +166,7 @@ const LoginSignup = (props) => {
                   onChange={(e) => {
                     setPassword({ [e.target.name]: e.target.value });
                   }}
+                  required
                 />
                 <p>{invalid}</p>
               </div>
@@ -197,27 +217,63 @@ const LoginSignup = (props) => {
             <Link to="">create an account</Link>
           </div>
         </>
-      ) : (
+      ) : props.signup ? (
         <>
           <div className="loginBody">
             <form action="">
               <div className="form-group">
                 <label htmlFor="username">Username *</label>
-                <input type="text" name="UserName" onChange={(e)=> {setUser({ [e.target.name]: e.target.value })}} onBlur={localStorage.setItem("name", user.UserName)} required />
+                <input type="text" name="UserName" onChange={(e)=> {setUser({ [e.target.name]: e.target.value })}} onBlur={typeof window !=='undefined' ? localStorage.setItem("name", user.UserName) : null} required />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email *</label>
                 <input type="email" name="email" onChange={(e)=> {setEmail({ [e.target.name]: e.target.value })}} required />
                 
               </div>
+
+              <div className="form-group">
+                <label htmlFor="dob">DOB *</label>
+               
+                <div className="dob">
+                  <select name="" id="" name="day"  onChange={e=> setDay({[e.target.name]: e.target.value})}>
+                    <option value="">DD</option>
+                    <Days />
+                  </select>
+                  <select name="" id="" name="month" onChange={e => setMonth({[e.target.name]:e.target.value})} >
+                    <option value="">MM</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                  <input type="text" name="year" placeholder="YYYY" onChange={e => setYear({[e.target.name]:e.target.value})} />
+                </div>
+                
+              </div>
+
               <div className="form-group">
                 <label htmlFor="phone">Phone *</label>
                 <div className="phone">
                   <div className="sel">
-                    <img src={flag} alt="" />
-                    <select name="" id="">
+                    {/* <img src={flag} alt="" /> */}
+                    {/* <select name="" id="">
                       <option value="">+91</option>
-                    </select>
+                    </select> */}
+                    <PhoneInput
+                      country={'de'}
+                      regions={['europe', 'asia']}
+                      value={CountryCode}
+                      onChange={phoneCode => setCountryCode( phoneCode )}
+                      className="countryCode"
+                    />
                   </div>
                   <input type="text" name="phone" onChange={(e)=> {setPhone({ [e.target.name]: e.target.value })}} required/>
                 </div>
@@ -264,7 +320,10 @@ const LoginSignup = (props) => {
             <Link to="">sign in</Link>
           </div>
         </>
-      )}
+      ) : fb2nd !==undefined ? (
+        <FbGoogle2ndStep openFb={fb2nd} />
+      ) : ""
+      }
     </div>
   );
 };

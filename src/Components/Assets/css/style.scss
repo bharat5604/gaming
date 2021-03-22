@@ -10,10 +10,16 @@
 @import "__gameprovider";
 @import "__footer";
 @import "__header";
+@import "_cards";
 * {
   text-decoration: none !important;
 }
 
+.slick-vertical .slick-slide{
+  display: flex !important;
+  width: 50% !important;
+  justify-content: space-between;
+}
 body {
   margin: 0;
   padding: 0;

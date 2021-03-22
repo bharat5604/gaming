@@ -2,12 +2,13 @@
 
 // *************** hedaer
 header {
-  background-color: $black;
+  background-color: rgba(21, 21, 21, 0.733);
   display: flex;
   justify-content: left;
   z-index: 999;
+  width: 100%;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   font-family: $embrima !important;
   .dropdown-menu {
@@ -116,80 +117,128 @@ header {
 }
 
 //****************** bars
-.bars-main {
-  .modal-dialog {
-    margin: 0rem !important;
-    .modal-content {
-      min-height: 100vh !important;
-      border-radius: 0;
-      border: none;
-      width: 300px;
-      background: $black;
-      .modal-body {
-        background: $lightBlack;
-        padding: 30px 60px;
-        //lists
-        .lists {
-          display: flex;
-          align-items: flex-start;
-          margin: 30px 0;
-          &:first-child {
-            margin-top: 0;
-          }
+.bars{
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  z-index: 9999;
+  background: $lightBlack;
+  width:0px;
+  overflow:hidden;
+  transition: .3s ease-in-out;
+  top: 0;
 
-          img {
-            width: 30px;
-          }
-          a {
+
+  &#active{
+    visibility: visible;
+    width: 300px;
+  }
+  // overflow-y: scroll;
+
+  // scroll thumb
+  // &::-webkit-scrollbar {
+  //   width: 10px;
+  // }
+  
+  // /* Track */
+  // &::-webkit-scrollbar-track {
+  //   background: $lightBlack; 
+  // }
+   
+  // /* Handle */
+  // &::-webkit-scrollbar-thumb {
+  //   background: #888; 
+  // }
+  
+  // /* Handle on hover */
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background: #555; 
+  // }
+  //heading
+  .heading{
+    background: $black;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    position: relative;
+    img{
+      max-width: 70px;
+      display: block;
+      margin: 10px auto;
+    }
+    span{
+      color: $white;
+      text-transform: capitalize;
+    }
+    .fa-close{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: $lightBlack;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #999 !important;
+      border-radius:50%;
+      cursor: pointer;
+    }
+  }// heading
+
+  //bars__body
+  .bars__body{
+    padding: 20px 20px;
+    .list{
+      padding: 0px 20px;
+      h3{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px 0;
+        cursor: pointer;
+        img{
+          width: 40px;
+        }
+        span{
+          margin-left: 10px;
+          @include heading
+          color: $golden;
+        }
+        i{
+          margin-left: 5px;
+          color: $golden;
+          font-size: 10px;
+        }
+      }// heading
+      .card{
+        background: transparent;
+        border: none !important;
+        box-shadow: none;
+        .card-header{
+          border: none;
+        padding: 0;
+        }
+      
+
+        //card-body
+        .card-body{
+          position: relative;
+          left: 28%;
+          padding: 0;
+          border: none !important;
+          top: 0;
+          margin-top: 0;
+          a{
             color: $golden;
-            font-size: $menuFont;
-            border-bottom: 1px solid #999;
-            margin-left: 10px;
-            padding: 0;
-            font-family: $hekouFont;
-            display: inline-block;
+            display: block;
+            text-transform: capitalize;
+            font-size: 18px;
+            margin: 7px 0;
           }
-          //dropdown
-          .dropdown-menu {
-            background: transparent;
-            border: none;
-            position: inherit !important;
-            margin-top: -10px !important;
-            transition: 0.3s;
-            a {
-              border: none;
-              font-family: $roboto;
-              padding: 0px !important;
-              text-transform: capitalize;
-              margin-left: 4px !important;
-              &:hover {
-                background: transparent;
-                color: #999;
-              }
-              &::after {
-                border-bottom-color: $white;
-              }
-            }
-          }
-        }
-      }
-      //user{
-      .user {
-        text-align: center;
-        display: block;
-        width: 100%;
-        padding: 30px 0;
-        img {
-          display: block;
-          margin: 0 auto;
-          margin-bottom: 10px !important;
-          width: 60px;
-        }
-        span {
-          color: $white;
-          font-size: $paraFont;
-        }
+        }//card-body
       }
     }
-  }
+  }//bars__body
+
 }

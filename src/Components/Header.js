@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "./Assets/img/logo.png";
-import { Link,useHistory } from "react-router-dom";
+import { Link,useHistory, BrowserRouter as Router } from "react-router-dom";
 import LoginSignup from "./LoginSignup";
+import home from './Assets/img/icons/home.png'
+import cards from './Assets/img/icons/cards.png'
+import jackpot from './Assets/img/icons/jackpot.png'
+import livedealer from './Assets/img/icons/livedealer.png'
+import poker from './Assets/img/icons/poker.png'
+import roullete from './Assets/img/icons/roullete.png'
+import slots from './Assets/img/icons/slots.png'
+import table from './Assets/img/icons/table.png'
 const Header = () => {
   const [status, setStatus] = useState("open");
   const [open, setOpen] = useState("");
@@ -46,32 +54,55 @@ const Header = () => {
         <Container fluid>
           <Navbar.Brand>
             <Link to="/">
-              <img src={logo} alt="" />
+              <img src={logo} alt="logo" />
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
               <Nav.Link>
-                <Link to="/">home</Link>
+                <Link to="/">
+                <img src={home} alt="home"/>
+                home
+                </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">live casino</Link>
+                <Link to="/cards">
+                <img src={cards} alt="home"/>
+                Cards
+                </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">poker</Link>
+                <Link to="">
+                <img src={jackpot} alt="home"/>
+                jackpot games
+                </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">roulette</Link>
+                <Link to="">
+                <img src={roullete} alt="home"/>
+                roulette
+                </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">bingo</Link>
+                <Link to="">
+                <img src={poker} alt="home"/>
+                poker
+                </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">sports</Link>
+                <Link to="">
+                <img src={slots} alt="home"/>
+                slots
+                </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">cards</Link>
+                <img src={table} alt="home"/>
+                <Link to="">table</Link>
+              </Nav.Link>
+              <Nav.Link>
+                <img src={livedealer} alt="home"/>
+                <Link to="">live dealers</Link>
               </Nav.Link>
               <Nav.Link>
                 <button type="button" onClick={handleShow}>
@@ -96,7 +127,7 @@ const Header = () => {
           <h3>{text}</h3>
           <i className="fa fa-close" onClick={handleClose}></i>
         </div>
-        <LoginSignup sign={text === "sign in"} />
+        <LoginSignup sign={text === "sign in"} signup={text ==="sign up"} />
       </div>
     </header>
   );

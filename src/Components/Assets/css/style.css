@@ -17,6 +17,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @font-face {
   font-family: hekou;
   src: url(../fonts/Hikou/HikouRough.otf);
@@ -108,7 +112,6 @@
 .banner .mainTabs .profile .ppicture span {
   background: #fadb9b;
   color: #151515;
-  text-transform: capitalize;
   padding: 8px 20px;
   font-weight: 800;
   font-family: "Roboto", sans-serif;
@@ -119,6 +122,37 @@
   text-transform: capitalize;
   margin-top: 10px;
   font-size: 14px;
+}
+
+.banner .mainTabs .profile .result {
+  position: absolute;
+}
+
+.banner .mainTabs .profile .result h3 {
+  color: green;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.banner .mainTabs .profile .password {
+  position: relative;
+}
+
+.banner .mainTabs .profile .password input {
+  background: #222222;
+  color: #999;
+  padding: 0 0 0 10px;
+  outline: none;
+  border: none;
+  width: 60%;
+  height: 40px;
+  font-size: 14px;
+  display: block;
+  position: absolute;
+}
+
+.banner .mainTabs .profile .password button {
+  margin-top: 30px;
 }
 
 .banner .mainTabs .profile .updates {
@@ -168,6 +202,13 @@
   font-weight: 800;
 }
 
+.banner .mainTabs .profile .updates .item input {
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  outline: none;
+}
+
 .banner .mainTabs .profile .updates .item i {
   color: #ffd978;
   cursor: pointer;
@@ -183,11 +224,34 @@
   src: url(../fonts/ebrima.ttf) format("truetype");
 }
 
+.home .nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 4px 4px !important;
+}
+
+.home .nav-link img {
+  width: 20px;
+}
+
 .home .home__banner {
   background: url(../img/hero.jpg) no-repeat center center;
   background-size: cover;
-  padding: 100px 0;
+  padding: 150px 0;
   background-color: #1d1d1d;
+}
+
+.home .home__banner .slots {
+  position: relative;
+  top: 40px;
 }
 
 .home .home__banner .slots h1 {
@@ -624,6 +688,7 @@
   caret-color: #ffd978;
   padding: 0px 0px 0px 10px;
   margin: 0px 10px;
+  color: #ffffff;
 }
 
 .wallet1 .deposit .amount span {
@@ -892,6 +957,7 @@
 }
 
 .loginsignup .loginBody .form-group {
+  margin: 10px 0px !important;
   margin-top: 40px;
 }
 
@@ -916,7 +982,43 @@
   display: block;
 }
 
-.loginsignup .loginBody .form-group input {
+.loginsignup .loginBody .form-group .dob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.loginsignup .loginBody .form-group .dob input::-webkit-input-placeholder {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.loginsignup .loginBody .form-group .dob input:-ms-input-placeholder {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.loginsignup .loginBody .form-group .dob input::-ms-input-placeholder {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.loginsignup .loginBody .form-group .dob input::placeholder {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.loginsignup .loginBody .form-group .dob select:nth-child(2) {
+  margin: 0px 10px;
+}
+
+.loginsignup .loginBody .form-group .dob select option {
+  color: #151515;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.loginsignup .loginBody .form-group input, .loginsignup .loginBody .form-group select {
   border: 1px solid #666;
   width: 100%;
   background: transparent;
@@ -967,14 +1069,34 @@
           align-items: center;
 }
 
-.loginsignup .loginBody .form-group .phone .sel select {
-  margin-left: 10px;
-  background: transparent;
-  color: #ffffff;
-  height: 20px;
+.loginsignup .loginBody .form-group .phone .sel input {
   border: none;
-  border-bottom: 1px solid #ffffff;
-  outline: none;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  margin-left: 25px;
+}
+
+.loginsignup .loginBody .form-group .phone .sel .react-tel-input .flag-dropdown {
+  background: transparent !important;
+  border: none;
+}
+
+.loginsignup .loginBody .form-group .phone .sel .react-tel-input .flag-dropdown .selected-flag {
+  background: transparent !important;
+}
+
+.loginsignup .loginBody .form-group .phone .sel .react-tel-input .flag-dropdown .selected-flag .flag {
+  left: 1px;
+}
+
+.loginsignup .loginBody .form-group .phone .sel .react-tel-input .flag-dropdown .selected-flag:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.loginsignup .loginBody .form-group .phone .sel .react-tel-input .flag-dropdown .selected-flag:hover {
+  background: transparent !important;
 }
 
 .loginsignup .loginBody .form-group .phone input {
@@ -1102,6 +1224,20 @@
   border-bottom: 1px solid #ccc;
 }
 
+.fb2nd {
+  display: none;
+  min-height: 100vh;
+  width: 0;
+  overflow: hidden;
+}
+
+.fb2nd#show2nd {
+  display: block;
+  width: 350px;
+  position: relative;
+  z-index: 999;
+}
+
 @font-face {
   font-family: hekou;
   src: url(../fonts/Hikou/HikouRough.otf);
@@ -1130,26 +1266,8 @@
 }
 
 .why .tabs .all img {
-  width: 150px;
-  margin: 20px 10px;
-  height: 150px !important;
-  -o-object-fit: contain;
-     object-fit: contain;
-  height: 150px;
-}
-
-.why .tabs .all img:nth-child(1) {
-  width: 300px !important;
-  -o-object-fit: fill;
-     object-fit: fill;
-  height: 160px !important;
-}
-
-.why .tabs .all img:nth-child(2) {
-  height: 150px;
-  width: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  margin: 15px 0px;
+  cursor: pointer;
 }
 
 .why .tabs nav {
@@ -1357,8 +1475,30 @@
   z-index: 9;
 }
 
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
+}
+
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
+}
+
 .gameprovider {
   margin: 100px 0;
+}
+
+.gameprovider .heading {
+  font-size: 26px;
+  font-family: hekou;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.gameprovider .heading h3 {
+  color: #151515;
+  text-align: center;
 }
 
 .gameprovider .sliders .slick-slide {
@@ -1551,7 +1691,7 @@ footer form .btns img {
 }
 
 header {
-  background-color: #151515;
+  background-color: rgba(21, 21, 21, 0.733);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1559,11 +1699,11 @@ header {
       -ms-flex-pack: left;
           justify-content: left;
   z-index: 999;
+  width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   font-family: embrima !important;
 }
@@ -1704,98 +1844,220 @@ header .navbar-nav i {
   color: #ffd978;
 }
 
-.bars-main .modal-dialog {
-  margin: 0rem !important;
-}
-
-.bars-main .modal-dialog .modal-content {
-  min-height: 100vh !important;
-  border-radius: 0;
-  border: none;
-  width: 300px;
-  background: #151515;
-}
-
-.bars-main .modal-dialog .modal-content .modal-body {
+.bars {
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  z-index: 9999;
   background: #1d1d1d;
-  padding: 30px 60px;
+  width: 0px;
+  overflow: hidden;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  top: 0;
 }
 
-.bars-main .modal-dialog .modal-content .modal-body .lists {
+.bars#active {
+  visibility: visible;
+  width: 300px;
+}
+
+.bars .heading {
+  background: #151515;
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+  position: relative;
+}
+
+.bars .heading img {
+  max-width: 70px;
+  display: block;
+  margin: 10px auto;
+}
+
+.bars .heading span {
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+.bars .heading .fa-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #1d1d1d;
+  width: 30px;
+  height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  margin: 30px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #999 !important;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.bars-main .modal-dialog .modal-content .modal-body .lists:first-child {
+.bars .bars__body {
+  padding: 20px 20px;
+}
+
+.bars .bars__body .list {
+  padding: 0px 20px;
+}
+
+.bars .bars__body .list h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.bars .bars__body .list h3 img {
+  width: 40px;
+}
+
+.bars .bars__body .list h3 span {
+  margin-left: 10px;
+  font-size: 26px;
+  font-family: hekou;
+  text-transform: uppercase;
+  color: #ffffff;
+  color: #ffd978;
+}
+
+.bars .bars__body .list h3 i {
+  margin-left: 5px;
+  color: #ffd978;
+  font-size: 10px;
+}
+
+.bars .bars__body .list .card {
+  background: transparent;
+  border: none !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.bars .bars__body .list .card .card-header {
+  border: none;
+  padding: 0;
+}
+
+.bars .bars__body .list .card .card-body {
+  position: relative;
+  left: 28%;
+  padding: 0;
+  border: none !important;
+  top: 0;
   margin-top: 0;
 }
 
-.bars-main .modal-dialog .modal-content .modal-body .lists img {
-  width: 30px;
-}
-
-.bars-main .modal-dialog .modal-content .modal-body .lists a {
+.bars .bars__body .list .card .card-body a {
   color: #ffd978;
-  font-size: 16px;
-  border-bottom: 1px solid #999;
-  margin-left: 10px;
-  padding: 0;
-  font-family: hekou;
-  display: inline-block;
-}
-
-.bars-main .modal-dialog .modal-content .modal-body .lists .dropdown-menu {
-  background: transparent;
-  border: none;
-  position: inherit !important;
-  margin-top: -10px !important;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.bars-main .modal-dialog .modal-content .modal-body .lists .dropdown-menu a {
-  border: none;
-  font-family: "Roboto", sans-serif;
-  padding: 0px !important;
+  display: block;
   text-transform: capitalize;
-  margin-left: 4px !important;
+  font-size: 18px;
+  margin: 7px 0;
 }
 
-.bars-main .modal-dialog .modal-content .modal-body .lists .dropdown-menu a:hover {
-  background: transparent;
-  color: #999;
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
 }
 
-.bars-main .modal-dialog .modal-content .modal-body .lists .dropdown-menu a::after {
-  border-bottom-color: #ffffff;
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
 }
 
-.bars-main .modal-dialog .modal-content .user {
-  text-align: center;
-  display: block;
-  width: 100%;
-  padding: 30px 0;
+.cards .card__banner {
+  padding: 0;
+  margin: 0;
+  position: relative;
 }
 
-.bars-main .modal-dialog .modal-content .user img {
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 10px !important;
-  width: 60px;
+.cards .abs {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
 }
 
-.bars-main .modal-dialog .modal-content .user span {
+.cards .abs h3 {
   color: #ffffff;
-  font-size: 14px;
+  font-family: hekou;
+  font-size: 38px;
+}
+
+.cards .abs span {
+  text-transform: capitalize;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.cards .games__part {
+  background: #151515;
+}
+
+.cards .games__part .container {
+  position: relative;
+  top: -65px;
+  padding: 0px 0;
+  background: #151515;
+}
+
+.cards .games__part .in__games ul {
+  padding: 0;
+  margin: 0;
+}
+
+.cards .games__part .in__games ul li {
+  list-style: none;
+}
+
+.cards .games__part .in__games ul li:first-child a {
+  background: #000;
+  margin-top: 0;
+  color: #ffd978;
+}
+
+.cards .games__part .in__games ul li a {
+  color: #ffffff;
+  padding: 20px 40px;
+  font-size: 16px;
+  margin: 10px 0;
+  display: block;
+}
+
+.cards .games__part .in__games ul li a img {
+  margin-right: 5px;
+  width: 30px;
 }
 
 * {
   text-decoration: none !important;
+}
+
+.slick-vertical .slick-slide {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  width: 50% !important;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 body {

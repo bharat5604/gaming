@@ -2,12 +2,27 @@
 
 .home {
   //***** banner
+  .nav-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 4px 4px !important;
+    img{
+      width: 20px;
+    }
+    a{
+      // font-size: 11px;
+    }
+  }
   .home__banner {
     background: url(../img/hero.jpg) no-repeat center center;
     background-size: cover;
-    padding: 100px 0;
+    padding: 150px 0;
     background-color: $lightBlack;
     .slots {
+      position: relative;
+      top: 40px;
       h1 {
         font-size: 56px;
         font-family: $hekouFont;

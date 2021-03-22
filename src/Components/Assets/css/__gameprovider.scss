@@ -1,5 +1,14 @@
+@import "__variable";
+
 .gameprovider {
   margin: 100px 0;
+  .heading{
+    @include heading
+    h3{
+      color:$black;
+      text-align:center;
+    }
+  }
   .sliders {
     .slick-slide {
       //   width: 200px !important;

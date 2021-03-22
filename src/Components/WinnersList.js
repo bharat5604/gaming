@@ -12,12 +12,13 @@ const WinnersList = (props) => {
   let settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    loop:true,
+    speed: 1500,
     slidesToShow: 3,
     autoplay: true,
     arrows: false,
     slidesToScroll: 1,
-    vertical: true,
+    vertical: true
   };
   return (
     <div>

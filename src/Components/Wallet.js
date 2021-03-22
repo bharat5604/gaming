@@ -9,25 +9,74 @@ import logo3 from "./Assets/img/wallet/Skrill.png";
 import proceed from "./Assets/img/wallet/procced-Cta.png";
 
 const Wallet = () => {
+  let urlData = "http://gamepitara.globaldigitaz.com/api/GetSignature";
   const url = "https://jsonplaceholder.typicode.com/albums";
 
   const [items, setItems] = useState([]);
   const [showPerpage, setShowPerpage] = useState(5);
   const [counter, setCounter] = useState(1);
+  const [Amount, setAmount] = useState(0);
+  const RegId = localStorage.getItem("auth");
   const [pagination, setPagination] = useState({
-    start:0,
-    end:showPerpage
-  })
+    start: 0,
+    end: showPerpage,
+  });
+  const gateway = { RegId, Amount };
+  const [cashfree, setCashfree] = useState({});
 
- const onPaginationChnage = (start, end) =>{
-    setPagination({start:start, end:end})
- }
+  async function dataURL(url) {
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(gateway),
+    }).then(async (result) => {
+      result.json().then(async (res) => {
+        setCashfree((inputs) => {
+         return {
+          appId: res.AppId,
+          customerEmail: res.Email,
+          customerName: res.Name,
+          customerPhone: res.Mobile,
+          orderAmount: res.Amount,
+          orderId: res.OrderId,
+          returnUrl: res.ReturnURL,
+          redirectUrl: res.RedirectURL,
+          signature: res.Signature,
+         }
+        });
+      });
+    });
+  }
+
+  const handleChange = (e) => {
+    console.log(Amount);
+    setAmount(e.target.value);
+    setTimeout(() => {
+      dataURL(urlData);
+    }, 2000);
+  };
+
+  // handleSubmit
+  const  handleSubmit = (e) => {
+    e.preventDefault()
+     dataURL(urlData);
+    console.log("lkj",cashfree)
+    dataURL(urlData)
+  };
+
+  const onPaginationChnage = (start, end) => {
+    setPagination({ start: start, end: end });
+  };
 
   //handlePagination
-  useEffect(()=>{
-    const value = showPerpage * counter
-    onPaginationChnage(value - showPerpage, value)
-  }, [counter, showPerpage])
+  useEffect(() => {
+    // dataURL(urlData);
+    const value = showPerpage * counter;
+    onPaginationChnage(value - showPerpage, value);
+  }, [counter, showPerpage]);
   useEffect(() => {
     const test = fetch(url, {
       headers: {
@@ -43,7 +92,10 @@ const Wallet = () => {
         (error) => {}
       );
     console.log(test);
+
+    //api
   }, []);
+
   return (
     <div className="wallet1">
       <Tabs defaultActiveKey="statement" id="uncontrolled-tab-example">
@@ -104,27 +156,77 @@ const Wallet = () => {
                     <td>deposit</td>
                     <td className="success">sucess</td>
                     <td>1,000.00</td>
-                    
                   </tr>
-                  
                 ))}
               </tbody>
             </table>
             {/* tables end */}
             <div className="pagination">
               <div className="buttons">
-                  <button type="button" disabled={pagination.start < 5} onClick={() => setCounter(counter - 1)}><i className="fa fa-chevron-left"></i><i className="fa fa-chevron-left"></i> Previous</button>
-                  <button type="button" disabled={items.length - pagination.end < 5} onClick={() => setCounter(counter + 1)}>Next <i className="fa fa-chevron-right"></i><i className="fa fa-chevron-right"></i> </button>
+                <button
+                  type="button"
+                  disabled={pagination.start < 5}
+                  onClick={() => setCounter(counter - 1)}
+                >
+                  <i className="fa fa-chevron-left"></i>
+                  <i className="fa fa-chevron-left"></i> Previous
+                </button>
+                <button
+                  type="button"
+                  disabled={items.length - pagination.end < 5}
+                  onClick={() => setCounter(counter + 1)}
+                >
+                  Next <i className="fa fa-chevron-right"></i>
+                  <i className="fa fa-chevron-right"></i>{" "}
+                </button>
               </div>
             </div>
           </div>
         </Tab>
         <Tab eventKey="deposit" title="Deposit">
           <div className="deposit">
-            <form action="" className="amount">
+            <form
+              action={cashfree.redirectUrl}
+              method="POST"
+              className="amount"
+              onSubmit={handleSubmit}
+            >
               <label htmlFor="amount">Amount *</label>
-              <input type="text" />
+              <input value={Amount} type="text" onChange={handleChange} required />
               <span>INR</span>
+              <input
+                type="hidden"
+                name="signature"
+                value={cashfree.signature}
+              />
+              <input type="hidden" name="appId" value={cashfree.appId} />
+              <input
+                type="hidden"
+                name="customerEmail"
+                value={cashfree.customerEmail}
+              />
+              <input
+                type="hidden"
+                name="customerName"
+                value={cashfree.customerName}
+              />
+              <input
+                type="hidden"
+                name="customerPhone"
+                value={cashfree.customerPhone}
+              />
+              <input
+                type="hidden"
+                name="orderAmount"
+                value={cashfree.orderAmount}
+              />
+              <input type="hidden" name="orderId" value={cashfree.orderId} />
+              <input
+                type="hidden"
+                name="returnUrl"
+                value={cashfree.returnUrl}
+              />
+              <input type="submit" value="Submit" />
             </form>
             <div className="upis">
               <div className="leftupi">

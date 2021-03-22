@@ -3,7 +3,10 @@ import { Redirect } from 'react-router-dom';
 
 const Hoc = (props) => {
     const Afterlogin = props.comp;
-    const auth = JSON.parse(localStorage.getItem("auth"))
+    let auth;
+    if(typeof window !=='undefined'){
+        auth  = JSON.parse(localStorage.getItem("auth"))
+    }
     return (
         <div>
             {auth ? <Afterlogin /> : <Redirect to="/"/>}

@@ -2,23 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// import {HashRouter} from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
-import Context from './Components/Context';
-import useGlobalState from './Components/globalUseState';
-
-const Index = () =>{
-  const store  = useGlobalState()
-  return(
-    <Context.Provider value={store}>
-      <App/>
-    </Context.Provider>
-  )
+import { StateProvider } from './Components/StateProvider';
+import reducer, { initialState } from './Components/reducer';
 
 
-}
-ReactDOM.render(
+ReactDOM.hydrate(
   <React.StrictMode>
-    <Index />
+  <StateProvider initialState={initialState} reducer={reducer}>
+   <App/>
+  </StateProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

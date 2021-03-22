@@ -1,0 +1,71 @@
+@import "__variable";
+
+// ****************** Banner start ********************
+.cards{
+    .card__banner{
+        // background: url(../img/banner.jpg) center fixed no-repeat;
+        // padding: 100px;
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+    // abs
+    .abs{
+        position: absolute;
+        top:50%;
+        transform: translate(0%, -50%);
+        h3{
+            color: $white;
+            font-family:$hekouFont;
+            font-size: 38px;
+        }
+        span{
+            text-transform: capitalize;
+            font-size: 16px;
+            color: $white;
+        }
+    }
+
+    // games__part start
+    .games__part{
+        background: $black;
+        .container{
+            position: relative;
+            top: -65px;
+            padding: 0px 0;
+            background: $black;
+        }
+
+        // in__games
+        .in__games{
+        ul{
+            padding: 0;
+            margin: 0;
+            li{
+                list-style: none;
+                &:first-child{
+                   a{
+                       background: #000;
+                       margin-top: 0;
+                       color: $golden;
+                   }
+                }
+                a{
+                    color: $white;
+                    padding: 20px 40px;
+                    font-size: $menuFont;
+                    margin: 10px 0;
+                    display: block;
+
+                    
+                    img{
+                        margin-right: 5px;
+                        width: 30px;
+                    }
+                }
+            }
+        } 
+        } // in__games
+
+    }//games__part
+}
