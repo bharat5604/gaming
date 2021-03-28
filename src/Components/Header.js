@@ -11,22 +11,25 @@ import poker from './Assets/img/icons/poker.png'
 import roullete from './Assets/img/icons/roullete.png'
 import slots from './Assets/img/icons/slots.png'
 import table from './Assets/img/icons/table.png'
+import {useStateValue} from './StateProvider'
 const Header = () => {
   const [status, setStatus] = useState("open");
   const [open, setOpen] = useState("");
   const [text, setText] = useState();
+  const [{login}] = useStateValue();
   useEffect(() => {
     // if (open == "active") {
     //   let b = (document.body.style.overflow = "hidden");
     // } else {
     //   document.body.style.overflowY = "scroll";
     // }
-  });
+  }, [login]);
   const handleShow = (e) => {
+    login.loginUser = "active"
     setText(e.target.textContent);
     switch (status) {
       case "open":
-        setOpen("active");
+        setOpen(login.loginUser);
         setStatus("close");
         break;
       case "close":

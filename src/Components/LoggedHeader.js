@@ -95,7 +95,7 @@ const LoggedHeader = () => {
                 </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">
+                <Link to="/cards">
                 <img src={cards} alt="home"/>
                 Cards
                 </Link>

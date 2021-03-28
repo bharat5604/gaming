@@ -19,6 +19,7 @@ import {useStateValue} from './StateProvider'
 
 const Why = (props) => {
   const [{signature}, dispatch] = useStateValue();
+  const [{gameApi}] = useStateValue();
   console.log(signature);
 
   let baseUrl = "http://gamepitara.globaldigitaz.com/api/GetXSignForGameInit"
@@ -26,7 +27,7 @@ const Why = (props) => {
 
     // dispatch
     let getSignData = {GameUUId:e.target.dataset.id, PlayerId:"ANU001", PlayerName:"Anurag", Currency:"EUR", SessionId:"S001"}
-    let getGames = {game_uuid:getSignData.GameUUId, player_id:getSignData.PlayerId, player_name:getSignData.PlayerName, currency:getSignData.Currency, session_id:getSignData.SessionId}
+    // let getGames = {game_uuid:getSignData.GameUUId, player_id:getSignData.PlayerId, player_name:getSignData.PlayerName, currency:getSignData.Currency, session_id:getSignData.SessionId}
     // fetch
    await fetch(baseUrl, {
       method:"POST",
@@ -42,21 +43,7 @@ const Why = (props) => {
          signature[0].xnonce = res.XNonce
       })
     })
-    // await fetch("https://staging.slotegrator.com/api/index.php/v1/games/init-demo", {
-    //   method:"POST",
-    //   headers:{
-    //     "Content-Type":"application/x-www-form-urlencoded",
-    //     "x-merchant-id": "3675a5fa309b2a7fc72e588dfca8089d",
-    //     "x-sign": signature[0].xsign,
-    //     "x-timestamp": signature[0].timestamp,
-    //     "x-nonce": signature[0].xnonce,
-    //   },
-    //   body:JSON.stringify(getGames)
-    // }).then(result=>{
-    //   result.json().then(res => {
-    //     console.log(res);
-    //   })
-    // })
+
 
     $(document).ready(function () {
       var form = new FormData();
@@ -69,7 +56,7 @@ const Why = (props) => {
       var settings = {
           "async": true,
           "crossDomain": true,
-          "url": "https://staging.slotegrator.com/api/index.php/v1/games/init-demo",
+          "url": gameApi,
           "method": "POST",
           "headers": {
                  "x-merchant-id": "3675a5fa309b2a7fc72e588dfca8089d",
@@ -89,39 +76,6 @@ const Why = (props) => {
         console.log(url.url);
       });
   });
-
-    // $(document).ready(function () {
-    //   $.ajax(signature).done(function (res) {
-    //   });
-    //     var form = new FormData();
-    //     form.append("game_uuid", e.target.dataset.id);
-    //     form.append("language", "en")
-    //     // form.append("player_id", "ANU001");
-    //     // form.append("player_name", "Anurag");
-    //     // form.append("currency", "EUR");
-    //     // form.append("session_id","S001");
-    //     var settings = {
-    //         "async": true,
-    //         "crossDomain": true,
-    //         "url": "https://staging.slotegrator.com/api/index.php/v1/games/init-demo",
-    //         "method": "POST",
-    //         "headers": {
-    //             "x-merchant-id": "3675a5fa309b2a7fc72e588dfca8089d",
-    //             "x-sign": signature[0].xsign,
-    //             "x-timestamp": signature[0].timestamp,
-    //             "x-nonce": signature[0].xnonce,
-    //         },
-    //         "processData": false,
-    //         "contentType": false,
-    //         "mimeType": "multipart/form-data",
-    //         "data": form
-    //     }
-    //     $.ajax(settings).done(function (response) {
-    //         console.log(JSON.parse(response));
-    //        let url = JSON.parse(response)
-    //         window.open(url.url, '_blank')
-    //     });
-    // });
   }
   return (
     <div className="why" id={props.classType}>
@@ -186,9 +140,18 @@ const Why = (props) => {
                 </Tab>
                 <Tab eventKey="poker" title="Poker">
                   <div className="all">
-                    <img src={pr1} alt="" />
-                    <img src={pr2} alt="" />
-                    <img src={pr3} alt="" />
+                  <div className="col-md-4">
+
+                    <img src={pr1} alt="" className="img-fluid" />
+                  </div>
+                    <div className="col-md-4">
+
+                    <img src={pr2} alt="" className="img-fluid" />
+                    </div>
+                    <div className="col-md-4">
+
+                    <img src={pr3} alt="" className="img-fluid" />
+                    </div>
                   </div>
                 </Tab>
                 <Tab eventKey="roulette" title="Roulette"></Tab>

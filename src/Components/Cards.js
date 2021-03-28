@@ -62,8 +62,67 @@ import B_gaming_Db_img_hover from './Assets/img/cards/hover/B-gaming--Db.jpg'
 import Banner_2_Changeable_img from './Assets/img/cards/Banner-2-Changeable.jpg'
 
 import search_icon from './Assets/img/cards/search_icon.png'
+import {useStateValue} from './StateProvider'
+import $ from "jquery"
 
 const Cards = () => {
+    const [{signature}, dispatch] = useStateValue();
+    const [{gameApi}] = useStateValue();
+    let baseUrl = "http://gamepitara.globaldigitaz.com/api/GetXSignForGameInit"
+
+    const handleGames = async (e) =>{
+
+        // dispatch
+        let getSignData = {GameUUId:e.target.dataset.id, PlayerId:"ANU001", PlayerName:"Anurag", Currency:"EUR", SessionId:"S001"}
+        // let getGames = {game_uuid:getSignData.GameUUId, player_id:getSignData.PlayerId, player_name:getSignData.PlayerName, currency:getSignData.Currency, session_id:getSignData.SessionId}
+        // fetch
+       await fetch(baseUrl, {
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify(getSignData)
+        }).then( (result) => {
+          result.json().then(res =>{
+            console.log(res);
+             signature[0].xsign = res.XSign
+             signature[0].timestamp = res.TimeStamp
+             signature[0].xnonce = res.XNonce
+          })
+        })
+    
+        $(document).ready(function () {
+          var form = new FormData();
+          form.append("game_uuid", e.target.dataset.id);
+          form.append("player_id", "ANU001");
+          form.append("player_name", "Anurag");
+          form.append("currency", "EUR");
+          form.append("session_id", "S001");
+    
+          var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": gameApi,
+              "method": "POST",
+              "headers": {
+                     "x-merchant-id": "3675a5fa309b2a7fc72e588dfca8089d",
+                     "x-sign": signature[0].xsign,
+                     "x-timestamp": signature[0].timestamp,
+                     "x-nonce": signature[0].xnonce,
+              },
+              "processData": false,
+              "contentType": false,
+              "mimeType": "multipart/form-data",
+              "data": form
+          }
+    
+          $.ajax(settings).done(function (response) {
+            let url = JSON.parse(response)
+            window.open(url.url, '_blank')
+            console.log(url.url);
+          });
+      });
+      }
     return (
         <div className="cards">
             <Header />
@@ -141,14 +200,24 @@ const Cards = () => {
                                         </select>
                                     </div>
                                     <div className="col-sm-5 pr-0 search_div">
-                                        <img src={search_icon} className="search_icon" alt="search" />
+                                        <img src={search_icon}
+                                         className="search_icon"
+                                          alt="search"
+                                           />
                                         <button className="btn search_btn">Search</button>
                                     </div>
                                 </div>
                                 <div className="banner_maindiv">
                                     <div className="gameImg_div">
-                                        <img src={blackjack_img} alt="blackjack" className="blackjack_img_c gameImg" />
-                                        <img src={BJ_Platiplus_hover} alt="blackjack" className="blackjack_img_c gameImg_Hover" />
+                                        <img src={blackjack_img}
+                                         alt="blackjack"
+                                          className="blackjack_img_c gameImg"
+                                           />
+                                        <img src={BJ_Platiplus_hover}
+                                         alt="blackjack"
+                                          className="blackjack_img_c gameImg_Hover"
+                                         data-id="bf3779ff30e48a8455cf73b292f135fe2e280528"
+                                          onClick={handleGames} />
 
                                     </div>
                                     <div className="gameImg_div search__banner_img_div">
@@ -161,35 +230,59 @@ const Cards = () => {
 
                                 <div className="col-sm-3 gameImg_div">
                                     <img src={Ezugi_BJ_Auto_split_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={BJ_Ezugi_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
+                                    <img src={BJ_Ezugi_hover}
+                                     alt="blackjack" width="100%"
+                                      className="gameImg_Hover"
+                                      data-id="802e0279619f46a9250a134e40e795606f493329"
+                                      onClick={handleGames} 
+                                       />
                                 </div>
                                 <div className="col-sm-3 gameImg_div">
                                     <img src={Evoplay_BJ_lucky_sevens_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Evoplay_BJ_lucky_sevens_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
+                                    <img src={Evoplay_BJ_lucky_sevens_hover} alt="blackjack" width="100%"
+                                     className="gameImg_Hover"
+                                     data-id="3b98aa535d4f492eaa2fe04b7d826105"
+                                    onClick={handleGames}
+                                      />
                                 </div>
                                 <div className="col-sm-3 gameImg_div">
                                     <img src={Ezugi_Live_Bj_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Ezugi_Live_Bj_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
+                                    <img src={Ezugi_Live_Bj_hover} alt="blackjack" width="100%" className="gameImg_Hover"
+                                    data-id="cac88d6f80950224007a2d90ad58d5f8c991b72d"
+                                    onClick={handleGames}
+                                     />
                                 </div>
                                 <div className="col-sm-3 gameImg_div">
                                     <img src={XPG_BJ_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={XPG_BJ_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
+                                    <img src={XPG_BJ_hover} alt="blackjack" width="100%" className="gameImg_Hover"
+                                    data-id="cb2d3bc6e2ce0532610c97b412723ac9a57337ac"
+                                    onClick={handleGames} />
                                 </div>
                                 <div className="col-sm-3 gameImg_div">
                                     <img src={Vivo_Gaming_Unlimited_BJ_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Vivo_Gaming_Unlimited_BJ_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
+                                    <img src={Vivo_Gaming_Unlimited_BJ_hover} alt="blackjack" width="100%" className="gameImg_Hover"
+                                    data-id="efec450ddc51a625d94fe75d0ddc037ccac9259a"
+                                    onClick={handleGames} />
                                 </div>
                                 <div className="col-sm-3 gameImg_div">
                                     <img src={Playson_High_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Playson_High_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
+                                    <img src={Playson_High_hover} alt="blackjack" width="100%" className="gameImg_Hover"
+                                    data-id="08a0600f6b1503f1beb47f68cf757bd46f00fa64"
+                                    onClick={handleGames} />
                                 </div>
                                 <div className="col-sm-3 gameImg_div">
                                     <img src={Onetouch_BJ_Suppreme_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Onetouch_BJ_Suppreme_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
+                                    <img src={Onetouch_BJ_Suppreme_hover} alt="blackjack" width="100%" className="gameImg_Hover"
+                                    data-id="66d5bba5dbe943616f477c71c4580535246861ae"
+                                    onClick={handleGames}
+                                     />
                                 </div>
                                 <div className="col-sm-3 gameImg_div">
                                     <img src={Platiplus_Bj_Vip_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Platiplus_Bj_Vip_img_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
+                                    <img src={Platiplus_Bj_Vip_img_hover} alt="blackjack" width="100%" className="gameImg_Hover" 
+                                    data-id="cb1bf4924197653242438c79e5b449ce282dbc1a"
+                                    onClick={handleGames}    
+                                    />
                                 </div>
                                 <div className="col-sm-3 gameImg_div">
                                     <img src={BGaming_Mutli_Bj_img} alt="blackjack" width="100%" className="gameImg" />
