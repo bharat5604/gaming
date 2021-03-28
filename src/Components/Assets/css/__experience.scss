@@ -2,9 +2,10 @@
 
 // ******************* experience
 .experience {
-  background: url(../img/experience/Background.jpg) no-repeat center bottom;
+  background: url(../img/experience/Background.jpg) no-repeat;
   background-size: cover;
   padding: 100px 0;
+  background-position: center;
   .heading {
     @include heading;
     text-align: center;
@@ -23,8 +24,8 @@
 
   .images {
     // margin-top: 60px;
-    width: 80%;
-    margin: 60px auto 0 auto;
+    width: 60%;
+    margin: 30px auto 0 auto;
     .images__in {
       position: relative;
       text-align: center;

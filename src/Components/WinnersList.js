@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import Winners from "./Winners";
 import { winnersData } from "./WinnersData";
-import videoImage from "./Assets/img/winning/video-Image.jpg";
+import video from "./Assets/img/winning/Gp_Website_video.mp4";
 import whyImg1 from "./Assets/img/why/Badge-1.png";
 import whyImg2 from "./Assets/img/why/Badge-2.png";
 import whyImg3 from "./Assets/img/why/Badge-3.png";
@@ -12,7 +12,7 @@ const WinnersList = (props) => {
   let settings = {
     dots: false,
     infinite: true,
-    loop:true,
+    loop: true,
     speed: 1500,
     slidesToShow: 3,
     autoplay: true,
@@ -28,20 +28,24 @@ const WinnersList = (props) => {
             <div className="col-sm-8">
               <div className="video">
                 <div className="row">
-                  <div className="col-md-7">
-                  <img src={videoImage} className="img-fluid" alt=""/>
-                   
+                  <div className="col-md-7 video_section">
+                    {/* <iframe src={video} title="testing " className="video_frame" /> */}
+                    <video width="100%" height="90%" controls>
+                      <source src={video} type="video/mp4" />
+                    </video>
                   </div>
-                  <div className="col-md-5">
-                    <div className="video__content">
+                  <div className="col-md-8 content_section">
+                    <div className="video__content pt-4">
                       <h3>more than games</h3>
                       <span>
                         In Gamepitara, <br /> We offer more than just games..
                       </span>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                        Gamepitara is home to the best online casino,
+                        sports betting and entertainment games.
+                        We offer an impressive variety of games. Enjoy our selected range
+                        of slots games and live bets on our huge selection of
+                        worldwide sports events.<br />
                       </p>
                     </div>
                   </div>

@@ -38,7 +38,7 @@ footer {
     img {
       width: 70px;
       display: inline-block !important;
-      float: right;
+      // float: right;
       margin-left: 10px;
     }
   }
@@ -68,9 +68,11 @@ footer {
         font-weight: $fontWeight;
         font-size: $menuFont;
         padding: 6px 20px;
-        text-transform: capitalize;
+        text-transform: uppercase;
         // margin-right: 10px;
         border: none;
+        font-family: "hekou";
+        letter-spacing: 2px;
       }
       a {
         color: $white;
@@ -82,8 +84,14 @@ footer {
         }
       }
       img {
-        width: 40px;
+        width: 34px;
       }
+    }
+  }
+  .container {
+    .row {
+      margin-left: 5%;
+      margin-right: 5%;
     }
   }
 }
@@ -91,20 +99,29 @@ footer {
 .btm__footer {
   background-color: $lightBlack;
   padding: 20px 0;
+  .container {
+    .row {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+  }
   .foot {
     margin-top: 10px;
-    &.last {
-      margin-top: 70px;
-    }
+    // &.last {
+    //   margin-top: 0px;
+    // }
     img {
       margin-bottom: 15px;
-      width: 150px;
+      width: 75px;
     }
     h3 {
       color: #999;
-      font-size: $headingFont;
-      margin-top: 45px;
+      font-size: $paraFont;
+      margin-top: 0px;
       text-transform: capitalize;
+      margin-bottom: 5px;
+      font-family: $roboto;
+      font-weight: 600;
     }
     p {
       color: #999;
@@ -125,6 +142,7 @@ footer {
           color: #999;
           font-size: $paraFont;
           text-transform: capitalize;
+          font-family: "roboto";
         }
       }
     }

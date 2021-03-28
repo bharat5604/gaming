@@ -27,9 +27,9 @@ const GameProvider = () => {
   };
   return (
     <div className="gameprovider">
-       <div className="heading">
-       <h3>Game Provider</h3>
-       </div>    
+      <div className="heading">
+        <h3>Game Provider</h3>
+      </div>
       <div className="sliders">
         <Slider {...settings}>
           <img src={game1} alt="" />

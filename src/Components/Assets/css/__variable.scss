@@ -9,7 +9,12 @@
   font-family: embrima;
   src: url(../fonts/ebrima.ttf) format("truetype");
 }
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/Roboto/Roboto-Light.ttf) format("truetype");
+}
 $golden: #ffd978;
+$darkBlack: #000;
 $black: #151515;
 $lightBlack: #1d1d1d;
 $white: #ffffff;

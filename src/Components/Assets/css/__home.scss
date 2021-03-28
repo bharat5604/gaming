@@ -2,74 +2,117 @@
 
 .home {
   //***** banner
-  .nav-link{
+  .nav-link {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 4px 4px !important;
-    img{
+    img {
       width: 20px;
     }
-    a{
-      // font-size: 11px;
-    }
   }
+  .carousel-control-next,
+  .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+    color: #fff;
+    text-align: center;
+    opacity: 0.5;
+    transition: opacity 0.15s ease;
+  }
+
   .home__banner {
     background: url(../img/hero.jpg) no-repeat center center;
     background-size: cover;
-    padding: 150px 0;
+    padding: 0;
     background-color: $lightBlack;
-    .slots {
-      position: relative;
-      top: 40px;
-      h1 {
-        font-size: 56px;
-        font-family: $hekouFont;
-        font-weight: $fontWeight;
-        text-transform: uppercase;
-        color: $white !important;
+    background-position: center;
+  }
+  .home__banner_2 {
+    background: url(../img/Hero-Banner-vF-2.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 0;
+    background-color: $lightBlack;
+    background-position: center;
+    .playnow_btn {
+      border: 1px solid $golden;
+      padding: 10px 45px;
+      background-color: transparent;
+      color: $golden;
+      margin-bottom: 110px;
+    }
+  }
+  .carousel-caption {
+    position: absolute;
+    right: 5%;
+    bottom: 150px;
+    left: 5%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+  }
+
+  .slots {
+    position: relative;
+    top: 40px;
+    text-align: left;
+
+    h1 {
+      font-size: 56px;
+      font-family: $hekouFont;
+      font-weight: $fontWeight;
+      text-transform: uppercase;
+      color: $white !important;
+    }
+    span {
+      color: #999;
+      text-transform: capitalize;
+      font-size: $headingFont;
+    }
+    .icons {
+      display: flex;
+      margin-top: 30px;
+    }
+
+    .item {
+      margin: 5px 10px;
+      display: flex;
+      padding: 0px 10px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-width: 100px;
+      height: 120px;
+      background: rgba(0, 0, 0, 0.651);
+      border-radius: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+      img {
+        width: 55px;
       }
       span {
+        font-size: 11px;
+        margin-top: 10px;
         color: #999;
-        text-transform: capitalize;
-        font-size: $headingFont;
-      }
-      .icons {
-        display: flex;
-        margin-top: 30px;
-      }
-      .item {
-        margin: 5px 10px;
-        display: flex;
-        padding: 0px 10px;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        min-width: 100px;
-        height: 120px;
-        background: rgba(0, 0, 0, 0.651);
-        border-radius: 10px;
-        &:last-child {
-          margin-right: 0;
-        }
-        &:first-child {
-          margin-left: 0;
-        }
-        img {
-          width: 30px;
-        }
-        span {
-          font-size: 11px;
-          margin-top: 10px;
-          color: #999;
-          b {
-            color: $white !important;
-          }
+        b {
+          color: $white !important;
         }
       }
     }
   }
+
   // ***** banner end
 
   // ************** winning
@@ -84,8 +127,19 @@
       }
     }
     .video {
-      background-color: $lightBlack;
-      .videoImg {
+      // background-color: $lightBlack;
+      .video_section {
+        z-index: 9;
+        .video_frame {
+          height: 85%;
+          width: 100%;
+        }
+      }
+      .content_section {
+        background: $lightBlack;
+        margin-left: -225px;
+        z-index: 0;
+        padding-left: 225px;
       }
       .video__content {
         padding: 10px 0;

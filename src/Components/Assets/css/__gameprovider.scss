@@ -1,12 +1,12 @@
 @import "__variable";
 
 .gameprovider {
-  margin: 100px 0;
-  .heading{
-    @include heading
-    h3{
-      color:$black;
-      text-align:center;
+  margin: 50px 0;
+  .heading {
+    @include heading;
+    h3 {
+      color: $black;
+      text-align: center;
     }
   }
   .sliders {
@@ -15,8 +15,15 @@
       margin: 0px 0px !important;
     }
     img {
-      width: 270px !important;
-      //   margin: 0px 20px !important;
+      border: 1px solid #aaa;
+      padding: 10px;
     }
+    div {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+  }
+  h3 {
+    margin-bottom: 30px;
   }
 }

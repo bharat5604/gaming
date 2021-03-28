@@ -2,7 +2,11 @@ import React from "react";
 import facebook from "./Assets/img/footer/facebook.png";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import icon from "./Assets/img/footer/icon.png";
+// import icon from "./Assets/img/footer/icon.png";
+import persion_1 from './Assets/img/testimonial/persion-1.png'
+import persion_2 from './Assets/img/testimonial/persion-2.png'
+import persion_3 from './Assets/img/testimonial/persion-3.png'
+
 const Testimonial = () => {
   let settings = {
     dots: false,
@@ -27,38 +31,51 @@ const Testimonial = () => {
                 <div>
                   <div className="para">
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nemo, vel. Eligendi quod maiores recusandae sunt nostrum
-                      soluta enim quas repellendus. Quis maxime eaque earum
-                      deserunt, debitis assumenda neque quod? Dolorem dolore
-                      quis exercitationem! Nihil
+                      I didn’t know that we can actually Win Real Money by playing
+                      games just by using some skills at the comfort of your
+                      place & time. Highly Recommended Platform!
                     </p>
                   </div>
                   <div className="person">
-                    <img src={icon} alt="" />
+                    <img src={persion_1} alt="" />
                     <div className="content">
-                      <p>dayal gill </p>
-                      <span>creative head</span>
-                      <span> katnkrow studios</span>
+                      <p>Parth Kapoor</p>
+                      <span>Gold Badger Holder</span>
+                      {/* <span> katnkrow studios</span> */}
                     </div>
                   </div>
                 </div>
                 <div>
                   <div className="para">
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nemo, vel. Eligendi quod maiores recusandae sunt nostrum
-                      soluta enim quas repellendus. Quis maxime eaque earum
-                      deserunt, debitis assumenda neque quod? Dolorem dolore
-                      quis exercitationem! Nihil,
+                      The best part about Game Pitara is the range of Las Vegas
+                      style live Casino games available plus they provide you
+                      exciting offers & rewards on each Level Up
                     </p>
                   </div>
                   <div className="person">
-                    <img src={icon} alt="" />
+                    <img src={persion_2} alt="" />
                     <div className="content">
-                      <p>dayal gill </p>
-                      <span>creative head</span>
-                      <span> katnkrow studios</span>
+                      <p>Jenny Writes</p>
+                      <span>Diamond Badge Holder</span>
+                      {/* <span> katnkrow studios</span> */}
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="para">
+                    <p>
+                      Best Online Betting Experience as I can withdraw my winning on time,
+                      money is credited instantly to my wallet. Wonderful Experience so far.
+                      Supportive Customer Service. Safe, Legit & Trustworthy online betting platform.
+                    </p>
+                  </div>
+                  <div className="person">
+                    <img src={persion_3} alt="" />
+                    <div className="content">
+                      <p>Nitin Khanna</p>
+                      <span>Bronze Badge Holder</span>
+                      {/* <span> katnkrow studios</span> */}
                     </div>
                   </div>
                 </div>
@@ -66,11 +83,12 @@ const Testimonial = () => {
             </div>
             <div className="col-sm-7">
               <form action="">
-                <div className="heading">
-                  <h3>register with us</h3>
-                </div>
+
                 <div className="row">
-                  <div className="form-group col-sm-6">
+                  <div className="heading w-100">
+                    <h3>register with us</h3>
+                  </div>
+                  <div className="form-group col-sm-6 pl-0">
                     <input
                       type="text"
                       className="form-control"
@@ -84,7 +102,7 @@ const Testimonial = () => {
                       placeholder="Email Address"
                     />
                   </div>
-                  <div className="form-group col-sm-6">
+                  <div className="form-group col-sm-6 pl-0">
                     <input
                       type="text"
                       className="form-control"
@@ -98,14 +116,15 @@ const Testimonial = () => {
                       placeholder="New Password"
                     />
                   </div>
+                  <div className="form-group btns">
+                    <button type="button">submit</button>
+                    <Link to="">Login</Link>
+                    <a href="#!">
+                      <img src={facebook} alt="" />
+                    </a>
+                  </div>
                 </div>
-                <div className="form-group btns">
-                  <button type="button">submit</button>
-                  <Link to="">Login</Link>
-                  <a href="#!">
-                    <img src={facebook} alt="" />
-                  </a>
-                </div>
+
               </form>
             </div>
           </div>

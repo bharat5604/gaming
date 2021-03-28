@@ -3,6 +3,8 @@
 .why {
   background: url("../img/why/background.jpg") no-repeat center center;
   padding: 100px 0;
+  background-size: cover;
+  background-position: top;
   &#after {
     background: none;
     padding: 10px 0;
@@ -13,23 +15,12 @@
       display: flex;
       text-align: center;
       img {
-        // width: 150px;
         margin: 15px 0px;
-        // height: 150px !important;
-        // object-fit: contain;
-        // height: 150px;
         cursor: pointer;
-        &:nth-child(1) {
-          // width: 300px !important;
-          // object-fit: fill;
-          // height: 160px !important;
-        }
-        &:nth-child(2) {
-          // cursor: pointer;
-          // height: 150px;
-          // width: 300px;
-          // object-fit: cover;
-        }
+        // &:nth-child(1) {
+        // }
+        // &:nth-child(2) {
+        // }
       }
     }
     //nav
@@ -46,9 +37,11 @@
         font-size: $paraFont;
         font-weight: $fontWeight;
         width: calc(100% / 6);
-        font-family: $roboto;
+        font-family: "roboto";
+        font-weight: 500;
+        padding: 15px 10px !important;
         &.active {
-          background: $black;
+          background: $darkBlack;
           border: none;
           color: $golden;
         }
