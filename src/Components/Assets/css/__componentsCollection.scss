@@ -1,0 +1,128 @@
+.games__part {
+  background: $black;
+  .container {
+    margin-top: -100px;
+    // search bar
+    .searchbar_div {
+      position: absolute;
+      width: 80%;
+      background: $black;
+      top: 0px;
+      left: 15px;
+      padding-bottom: 30px;
+      .search_section3 {
+        background-color: $darkBlack;
+      }
+
+      .search_your_game {
+        color: #ffd978;
+        margin-bottom: 0px;
+        background: transparent;
+        border: 0px;
+      }
+      .search_dropdown {
+        background: transparent;
+        color: #ffd978;
+        border: 0px;
+        border-bottom: 1px solid #ffd978;
+        border-radius: 0px;
+        &:focus {
+          background: transparent;
+          color: #ffd978;
+          border: 0px;
+          border-bottom: 1px solid #ffd978;
+          border-radius: 0px;
+        }
+        option {
+          background: #000;
+        }
+      }
+      .search_div {
+        display: flex;
+        .btn {
+          width: 100%;
+          border-radius: 0px;
+          background: #ffd978;
+          border-color: #ffd978;
+          color: #000;
+          font-weight: 600;
+          &:focus {
+            box-shadow: 0 0 0 0rem #ffd978;
+          }
+        }
+        img {
+          width: 45px;
+          height: 40px;
+          align-items: center;
+          background: #010101;
+          margin-right: -19px;
+          z-index: 0;
+          padding: 8px;
+          border-radius: 50%;
+        }
+      }
+    }
+    .banner_maindiv {
+      display: flex;
+      padding-top: 15px;
+    }
+
+    // side bar
+    .flex-column {
+      .nav-link {
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        text-align: left;
+        font-weight: 500;
+        font-family: "roboto";
+        margin: 0;
+        font-size: 16px;
+        padding: 4px 4px !important;
+        height: 120px;
+        color: #fff;
+        text-transform: capitalize;
+        background-color: $lightBlack;
+        border-bottom: 2px solid $darkBlack;
+      }
+      .nav-link.active {
+        color: $golden;
+        background-color: $darkBlack;
+      }
+      img {
+        margin-right: 5px;
+        width: 50px;
+      }
+    }
+
+    .Game_gridview {
+      background-color: $black;
+      padding-left: 15px;
+      margin-top: 70px;
+
+      .gameImg_div {
+        padding: 15px;
+        z-index: 9;
+        cursor: pointer;
+        .blackjack_img_c {
+          width: 210px;
+        }
+        .gameImg {
+          display: block;
+        }
+        .gameImg_Hover {
+          display: none;
+        }
+        &:hover {
+          .gameImg {
+            display: none;
+          }
+          .gameImg_Hover {
+            display: block;
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}

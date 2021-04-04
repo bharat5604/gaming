@@ -8,23 +8,23 @@
   background-position: center;
   .heading {
     @include heading;
-    text-align: center;
+    color: $golden;
+    text-align: left;
     span {
-      background: $golden;
       font-size: 13px;
       letter-spacing: 0;
       padding: 3px 10px;
       border-radius: 6px;
       text-transform: initial;
-      border: 1px solid $black;
       font-family: $monteSerrat;
-      color: $black;
+      color: #ddd;
+      font-weight: 600;
     }
   }
 
   .images {
     // margin-top: 60px;
-    width: 60%;
+    width: 100%;
     margin: 30px auto 0 auto;
     .images__in {
       position: relative;
@@ -42,3 +42,43 @@
     }
   }
 }
+
+//why__us
+.why__us {
+  .heading {
+    @include heading;
+    color: $golden;
+    padding: 0;
+  }
+
+  .img {
+    margin-top: 28px;
+    .img__in {
+      position: relative;
+      text-align: center;
+      img {
+        max-width: 60%;
+        margin: 0 auto;
+      }
+      .title {
+        font-family: $roboto;
+        border: 1px solid $black;
+        text-align: center;
+        background: #3b3a39;
+        text-transform: capitalize;
+        position: relative;
+        top: -30px;
+
+        span {
+          color: #ddd;
+          font-size: 13px;
+        }
+        h4 {
+          color: $white;
+          font-size: 13px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+} //why__us

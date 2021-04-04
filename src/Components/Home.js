@@ -10,10 +10,13 @@ import WinnersList from "./WinnersList";
 import Testimonial from "./Testimonial";
 import Header from "./Header";
 
+
+
 const Home = () => {
+
   return (
-    <div className="home">
-    <Header />
+    < div className="home" >
+      <Header />
       <HeroBanner />
       <WinnersList />
 
@@ -29,7 +32,7 @@ const Home = () => {
       {/* Footer */}
       <Testimonial />
       <Footer />
-    </div>
+    </div >
   );
 };
 

@@ -8,14 +8,15 @@ import HomeAfter from "./Components/HomeAfter";
 import ProfileWallet from "./Components/ProfileWallet";
 import Hoc from './Components/Hoc';
 import Cards from "./Components/Cards";
+import Roulette from "./Components/Roulette";
 
 function App() {
   let auth;
-  if(typeof window !== 'undefined'){
-   auth =  JSON.parse(localStorage.getItem("auth"))
+  if (typeof window !== 'undefined') {
+    auth = JSON.parse(localStorage.getItem("auth"))
   }
   return (
-    
+
     <div className="App">
       <Router>
         <Switch>
@@ -26,17 +27,17 @@ function App() {
           <Route path="/cards">
             <Cards />
           </Route>
+          <Route path="/roulette">
+            <Roulette />
+          </Route>
           <Route path="/wallet">
             {/* <ProfileWallet /> */}
-            <Hoc comp={ProfileWallet}/>
+            <Hoc comp={ProfileWallet} />
           </Route>
           <Route path="/">
             {
               !auth ? <Home /> : <HomeAfter />
             }
-            {/* <Hoc comp={Home}/> */}
-            {/* <Home /> */}
-            {/* <Lines /> */}
           </Route>
         </Switch>
       </Router>

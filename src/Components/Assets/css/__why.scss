@@ -9,14 +9,17 @@
     background: none;
     padding: 10px 0;
   }
+
   //tabs
   .tabs {
     .all {
       display: flex;
       text-align: center;
       img {
-        margin: 15px 0px;
+        margin: 0px;
         cursor: pointer;
+        width: 20%;
+        padding: 10px;
         // &:nth-child(1) {
         // }
         // &:nth-child(2) {
@@ -36,7 +39,7 @@
         text-align: center;
         font-size: $paraFont;
         font-weight: $fontWeight;
-        width: calc(100% / 6);
+        width: calc(100% / 10);
         font-family: "roboto";
         font-weight: 500;
         padding: 15px 10px !important;
@@ -53,6 +56,29 @@
     .images {
       margin-top: 40px;
       text-align: center;
+    }
+  }
+  //searchbar on tabs
+  .search_tabs {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    background: $darkBlack;
+    padding: 7px;
+    height: 53px;
+    .search_input {
+      text-align: left;
+      color: #ddd;
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0rem !important;
+      }
+    }
+    img {
+      margin-right: 10px;
+      background: $lightBlack;
+      padding: 6px;
+      border-radius: 50%;
     }
   }
   //why__us

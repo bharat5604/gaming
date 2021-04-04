@@ -54,13 +54,14 @@ const Wallet = () => {
   const handleChange = (e) => {
     console.log(Amount);
     setAmount(e.target.value);
-    dataURL(urlData);
-   
+    setTimeout(() => {
+      dataURL(urlData);
+    }, 2000);
   };
 
   // handleSubmit
   const  handleSubmit = (e) => {
-    // e.preventDefault()
+    e.preventDefault()
      dataURL(urlData);
     console.log("lkj",cashfree)
     dataURL(urlData)

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "./Assets/img/logo.png";
-import { Link,useHistory, BrowserRouter as Router } from "react-router-dom";
+import { Link, useHistory, BrowserRouter as Router } from "react-router-dom";
 import LoginSignup from "./LoginSignup";
 import home from './Assets/img/icons/home.png'
 import cards from './Assets/img/icons/cards.png'
@@ -11,25 +11,24 @@ import poker from './Assets/img/icons/poker.png'
 import roullete from './Assets/img/icons/roullete.png'
 import slots from './Assets/img/icons/slots.png'
 import table from './Assets/img/icons/table.png'
-import {useStateValue} from './StateProvider'
+import Sports from './Assets/img/icons/Sports.png'
+
 const Header = () => {
   const [status, setStatus] = useState("open");
   const [open, setOpen] = useState("");
   const [text, setText] = useState();
-  const [{login}] = useStateValue();
   useEffect(() => {
     // if (open == "active") {
     //   let b = (document.body.style.overflow = "hidden");
     // } else {
     //   document.body.style.overflowY = "scroll";
     // }
-  }, [login]);
+  });
   const handleShow = (e) => {
-    login.loginUser = "active"
     setText(e.target.textContent);
     switch (status) {
       case "open":
-        setOpen(login.loginUser);
+        setOpen("active");
         setStatus("close");
         break;
       case "close":
@@ -54,7 +53,7 @@ const Header = () => {
   return (
     <header>
       <Navbar expand="lg">
-        <Container fluid>
+        <Container fluid className="p-0">
           <Navbar.Brand>
             <Link to="/">
               <img src={logo} alt="logo" />
@@ -65,48 +64,62 @@ const Header = () => {
             <Nav className="ml-auto">
               <Nav.Link>
                 <Link to="/">
-                <img src={home} alt="home"/>
-                home
+                  <img src={home} alt="home" />
+                  home
                 </Link>
               </Nav.Link>
               <Nav.Link>
                 <Link to="/cards">
-                <img src={cards} alt="home"/>
-                Cards
+                  <img src={cards} alt="home" />
+                  Cards
                 </Link>
               </Nav.Link>
-              <Nav.Link>
+              {/* <Nav.Link>
                 <Link to="">
                 <img src={jackpot} alt="home"/>
                 jackpot games
                 </Link>
+              </Nav.Link> */}
+              <Nav.Link>
+                <Link to="/roulette">
+                  <img src={roullete} alt="home" />
+                  roulette
+                </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">
-                <img src={roullete} alt="home"/>
-                roulette
+                <Link to="/Poker">
+                  <img src={poker} alt="poker" />
+                  poker
                 </Link>
               </Nav.Link>
               <Nav.Link>
                 <Link to="">
-                <img src={poker} alt="home"/>
-                poker
+                  <img src={jackpot} alt="home" />
+                  Fast Games
                 </Link>
               </Nav.Link>
               <Nav.Link>
                 <Link to="">
-                <img src={slots} alt="home"/>
-                slots
+                  <img src={Sports} alt="home" />
+                  Sports
                 </Link>
               </Nav.Link>
               <Nav.Link>
-                <img src={table} alt="home"/>
-                <Link to="">table</Link>
-              </Nav.Link>
-              <Nav.Link>
-                <img src={livedealer} alt="home"/>
+                <img src={livedealer} alt="home" />
                 <Link to="">live dealers</Link>
               </Nav.Link>
+              {/* <Nav.Link>
+                <img src={table} alt="home" />
+                <Link to="">table</Link>
+              </Nav.Link> */}
+              <Nav.Link>
+                <Link to="">
+                  <img src={slots} alt="slots" />
+                  slots
+                </Link>
+              </Nav.Link>
+
+
               <Nav.Link>
                 <button type="button" onClick={handleShow}>
                   sign in
@@ -130,7 +143,7 @@ const Header = () => {
           <h3>{text}</h3>
           <i className="fa fa-close" onClick={handleClose}></i>
         </div>
-        <LoginSignup sign={text === "sign in"} signup={text ==="sign up"} />
+        <LoginSignup sign={text === "sign in"} signup={text === "sign up"} />
       </div>
     </header>
   );

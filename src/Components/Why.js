@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Tabs, Tab } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import whyImg1 from "./Assets/img/why/Badge-1.png";
@@ -14,154 +14,134 @@ import pr4 from "./Assets/img/games/Casino-Hold.jpg";
 import pr5 from "./Assets/img/games/Roulette.jpg";
 import pr6 from "./Assets/img/games/Teen-Patti.jpg";
 import $ from "jquery"
-import {useStateValue} from './StateProvider'
+import { useStateValue } from './StateProvider'
+import search_icon from './Assets/img/cards/search_icon.png'
+
 
 
 const Why = (props) => {
-  const [{signature}, dispatch] = useStateValue();
-  const [{gameApi}] = useStateValue();
+  const [{ signature }, dispatch] = useStateValue();
   console.log(signature);
+  const handleGames = async (e) => {
 
-  let baseUrl = "http://gamepitara.globaldigitaz.com/api/GetXSignForGameInit"
-  const handleGames = async (e) =>{
-
-    // dispatch
-    let getSignData = {GameUUId:e.target.dataset.id, PlayerId:"ANU001", PlayerName:"Anurag", Currency:"EUR", SessionId:"S001"}
-    // let getGames = {game_uuid:getSignData.GameUUId, player_id:getSignData.PlayerId, player_name:getSignData.PlayerName, currency:getSignData.Currency, session_id:getSignData.SessionId}
-    // fetch
-   await fetch(baseUrl, {
+    let getGames ={
+      GameUUId:e.target.dataset.id,
+      PlayerId:"ANU001",
+      PlayerName:"Anurag",
+      Currency:"EUR",
+      SessionId:"S001"
+    }
+    await fetch("http://gamepitara.globaldigitaz.com/api/LaunchGame", {
       method:"POST",
       headers:{
         "Content-Type":"application/json"
       },
-      body:JSON.stringify(getSignData)
-    }).then( (result) => {
-      result.json().then(res =>{
-        console.log(res);
-         signature[0].xsign = res.XSign
-         signature[0].timestamp = res.TimeStamp
-         signature[0].xnonce = res.XNonce
+      body:JSON.stringify(getGames)
+    }).then(result=>{
+      result.json().then(res => {
+        let result = JSON.parse(res)
+        window.open(result.url, '_blank')
       })
     })
-
-
-    $(document).ready(function () {
-      var form = new FormData();
-      form.append("game_uuid", e.target.dataset.id);
-      form.append("player_id", "ANU001");
-      form.append("player_name", "Anurag");
-      form.append("currency", "EUR");
-      form.append("session_id", "S001");
-
-      var settings = {
-          "async": true,
-          "crossDomain": true,
-          "url": gameApi,
-          "method": "POST",
-          "headers": {
-                 "x-merchant-id": "3675a5fa309b2a7fc72e588dfca8089d",
-                 "x-sign": signature[0].xsign,
-                 "x-timestamp": signature[0].timestamp,
-                 "x-nonce": signature[0].xnonce,
-          },
-          "processData": false,
-          "contentType": false,
-          "mimeType": "multipart/form-data",
-          "data": form
-      }
-
-      $.ajax(settings).done(function (response) {
-        let url = JSON.parse(response)
-        window.open(url.url, '_blank')
-        console.log(url.url);
-      });
-  });
   }
   return (
     <div className="why" id={props.classType}>
       <div className="container">
         <div className="row">
-          <div className="col-sm-8">
+          <div className="col-sm-12">
             <div className="tabs">
               <Tabs defaultActiveKey="all" id="uncontrolled-tab-example">
                 <Tab eventKey="all" title="All">
                   <div className="all">
-                    <div className="col-lg-4 col-md-4">
-                    <img src={pr1} 
-                    alt=""
-                     data-id="aad60e43266b22cf533ed73c720519f665d7fc0d"
-                    onClick={handleGames}
+                    <img src={pr1}
+                      alt=""
+                      data-id="aad60e43266b22cf533ed73c720519f665d7fc0d"
+                      onClick={handleGames}
                       className="img-fluid"
                     />
-                    </div>
-                    <div className="col-lg-4">
                     <img src={pr2}
-                     alt=""
-                     data-id="e864e7d293376c830c58d7ddddf9983f8d852718"
-                    onClick={handleGames}
+                      alt=""
+                      data-id="e864e7d293376c830c58d7ddddf9983f8d852718"
+                      onClick={handleGames}
                       className="img-fluid"
                     />
-                    </div>
-                    <div className="col-md-4">
-                    <img src={pr3}
-                     alt=""
-                     data-id="0b4fa51ec8a659c2702e30acbf8afebff470bb5d"
-                    onClick={handleGames} 
+                    <img src={pr6}
+                      alt=""
+                      data-id="743294d8a4e2ed636095c32bc6023c0669af9aab"
+                      onClick={handleGames}
                       className="img-fluid"
                     />
-                    </div>
+                    <img src={pr6}
+                      alt=""
+                      data-id="743294d8a4e2ed636095c32bc6023c0669af9aab"
+                      onClick={handleGames}
+                      className="img-fluid"
+                    />
+                    <img src={pr6}
+                      alt=""
+                      data-id="743294d8a4e2ed636095c32bc6023c0669af9aab"
+                      onClick={handleGames}
+                      className="img-fluid"
+                    />
                   </div>
                   <div className="all">
-                    <div className="col-md-4">
                     <img src={pr4}
-                     alt=""
-                     data-id="a01049481ef93f0b94a60bd1cb5e101e093d301f"
-                     onClick={handleGames} 
-                     className="img-fluid"
-                       />
-                    </div>
-                    <div className="col-md-4">
+                      alt=""
+                      data-id="a01049481ef93f0b94a60bd1cb5e101e093d301f"
+                      onClick={handleGames}
+                      className="img-fluid"
+                    />
                     <img src={pr5}
-                     alt=""
-                    data-id="74f63b2445644437ce446289753a4d14e2634942"
-                    onClick={handleGames} 
-                    className="img-fluid"
-                      />
-                    </div>
-                    <div className="col-md-4">
+                      alt=""
+                      data-id="74f63b2445644437ce446289753a4d14e2634942"
+                      onClick={handleGames}
+                      className="img-fluid"
+                    />
+                    <img src={pr3}
+                      alt=""
+                      data-id="743294d8a4e2ed636095c32bc6023c0669af9aab"
+                      onClick={handleGames}
+                      className="img-fluid"
+                    />
                     <img src={pr6}
-                     alt=""
-                     data-id="743294d8a4e2ed636095c32bc6023c0669af9aab"
-                     onClick={handleGames} 
-                     className="img-fluid"
-                      />
-                    </div>
+                      alt=""
+                      data-id="a01049481ef93f0b94a60bd1cb5e101e093d301f"
+                      onClick={handleGames}
+                      className="img-fluid"
+                    />
+                    <img src={pr6}
+                      alt=""
+                      data-id="a01049481ef93f0b94a60bd1cb5e101e093d301f"
+                      onClick={handleGames}
+                      className="img-fluid"
+                    />
                   </div>
                 </Tab>
                 <Tab eventKey="poker" title="Poker">
                   <div className="all">
-                  <div className="col-md-4">
-
-                    <img src={pr1} alt="" className="img-fluid" />
-                  </div>
-                    <div className="col-md-4">
-
-                    <img src={pr2} alt="" className="img-fluid" />
-                    </div>
-                    <div className="col-md-4">
-
-                    <img src={pr3} alt="" className="img-fluid" />
-                    </div>
+                    <img src={pr1} alt="" />
+                    <img src={pr2} alt="" />
+                    <img src={pr3} alt="" />
                   </div>
                 </Tab>
-                <Tab eventKey="roulette" title="Roulette"></Tab>
-                <Tab eventKey="dragon" title="Dragon Tiger"></Tab>
-                <Tab eventKey="baccarat" title="Baccarat"></Tab>
-                <Tab eventKey="sports" title="Sportsbook"></Tab>
+                {/* <Tab eventKey="Jackpot" title="Jackpot"></Tab> */}
+                <Tab eventKey="Roulette" title="Roulette"></Tab>
+                {/* <Tab eventKey="Lottery" title="Lottery"></Tab> */}
+                <Tab eventKey="Football" title="Football"></Tab>
+                <Tab eventKey="Blackjack" title="Blackjack"></Tab>
+                {/* <Tab eventKey="Basketball" title="Basketball"></Tab> */}
+                <Tab eventKey="Teenpatti" title="Teen Patti"></Tab>
+                <Tab eventKey="Race" title="Race"></Tab>
+                {/* <Tab eventKey="dragon" title="Dragon Tiger"></Tab>
+                <Tab eventKey="baccarat" title="Baccarat"></Tab> */}
               </Tabs>
+              <div className="search_tabs">
+                <input className="btn search_input" placeholder="Search your game" />
+                <img src={search_icon} className="search_icon" alt="search" />
+              </div>
             </div>
           </div>
-          <div className="col-sm-4">
+          {/* <div className="col-sm-4">
             {!props.rightPart ? (
               <div className="why__us">
                 <div className="heading">
@@ -231,7 +211,7 @@ const Why = (props) => {
                 </div>
               </div>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

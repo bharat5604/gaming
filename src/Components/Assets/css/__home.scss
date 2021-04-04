@@ -2,16 +2,7 @@
 
 .home {
   //***** banner
-  .nav-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 4px 4px !important;
-    img {
-      width: 20px;
-    }
-  }
+
   .carousel-control-next,
   .carousel-control-prev {
     position: absolute;

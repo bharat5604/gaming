@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header';
 import banner from './Assets/img/banner.jpg'
-import { Link } from 'react-router-dom';
+import { GameSection, GameSidebar, GameSideBarItem, GameListSection, GameList, GameIndividual, TopSearchBar } from "./componentsCollection";
 import GameProvider from './GameProvider';
 import Footer from './Footer';
 import Testimonial from './Testimonial';
@@ -9,120 +9,137 @@ import blackjack from './Assets/img/icons/blackjack.png'
 import baccarat from './Assets/img/icons/baccarat.png'
 import teenpati from './Assets/img/icons/poker.png'
 import andarbahar from './Assets/img/icons/cards.png'
-import casino from './Assets/img/icons/casinowar.png'
-import casinoHoldem from './Assets/img/icons/holdem.png'
-import blackjack_img from './Assets/img/cards/Platiplus-BJ.jpg'
-import BJ_Platiplus_hover from './Assets/img/cards/hover/BJ-Platiplus.jpg'
 
-import Ezugi_BJ_Auto_split_img from './Assets/img/cards/Ezugi-BJ-Auto-split.jpg'
-import BJ_Ezugi_hover from './Assets/img/cards/hover/BJ-Ezugi.jpg'
+// Blackjack
+import blackjack_img from './Assets/img/cards/blackjack/Platiplus-BJ.jpg'
+import BJ_Platiplus_hover from './Assets/img/cards/blackjack/hover/BJ-Platiplus.jpg'
 
-import Evoplay_BJ_lucky_sevens_img from './Assets/img/cards/Evoplay-BJ-lucky-sevens.jpg'
-import Evoplay_BJ_lucky_sevens_hover from './Assets/img/cards/hover/Evoplay-BJ-lucky-sevens.jpg'
+import Ezugi_BJ_Auto_split_img from './Assets/img/cards/blackjack/Ezugi-BJ-Auto-split.jpg'
+import BJ_Ezugi_hover from './Assets/img/cards/blackjack/hover/BJ-Ezugi.jpg'
 
-import Ezugi_Live_Bj_img from './Assets/img/cards/Ezugi-Live-Bj.jpg'
-import Ezugi_Live_Bj_hover from './Assets/img/cards/hover/Ezugi-Live-Bj.jpg'
+import Evoplay_BJ_lucky_sevens_img from './Assets/img/cards/blackjack/Evoplay-BJ-lucky-sevens.jpg'
+import Evoplay_BJ_lucky_sevens_hover from './Assets/img/cards/blackjack/hover/Evoplay-BJ-lucky-sevens.jpg'
 
-import XPG_BJ_img from './Assets/img/cards/XPG-BJ.jpg'
-import XPG_BJ_hover from './Assets/img/cards/hover/XPG-BJ.jpg'
+import Ezugi_Live_Bj_img from './Assets/img/cards/blackjack/Ezugi-Live-Bj.jpg'
+import Ezugi_Live_Bj_hover from './Assets/img/cards/blackjack/hover/Ezugi-Live-Bj.jpg'
 
-import Vivo_Gaming_Unlimited_BJ_img from './Assets/img/cards/Vivo-Gaming-Unlimited-BJ.jpg'
-import Vivo_Gaming_Unlimited_BJ_hover from './Assets/img/cards/hover/Vivi-Gaming-Unlimited-BJ.jpg'
+import XPG_BJ_img from './Assets/img/cards/blackjack/XPG-BJ.jpg'
+import XPG_BJ_hover from './Assets/img/cards/blackjack/hover/XPG-BJ.jpg'
 
-import Playson_High_img from './Assets/img/cards/Playson-High.jpg'
-import Playson_High_hover from './Assets/img/cards/hover/Playson-High.jpg'
+import Vivo_Gaming_Unlimited_BJ_img from './Assets/img/cards/blackjack/Vivo-Gaming-Unlimited-BJ.jpg'
+import Vivo_Gaming_Unlimited_BJ_hover from './Assets/img/cards/blackjack/hover/Vivo-Gaming-Unlimited-BJ.jpg'
 
-import Onetouch_BJ_Suppreme_img from './Assets/img/cards/Onetouch-BJ-Suppreme.jpg'
-import Onetouch_BJ_Suppreme_hover from './Assets/img/cards/hover/Onetouch-BJ-Suppreme.jpg'
+import Playson_High_img from './Assets/img/cards/blackjack/Playson-High.jpg'
+import Playson_High_hover from './Assets/img/cards/blackjack/hover/Playson-High.jpg'
 
-import Platiplus_Bj_Vip_img from './Assets/img/cards/Platiplus--Bj-Vip.jpg'
-import Platiplus_Bj_Vip_img_hover from './Assets/img/cards/hover/Platiplus--Bj-Vip.jpg'
+import Onetouch_BJ_Suppreme_img from './Assets/img/cards/blackjack/Onetouch-BJ-Suppreme.jpg'
+import Onetouch_BJ_Suppreme_hover from './Assets/img/cards/blackjack/hover/Onetouch-BJ-Suppreme.jpg'
 
-import BGaming_Mutli_Bj_img from './Assets/img/cards/BGaming-Mutli-Bj.jpg'
-import BGaming_Mutli_Bj_img_hover from './Assets/img/cards/hover/BGaming-muti-pro.jpg'
+import Platiplus_Bj_Vip_img from './Assets/img/cards/blackjack/Platiplus--Bj-Vip.jpg'
+import Platiplus_Bj_Vip_img_hover from './Assets/img/cards/blackjack/hover/Platiplus--Bj-Vip.jpg'
 
-import Vivi_Gaming_BJ_img from './Assets/img/cards/Vivi-Gaming-BJ.jpg'
-import Vivi_Gaming_BJ_img_hover from './Assets/img/cards/hover/Vivo-Gaming-BJ.jpg'
+import BGaming_Mutli_Bj_img from './Assets/img/cards/blackjack/BGaming-Mutli-Bj.jpg'
+import BGaming_Mutli_Bj_img_hover from './Assets/img/cards/blackjack/hover/BGaming-muti-pro.jpg'
 
-import Playson_med_img from './Assets/img/cards/Playson-med.jpg'
-import Playson_med_img_hover from './Assets/img/cards/hover/Playson-med.jpg'
+import Vivi_Gaming_BJ_img from './Assets/img/cards/blackjack/Vivi-Gaming-BJ.jpg'
+import Vivi_Gaming_BJ_img_hover from './Assets/img/cards/blackjack/hover/Vivo-Gaming-BJ.jpg'
 
-import Bgaming_Mutihand_img from './Assets/img/cards/Bgaming-Mutihand.jpg'
-import Bgaming_Mutihand_img_hover from './Assets/img/cards/hover/Bgaming-Mutihand.jpg'
+import Playson_med_img from './Assets/img/cards/blackjack/Playson-med.jpg'
+import Playson_med_img_hover from './Assets/img/cards/blackjack/hover/Playson-med.jpg'
 
-import Playson_Low_img from './Assets/img/cards/Playson-Low.jpg'
-import Playson_Low_img_hover from './Assets/img/cards/hover/Playson-Low.jpg'
+import Bgaming_Mutihand_img from './Assets/img/cards/blackjack/Bgaming-Mutihand.jpg'
+import Bgaming_Mutihand_img_hover from './Assets/img/cards/blackjack/hover/Bgaming-Mutihand.jpg'
 
-import B_Gaming_Surrender_img from './Assets/img/cards/B-Gaming-Surrender.jpg'
-import B_Gaming_Surrender_img_hover from './Assets/img/cards/hover/B-Gaming-Surrender.jpg'
+import Playson_Low_img from './Assets/img/cards/blackjack/Playson-Low.jpg'
+import Playson_Low_img_hover from './Assets/img/cards/blackjack/hover/Playson-Low.jpg'
 
-import B_gaming_Db_img from './Assets/img/cards/B-gaming--Db.jpg'
-import B_gaming_Db_img_hover from './Assets/img/cards/hover/B-gaming--Db.jpg'
+import B_Gaming_Surrender_img from './Assets/img/cards/blackjack/B-Gaming-Surrender.jpg'
+import B_Gaming_Surrender_img_hover from './Assets/img/cards/blackjack/hover/B-Gaming-Surrender.jpg'
 
-import Banner_2_Changeable_img from './Assets/img/cards/Banner-2-Changeable.jpg'
+import B_gaming_Db_img from './Assets/img/cards/blackjack/B-gaming--Db.jpg'
+import B_gaming_Db_img_hover from './Assets/img/cards/blackjack/hover/B-gaming--Db.jpg'
 
-import search_icon from './Assets/img/cards/search_icon.png'
-import {useStateValue} from './StateProvider'
-import $ from "jquery"
+import Banner_2_Changeable_img from './Assets/img/cards/blackjack/Banner-2-Changeable.jpg'
+
+// Baccart
+import b_opt_0000_XPG_Gaming_bcrt_2_img from './Assets/img/cards/Baccarat/b_opt_0000_XPG_Gaming_bcrt_2.jpg'
+import b_opt_0000_XPG_Gaming_bcrt_2_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0000_XPG_Gaming_bcrt_2.jpg'
+
+import b_opt_0001_XPG_Gaming_img from './Assets/img/cards/Baccarat/b_opt_0001_XPG_Gaming.jpg'
+import b_opt_0001_XPG_Gaming_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0001_XPG_Gaming.jpg'
+
+import b_opt_0002_Vivo_Gaming_img from './Assets/img/cards/Baccarat/b_opt_0002_Vivo_Gaming.jpg'
+import b_opt_0002_Vivo_Gaming_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0002_Vivo_Gaming.jpg'
+
+import b_opt_0003_Superspade_Gaming_img from './Assets/img/cards/Baccarat/b_opt_0003_Superspade_Gaming.jpg'
+import b_opt_0003_Superspade_Gaming_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0003_Supe_spade_Gaming.jpg'
+
+import b_opt_0004_EZU_baccarat_img from './Assets/img/cards/Baccarat/b_opt_0004_EZU_baccarat.jpg'
+import b_opt_0004_EZU_baccarat_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0004_EZU_baccarat.jpg'
+
+import b_opt_0005_EZU_baccaratko_img from './Assets/img/cards/Baccarat/b_opt_0005_EZU_baccaratko.jpg'
+import b_opt_0005_EZU_baccaratko_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0005_EZU_baccaratko.jpg'
+
+import b_opt_0006_EZU_baccaratsuper6_img from './Assets/img/cards/Baccarat/b_opt_0006_EZU_baccaratsuper6.jpg'
+import b_opt_0006_EZU_baccaratsuper6_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0006_EZU_baccaratsuper6.jpg'
+
+import b_opt_0007_EZU_baccaratnocommission_img from './Assets/img/cards/Baccarat/b_opt_0007_EZU_baccaratnocommission.jpg'
+import b_opt_0007_EZU_baccaratnocommission_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0007_EZU_baccaratnocommission.jpg'
+
+import b_opt_0008_EZU_baccaratqueenco_img from './Assets/img/cards/Baccarat/b_opt_0008_EZU_baccaratqueenco.jpg'
+import b_opt_0008_EZU_baccaratqueenco_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0008_EZU_baccaratqueenco.jpg'
+
+import b_opt_0009_Evoplay_Bacrt777_img from './Assets/img/cards/Baccarat/b_opt_0009_Evoplay_Bacrt777.jpg'
+import b_opt_0009_Evoplay_Bacrt777_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0009_Evoplay_Bacrt777.jpg'
+
+import b_opt_0010_Bgaming_img from './Assets/img/cards/Baccarat/b_opt_0010_Bgaming.jpg'
+import b_opt_0010_Bgaming_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0010_Bgaming.jpg'
+
+import b_opt_0011_Betgames_img from './Assets/img/cards/Baccarat/b_opt_0011_Betgames.jpg'
+import b_opt_0011_Betgames_img_hover from './Assets/img/cards/Baccarat/hover/Hover_0011_Betgames.jpg'
+
+// Teen Pati
+import Teen_Patti_0000_XPG_tp_img from './Assets/img/cards/Teen_Patti/Teen_Patti_0000_XPG_tp.jpg'
+import Teen_Patti_0000_XPG_tp_img_hover from './Assets/img/cards/Teen_Patti/hover/Hover_0000_XPG_tp.jpg'
+
+import Teen_Patti_0001_Ezugi_img from './Assets/img/cards/Teen_Patti/Teen_Patti_0001_Ezugi.jpg'
+import Teen_Patti_0001_Ezugi_img_hover from './Assets/img/cards/Teen_Patti/hover/Hover_0001_Ezugi.jpg'
+
+import Teen_Patti_0002_Evoplay_Pokerr_tp_img from './Assets/img/cards/Teen_Patti/Teen_Patti_0002_Evoplay_Pokerr_tp.jpg'
+import Teen_Patti_0002_Evoplay_Pokerr_tp_img_hover from './Assets/img/cards/Teen_Patti/hover/Hover_0002_Evoplay_Pokerr_tp.jpg'
+
+import Teen_Patti_0003_Superspade_2020_tp_img from './Assets/img/cards/Teen_Patti/Teen_Patti_0003_Superspade_2020_tp.jpg'
+import Teen_Patti_0003_Superspade_2020_tp_img_hover from './Assets/img/cards/Teen_Patti/hover/Hover_0003_Superspade_2020_tp.jpg'
+
+import Teen_Patti_0004_Superspade_tp_img from './Assets/img/cards/Teen_Patti/Teen_Patti_0004_Superspade_tp.jpg'
+import Teen_Patti_0004_Superspade_tp_img_hover from './Assets/img/cards/Teen_Patti/hover/Hover_0004_Superspade_tp.jpg'
+
+//Andar Bahar
+import Andar_bahar_0000_XPG_AB_img from './Assets/img/cards/Andar_Bahar/Andar_bahar_0000_XPG_AB.jpg'
+import Andar_bahar_0000_XPG_AB_img_hover from './Assets/img/cards/Andar_Bahar/hover/Hover_0000_XPG-AB.jpg'
+
+import Andar_bahar_0001_Vivo_Gaming_Ab_img from './Assets/img/cards/Andar_Bahar/Andar_bahar_0001_Vivo_Gaming_Ab.jpg'
+import Andar_bahar_0001_Vivo_Gaming_Ab_img_hover from './Assets/img/cards/Andar_Bahar/hover/Hover_0001_Vivo Gaming-Ab.jpg'
+
+import Andar_bahar_0002_Superspade_ab_NC_img from './Assets/img/cards/Andar_Bahar/Andar_bahar_0002_Superspade_ab_NC.jpg'
+import Andar_bahar_0002_Superspade_ab_NC_img_hover from './Assets/img/cards/Andar_Bahar/hover/Hover_0002_Superspade-ab-NC.jpg'
+
+import Andar_bahar_0003_Superspade_Speed_Ab_img from './Assets/img/cards/Andar_Bahar/Andar_bahar_0003_Superspade_Speed_Ab.jpg'
+import Andar_bahar_0003_Superspade_Speed_Ab_img_hover from './Assets/img/cards/Andar_Bahar/hover/Hover_0003_Superspade-Speed-Ab.jpg'
+
+import Andar_bahar_0004_Onetouvh_AB_img from './Assets/img/cards/Andar_Bahar/Andar_bahar_0004_Onetouvh_AB.jpg'
+import Andar_bahar_0004_Onetouvh_AB_img_hover from './Assets/img/cards/Andar_Bahar/hover/Hover_0004_Onetouvh-AB.jpg'
+
+import Andar_bahar_0005_Onetouh_AB_M_img from './Assets/img/cards/Andar_Bahar/Andar_bahar_0005_Onetouh_AB_M.jpg'
+import Andar_bahar_0005_Onetouh_AB_M_img_hover from './Assets/img/cards/Andar_Bahar/hover/Hover_0005_Onetouh-AB-M.jpg'
+
+import Andar_bahar_0006_Ezugi_AB_img from './Assets/img/cards/Andar_Bahar/Andar_bahar_0006_Ezugi_AB.jpg'
+import Andar_bahar_0006_Ezugi_AB_img_hover from './Assets/img/cards/Andar_Bahar/hover/Hover_0006_Ezugi -AB.jpg'
+
+import Andar_bahar_0007_Ezugi_Andar_Bahar_Ott_img from './Assets/img/cards/Andar_Bahar/Andar_bahar_0007_Ezugi_Andar_Bahar_Ott.jpg'
+import Andar_bahar_0007_Ezugi_Andar_Bahar_Ott_img_hover from './Assets/img/cards/Andar_Bahar/hover/Hover_0007_Ezugi-Andar Bahar-Ott.jpg'
 
 const Cards = () => {
-    const [{signature}, dispatch] = useStateValue();
-    const [{gameApi}] = useStateValue();
-    let baseUrl = "http://gamepitara.globaldigitaz.com/api/GetXSignForGameInit"
-
-    const handleGames = async (e) =>{
-
-        // dispatch
-        let getSignData = {GameUUId:e.target.dataset.id, PlayerId:"ANU001", PlayerName:"Anurag", Currency:"EUR", SessionId:"S001"}
-        // let getGames = {game_uuid:getSignData.GameUUId, player_id:getSignData.PlayerId, player_name:getSignData.PlayerName, currency:getSignData.Currency, session_id:getSignData.SessionId}
-        // fetch
-       await fetch(baseUrl, {
-          method:"POST",
-          headers:{
-            "Content-Type":"application/json"
-          },
-          body:JSON.stringify(getSignData)
-        }).then( (result) => {
-          result.json().then(res =>{
-            console.log(res);
-             signature[0].xsign = res.XSign
-             signature[0].timestamp = res.TimeStamp
-             signature[0].xnonce = res.XNonce
-          })
-        })
-    
-        $(document).ready(function () {
-          var form = new FormData();
-          form.append("game_uuid", e.target.dataset.id);
-          form.append("player_id", "ANU001");
-          form.append("player_name", "Anurag");
-          form.append("currency", "EUR");
-          form.append("session_id", "S001");
-    
-          var settings = {
-              "async": true,
-              "crossDomain": true,
-              "url": gameApi,
-              "method": "POST",
-              "headers": {
-                     "x-merchant-id": "3675a5fa309b2a7fc72e588dfca8089d",
-                     "x-sign": signature[0].xsign,
-                     "x-timestamp": signature[0].timestamp,
-                     "x-nonce": signature[0].xnonce,
-              },
-              "processData": false,
-              "contentType": false,
-              "mimeType": "multipart/form-data",
-              "data": form
-          }
-    
-          $.ajax(settings).done(function (response) {
-            let url = JSON.parse(response)
-            window.open(url.url, '_blank')
-            console.log(url.url);
-          });
-      });
-      }
     return (
         <div className="cards">
             <Header />
@@ -136,187 +153,76 @@ const Cards = () => {
                 </div>
             </div>
 
-            {/* games part */}
-            <div className="games__part">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-2 pr-0">
-                            <div className="in__games">
-                                <ul>
-                                    <li>
-                                        <Link to="">
-                                            <img src={blackjack} alt="black jack" />
-                                            Black Jack
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="">
-                                            <img src={baccarat} alt="black jack" />
-                                            baccarat
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="">
-                                            <img src={teenpati} alt="black jack" />
-                                            teen pati
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="">
-                                            <img src={andarbahar} alt="black jack" />
-                                            andar bahar
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="">
-                                            <img src={casino} alt="black jack" />
-                                            casino war
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="">
-                                            <img src={casinoHoldem} alt="black jack" />
-                                            casino holde
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
+            <GameSection defaultTab="Black-Jack">
+                <GameSidebar>
+                    <GameSideBarItem sideItem="Black-Jack" name="Black Jack" ImgSrc={blackjack} />
+                    <GameSideBarItem sideItem="baccarat" name="baccarat" ImgSrc={baccarat} />
+                    <GameSideBarItem sideItem="teen-pati" name="teenpati" ImgSrc={teenpati} />
+                    <GameSideBarItem sideItem="andar-bahar" name="andar bahar" ImgSrc={andarbahar} />
+                </GameSidebar>
+
+                <GameListSection>
+                    <GameList TabName="Black-Jack">
+                        <GameIndividual Alt="Black-Jack" GameImg={blackjack_img} GameImgHover={BJ_Platiplus_hover} />
+                        <GameIndividual Alt="Evoplay BJ lucky sevens" GameImg={Evoplay_BJ_lucky_sevens_img} GameImgHover={Evoplay_BJ_lucky_sevens_hover} />
+                        <div className="col-sm-6 gameImg_div">
+                            <img src={Banner_2_Changeable_img} alt="Changeable" width="100%" height="210px" className="search__banner_img " />
                         </div>
-                        <div className="col-sm-10">
-                            <div className="search_maindiv pr-0">
+                        <GameIndividual Alt="Ezugi BJ Auto split" GameImg={Ezugi_BJ_Auto_split_img} GameImgHover={BJ_Ezugi_hover} />
+                        <GameIndividual Alt="Evoplay BJ lucky sevens" GameImg={Evoplay_BJ_lucky_sevens_img} GameImgHover={Evoplay_BJ_lucky_sevens_hover} />
+                        <GameIndividual Alt="Ezugi Live Bj" GameImg={Ezugi_Live_Bj_img} GameImgHover={Ezugi_Live_Bj_hover} />
+                        <GameIndividual Alt="XPG BJ" GameImg={XPG_BJ_img} GameImgHover={XPG_BJ_hover} />
+                        <GameIndividual Alt="Vivo Gaming Unlimited BJ" GameImg={Vivo_Gaming_Unlimited_BJ_img} GameImgHover={Vivo_Gaming_Unlimited_BJ_hover} />
+                        <GameIndividual Alt="Playson High" GameImg={Playson_High_img} GameImgHover={Playson_High_hover} />
+                        <GameIndividual Alt="Onetouch BJ Suppreme" GameImg={Onetouch_BJ_Suppreme_img} GameImgHover={Onetouch_BJ_Suppreme_hover} />
+                        <GameIndividual Alt="Platiplus Bj Vip" GameImg={Platiplus_Bj_Vip_img} GameImgHover={Platiplus_Bj_Vip_img_hover} />
+                        <GameIndividual Alt="BGaming Mutli Bj" GameImg={BGaming_Mutli_Bj_img} GameImgHover={BGaming_Mutli_Bj_img_hover} />
+                        <GameIndividual Alt="Vivi Gaming BJ" GameImg={Vivi_Gaming_BJ_img} GameImgHover={Vivi_Gaming_BJ_img_hover} />
+                        <GameIndividual Alt="Playson med" GameImg={Playson_med_img} GameImgHover={Playson_med_img_hover} />
+                        <GameIndividual Alt="Bgaming Mutihand" GameImg={Bgaming_Mutihand_img} GameImgHover={Bgaming_Mutihand_img_hover} />
+                        <GameIndividual Alt="Playson Low" GameImg={Playson_Low_img} GameImgHover={Playson_Low_img_hover} />
+                        <GameIndividual Alt="B Gaming Surrender" GameImg={B_Gaming_Surrender_img} GameImgHover={B_Gaming_Surrender_img_hover} />
+                        <GameIndividual Alt="B gaming Db" GameImg={B_gaming_Db_img} GameImgHover={B_gaming_Db_img_hover} />
+                    </GameList>
 
-                                <div className="row searchbar_div">
-                                    <div className="col-sm-4">
-                                        <input type="text" className="form-control search_your_game" placeholder="Search your game" />
-                                    </div>
-                                    <div className="col-sm-3">
-                                        <select className="form-control search_dropdown">
-                                            <option>blackjack</option>
-                                            <option>Test 1</option>
-                                            <option>Test 2</option>
-                                            <option>Test 3</option>
-                                            <option>Test 4</option>
-                                            <option>Test 5</option>
-                                        </select>
-                                    </div>
-                                    <div className="col-sm-5 pr-0 search_div">
-                                        <img src={search_icon}
-                                         className="search_icon"
-                                          alt="search"
-                                           />
-                                        <button className="btn search_btn">Search</button>
-                                    </div>
-                                </div>
-                                <div className="banner_maindiv">
-                                    <div className="gameImg_div">
-                                        <img src={blackjack_img}
-                                         alt="blackjack"
-                                          className="blackjack_img_c gameImg"
-                                           />
-                                        <img src={BJ_Platiplus_hover}
-                                         alt="blackjack"
-                                          className="blackjack_img_c gameImg_Hover"
-                                         data-id="bf3779ff30e48a8455cf73b292f135fe2e280528"
-                                          onClick={handleGames} />
+                    <GameList TabName="baccarat">
+                        <GameIndividual Alt="XPG Gaming bcrt" GameImg={b_opt_0000_XPG_Gaming_bcrt_2_img} GameImgHover={b_opt_0000_XPG_Gaming_bcrt_2_img_hover} />
+                        <GameIndividual Alt="XPG Gaming" GameImg={b_opt_0001_XPG_Gaming_img} GameImgHover={b_opt_0001_XPG_Gaming_img_hover} />
+                        <GameIndividual Alt="Vivo Gaming" GameImg={b_opt_0002_Vivo_Gaming_img} GameImgHover={b_opt_0002_Vivo_Gaming_img_hover} />
+                        <GameIndividual Alt="Superspade Gaming" GameImg={b_opt_0003_Superspade_Gaming_img} GameImgHover={b_opt_0003_Superspade_Gaming_img_hover} />
+                        <GameIndividual Alt="EZU baccarat" GameImg={b_opt_0004_EZU_baccarat_img} GameImgHover={b_opt_0004_EZU_baccarat_img_hover} />
+                        <GameIndividual Alt="EZU baccaratko" GameImg={b_opt_0005_EZU_baccaratko_img} GameImgHover={b_opt_0005_EZU_baccaratko_img_hover} />
+                        <GameIndividual Alt="EZU baccaratsuper6" GameImg={b_opt_0006_EZU_baccaratsuper6_img} GameImgHover={b_opt_0006_EZU_baccaratsuper6_img_hover} />
+                        <GameIndividual Alt="EZU baccaratnocommission" GameImg={b_opt_0007_EZU_baccaratnocommission_img} GameImgHover={b_opt_0007_EZU_baccaratnocommission_img_hover} />
+                        <GameIndividual Alt="EZU baccaratqueenco" GameImg={b_opt_0008_EZU_baccaratqueenco_img} GameImgHover={b_opt_0008_EZU_baccaratqueenco_img_hover} />
+                        <GameIndividual Alt="Evoplay Bacrt777" GameImg={b_opt_0009_Evoplay_Bacrt777_img} GameImgHover={b_opt_0009_Evoplay_Bacrt777_img_hover} />
+                        <GameIndividual Alt="0010 Bgaming" GameImg={b_opt_0010_Bgaming_img} GameImgHover={b_opt_0010_Bgaming_img_hover} />
+                        <GameIndividual Alt="0011 Betgames" GameImg={b_opt_0011_Betgames_img} GameImgHover={b_opt_0011_Betgames_img_hover} />
+                    </GameList>
 
-                                    </div>
-                                    <div className="gameImg_div search__banner_img_div">
-                                        <img src={Banner_2_Changeable_img} alt="blackjack" className="search__banner_img" />
-                                    </div>
-                                </div>
-                            </div>
+                    <GameList TabName="teen-pati">
+                        <GameIndividual Alt="Teen Patti XPG tp" GameImg={Teen_Patti_0000_XPG_tp_img} GameImgHover={Teen_Patti_0000_XPG_tp_img_hover} />
+                        <GameIndividual Alt="Teen Patti Ezugi" GameImg={Teen_Patti_0001_Ezugi_img} GameImgHover={Teen_Patti_0001_Ezugi_img_hover} />
+                        <GameIndividual Alt="Teen Patti Evoplay Pokerr tp" GameImg={Teen_Patti_0002_Evoplay_Pokerr_tp_img} GameImgHover={Teen_Patti_0002_Evoplay_Pokerr_tp_img_hover} />
+                        <GameIndividual Alt="Superspade 2020 tp" GameImg={Teen_Patti_0003_Superspade_2020_tp_img} GameImgHover={Teen_Patti_0003_Superspade_2020_tp_img_hover} />
+                        <GameIndividual Alt="Teen Patti Superspade tp" GameImg={Teen_Patti_0004_Superspade_tp_img} GameImgHover={Teen_Patti_0004_Superspade_tp_img_hover} />
+                    </GameList>
 
-                            <div className="row ml-0 Game_gridview">
+                    <GameList TabName="andar-bahar">
+                        <GameIndividual Alt="Andar bahar XPG AB" GameImg={Andar_bahar_0000_XPG_AB_img} GameImgHover={Andar_bahar_0000_XPG_AB_img_hover} />
+                        <GameIndividual Alt="Andar bahar Vivo Gaming Ab" GameImg={Andar_bahar_0001_Vivo_Gaming_Ab_img} GameImgHover={Andar_bahar_0001_Vivo_Gaming_Ab_img_hover} />
+                        <GameIndividual Alt="Andar bahar Superspade ab NC" GameImg={Andar_bahar_0002_Superspade_ab_NC_img} GameImgHover={Andar_bahar_0002_Superspade_ab_NC_img_hover} />
+                        <GameIndividual Alt="Andar bahar Superspade Speed Ab" GameImg={Andar_bahar_0003_Superspade_Speed_Ab_img} GameImgHover={Andar_bahar_0003_Superspade_Speed_Ab_img_hover} />
+                        <GameIndividual Alt="Andar bahar Onetouvh AB" GameImg={Andar_bahar_0004_Onetouvh_AB_img} GameImgHover={Andar_bahar_0004_Onetouvh_AB_img_hover} />
+                        <GameIndividual Alt="Andar bahar Onetouh AB M" GameImg={Andar_bahar_0005_Onetouh_AB_M_img} GameImgHover={Andar_bahar_0005_Onetouh_AB_M_img_hover} />
+                        <GameIndividual Alt="Andar bahar Ezugi AB" GameImg={Andar_bahar_0006_Ezugi_AB_img} GameImgHover={Andar_bahar_0006_Ezugi_AB_img_hover} />
+                        <GameIndividual Alt="Andar bahar Ezugi Andar Bahar Ott" GameImg={Andar_bahar_0007_Ezugi_Andar_Bahar_Ott_img} GameImgHover={Andar_bahar_0007_Ezugi_Andar_Bahar_Ott_img_hover} />
+                    </GameList>
 
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={Ezugi_BJ_Auto_split_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={BJ_Ezugi_hover}
-                                     alt="blackjack" width="100%"
-                                      className="gameImg_Hover"
-                                      data-id="802e0279619f46a9250a134e40e795606f493329"
-                                      onClick={handleGames} 
-                                       />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={Evoplay_BJ_lucky_sevens_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Evoplay_BJ_lucky_sevens_hover} alt="blackjack" width="100%"
-                                     className="gameImg_Hover"
-                                     data-id="3b98aa535d4f492eaa2fe04b7d826105"
-                                    onClick={handleGames}
-                                      />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={Ezugi_Live_Bj_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Ezugi_Live_Bj_hover} alt="blackjack" width="100%" className="gameImg_Hover"
-                                    data-id="cac88d6f80950224007a2d90ad58d5f8c991b72d"
-                                    onClick={handleGames}
-                                     />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={XPG_BJ_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={XPG_BJ_hover} alt="blackjack" width="100%" className="gameImg_Hover"
-                                    data-id="cb2d3bc6e2ce0532610c97b412723ac9a57337ac"
-                                    onClick={handleGames} />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={Vivo_Gaming_Unlimited_BJ_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Vivo_Gaming_Unlimited_BJ_hover} alt="blackjack" width="100%" className="gameImg_Hover"
-                                    data-id="efec450ddc51a625d94fe75d0ddc037ccac9259a"
-                                    onClick={handleGames} />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={Playson_High_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Playson_High_hover} alt="blackjack" width="100%" className="gameImg_Hover"
-                                    data-id="08a0600f6b1503f1beb47f68cf757bd46f00fa64"
-                                    onClick={handleGames} />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={Onetouch_BJ_Suppreme_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Onetouch_BJ_Suppreme_hover} alt="blackjack" width="100%" className="gameImg_Hover"
-                                    data-id="66d5bba5dbe943616f477c71c4580535246861ae"
-                                    onClick={handleGames}
-                                     />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={Platiplus_Bj_Vip_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Platiplus_Bj_Vip_img_hover} alt="blackjack" width="100%" className="gameImg_Hover" 
-                                    data-id="cb1bf4924197653242438c79e5b449ce282dbc1a"
-                                    onClick={handleGames}    
-                                    />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={BGaming_Mutli_Bj_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={BGaming_Mutli_Bj_img_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={Vivi_Gaming_BJ_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Vivi_Gaming_BJ_img_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={Playson_med_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Playson_med_img_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={Bgaming_Mutihand_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Bgaming_Mutihand_img_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={Playson_Low_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={Playson_Low_img_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={B_Gaming_Surrender_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={B_Gaming_Surrender_img_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
-                                </div>
-                                <div className="col-sm-3 gameImg_div">
-                                    <img src={B_gaming_Db_img} alt="blackjack" width="100%" className="gameImg" />
-                                    <img src={B_gaming_Db_img_hover} alt="blackjack" width="100%" className="gameImg_Hover" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <TopSearchBar />
+                </GameListSection>
+            </GameSection>
+
             <GameProvider />
             <Testimonial />
             <Footer />

@@ -1,6 +1,16 @@
 @import "__variable";
 
 // *************** hedaer
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 4px 4px !important;
+  img {
+    width: 20px;
+  }
+}
 header {
   background-color: rgba(21, 21, 21, 0.733);
   display: flex;
@@ -86,9 +96,10 @@ header {
       margin: 0px 5px;
     }
     a {
+      display: flex;
       color: #ddd !important;
       text-transform: capitalize;
-      margin: 0 6px;
+      margin: 0 3px;
       font-size: $paraFont;
       font-family: $embrima;
       img {
@@ -117,19 +128,18 @@ header {
 }
 
 //****************** bars
-.bars{
+.bars {
   min-height: 100vh;
   position: fixed;
   left: 0;
   z-index: 9999;
   background: $lightBlack;
-  width:0px;
-  overflow:hidden;
-  transition: .3s ease-in-out;
+  width: 0px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
   top: 0;
 
-
-  &#active{
+  &#active {
     visibility: visible;
     width: 300px;
   }
@@ -139,38 +149,38 @@ header {
   // &::-webkit-scrollbar {
   //   width: 10px;
   // }
-  
+
   // /* Track */
   // &::-webkit-scrollbar-track {
-  //   background: $lightBlack; 
+  //   background: $lightBlack;
   // }
-   
+
   // /* Handle */
   // &::-webkit-scrollbar-thumb {
-  //   background: #888; 
+  //   background: #888;
   // }
-  
+
   // /* Handle on hover */
   // &::-webkit-scrollbar-thumb:hover {
-  //   background: #555; 
+  //   background: #555;
   // }
   //heading
-  .heading{
+  .heading {
     background: $black;
     padding: 60px 20px;
     text-align: center;
     border-bottom: 1px solid #444;
     position: relative;
-    img{
+    img {
       max-width: 70px;
       display: block;
       margin: 10px auto;
     }
-    span{
+    span {
       color: $white;
       text-transform: capitalize;
     }
-    .fa-close{
+    .fa-close {
       position: absolute;
       top: 10px;
       right: 10px;
@@ -181,64 +191,61 @@ header {
       justify-content: center;
       align-items: center;
       color: #999 !important;
-      border-radius:50%;
+      border-radius: 50%;
       cursor: pointer;
     }
-  }// heading
+  } // heading
 
   //bars__body
-  .bars__body{
+  .bars__body {
     padding: 20px 20px;
-    .list{
+    .list {
       padding: 0px 20px;
-      h3{
+      h3 {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         padding: 10px 0;
         cursor: pointer;
-        img{
+        img {
           width: 40px;
         }
-        span{
+        span {
           margin-left: 10px;
-          @include heading
-          color: $golden;
+          @include heading color: $golden;
         }
-        i{
+        i {
           margin-left: 5px;
           color: $golden;
           font-size: 10px;
         }
-      }// heading
-      .card{
+      } // heading
+      .card {
         background: transparent;
         border: none !important;
         box-shadow: none;
-        .card-header{
+        .card-header {
           border: none;
-        padding: 0;
+          padding: 0;
         }
-      
 
         //card-body
-        .card-body{
+        .card-body {
           position: relative;
           left: 28%;
           padding: 0;
           border: none !important;
           top: 0;
           margin-top: 0;
-          a{
+          a {
             color: $golden;
             display: block;
             text-transform: capitalize;
             font-size: 18px;
             margin: 7px 0;
           }
-        }//card-body
+        } //card-body
       }
     }
-  }//bars__body
-
+  } //bars__body
 }

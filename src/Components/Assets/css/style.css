@@ -21,6 +21,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @font-face {
   font-family: hekou;
   src: url(../fonts/Hikou/HikouRough.otf);
@@ -237,24 +239,6 @@
 @font-face {
   font-family: roboto;
   src: url(../fonts/Roboto/Roboto-Light.ttf) format("truetype");
-}
-
-.home .nav-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0;
-  padding: 4px 4px !important;
-}
-
-.home .nav-link img {
-  width: 20px;
 }
 
 .home .carousel-control-next,
@@ -1362,8 +1346,10 @@
 }
 
 .why .tabs .all img {
-  margin: 15px 0px;
+  margin: 0px;
   cursor: pointer;
+  width: 20%;
+  padding: 10px;
 }
 
 .why .tabs nav {
@@ -1379,7 +1365,7 @@
   text-align: center;
   font-size: 14px;
   font-weight: 800;
-  width: calc(100% / 6);
+  width: calc(100% / 10);
   font-family: "roboto";
   font-weight: 500;
   padding: 15px 10px !important;
@@ -1398,6 +1384,33 @@
 .why .tabs .images {
   margin-top: 40px;
   text-align: center;
+}
+
+.why .search_tabs {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  background: #000;
+  padding: 7px;
+  height: 53px;
+}
+
+.why .search_tabs .search_input {
+  text-align: left;
+  color: #ddd;
+}
+
+.why .search_tabs .search_input:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0rem !important;
+          box-shadow: 0 0 0 0rem !important;
+}
+
+.why .search_tabs img {
+  margin-right: 10px;
+  background: #1d1d1d;
+  padding: 6px;
+  border-radius: 50%;
 }
 
 .why .why__us .heading {
@@ -1543,23 +1556,23 @@
   font-family: hekou;
   text-transform: uppercase;
   color: #ffffff;
-  text-align: center;
+  color: #ffd978;
+  text-align: left;
 }
 
 .experience .heading span {
-  background: #ffd978;
   font-size: 13px;
   letter-spacing: 0;
   padding: 3px 10px;
   border-radius: 6px;
   text-transform: initial;
-  border: 1px solid #151515;
   font-family: "Montserrat", sans-serif;
-  color: #151515;
+  color: #ddd;
+  font-weight: 600;
 }
 
 .experience .images {
-  width: 60%;
+  width: 100%;
   margin: 30px auto 0 auto;
 }
 
@@ -1577,6 +1590,50 @@
   text-transform: uppercase;
   text-decoration: underline !important;
   z-index: 9;
+}
+
+.why__us .heading {
+  font-size: 26px;
+  font-family: hekou;
+  text-transform: uppercase;
+  color: #ffffff;
+  color: #ffd978;
+  padding: 0;
+}
+
+.why__us .img {
+  margin-top: 28px;
+}
+
+.why__us .img .img__in {
+  position: relative;
+  text-align: center;
+}
+
+.why__us .img .img__in img {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.why__us .img .img__in .title {
+  font-family: "Roboto", sans-serif;
+  border: 1px solid #151515;
+  text-align: center;
+  background: #3b3a39;
+  text-transform: capitalize;
+  position: relative;
+  top: -30px;
+}
+
+.why__us .img .img__in .title span {
+  color: #ddd;
+  font-size: 13px;
+}
+
+.why__us .img .img__in .title h4 {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 @font-face {
@@ -1830,6 +1887,24 @@ footer .container .row {
   src: url(../fonts/Roboto/Roboto-Light.ttf) format("truetype");
 }
 
+.nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 4px 4px !important;
+}
+
+.nav-link img {
+  width: 20px;
+}
+
 header {
   background-color: rgba(21, 21, 21, 0.733);
   display: -webkit-box;
@@ -1952,9 +2027,12 @@ header .navbar-nav img {
 }
 
 header .navbar-nav a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: #ddd !important;
   text-transform: capitalize;
-  margin: 0 6px;
+  margin: 0 3px;
   font-size: 14px;
   font-family: embrima;
 }
@@ -1992,8 +2070,8 @@ header .navbar-nav i {
   background: #1d1d1d;
   width: 0px;
   overflow: hidden;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   top: 0;
 }
 
@@ -2152,38 +2230,43 @@ header .navbar-nav i {
   color: #ffffff;
 }
 
-.cards .games__part {
+.form-control:focus {
+  background-color: transparent;
+  border-color: transparent;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0rem transparent;
+          box-shadow: 0 0 0 0rem transparent;
+}
+
+.games__part {
   background: #151515;
 }
 
-.cards .games__part .container {
-  position: relative;
-  top: -114px;
-  padding: 0px 0;
-  background: transparent;
+.games__part .container {
+  margin-top: -100px;
 }
 
-.cards .games__part .container .search_maindiv {
-  background-color: #151515;
-  margin-right: 210px;
+.games__part .container .searchbar_div {
+  position: absolute;
+  width: 80%;
+  background: #151515;
+  top: 0px;
+  left: 15px;
+  padding-bottom: 30px;
 }
 
-.cards .games__part .container .search_maindiv .searchbar_div {
-  margin-right: 0px;
-  margin-left: -30px;
-  padding: 0px;
-  margin-bottom: 0px;
+.games__part .container .searchbar_div .search_section3 {
   background-color: #000;
 }
 
-.cards .games__part .container .search_maindiv .searchbar_div .search_your_game {
+.games__part .container .searchbar_div .search_your_game {
   color: #ffd978;
   margin-bottom: 0px;
   background: transparent;
   border: 0px;
 }
 
-.cards .games__part .container .search_maindiv .searchbar_div .search_dropdown {
+.games__part .container .searchbar_div .search_dropdown {
   background: transparent;
   color: #ffd978;
   border: 0px;
@@ -2191,7 +2274,7 @@ header .navbar-nav i {
   border-radius: 0px;
 }
 
-.cards .games__part .container .search_maindiv .searchbar_div .search_dropdown:focus {
+.games__part .container .searchbar_div .search_dropdown:focus {
   background: transparent;
   color: #ffd978;
   border: 0px;
@@ -2199,17 +2282,17 @@ header .navbar-nav i {
   border-radius: 0px;
 }
 
-.cards .games__part .container .search_maindiv .searchbar_div .search_dropdown option {
+.games__part .container .searchbar_div .search_dropdown option {
   background: #000;
 }
 
-.cards .games__part .container .search_maindiv .searchbar_div .search_div {
+.games__part .container .searchbar_div .search_div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.cards .games__part .container .search_maindiv .searchbar_div .search_div .btn {
+.games__part .container .searchbar_div .search_div .btn {
   width: 100%;
   border-radius: 0px;
   background: #ffd978;
@@ -2218,12 +2301,12 @@ header .navbar-nav i {
   font-weight: 600;
 }
 
-.cards .games__part .container .search_maindiv .searchbar_div .search_div .btn:focus {
+.games__part .container .searchbar_div .search_div .btn:focus {
   -webkit-box-shadow: 0 0 0 0rem #ffd978;
           box-shadow: 0 0 0 0rem #ffd978;
 }
 
-.cards .games__part .container .search_maindiv .searchbar_div .search_div img {
+.games__part .container .searchbar_div .search_div img {
   width: 45px;
   height: 40px;
   -webkit-box-align: center;
@@ -2236,79 +2319,115 @@ header .navbar-nav i {
   border-radius: 50%;
 }
 
-.cards .games__part .container .search_maindiv .banner_maindiv {
+.games__part .container .banner_maindiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding-top: 15px;
 }
 
-.cards .games__part .container .gameImg_div {
+.games__part .container .flex-column .nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: left;
+  font-weight: 500;
+  font-family: "roboto";
+  margin: 0;
+  font-size: 16px;
+  padding: 4px 4px !important;
+  height: 120px;
+  color: #fff;
+  text-transform: capitalize;
+  background-color: #1d1d1d;
+  border-bottom: 2px solid #000;
+}
+
+.games__part .container .flex-column .nav-link.active {
+  color: #ffd978;
+  background-color: #000;
+}
+
+.games__part .container .flex-column img {
+  margin-right: 5px;
+  width: 50px;
+}
+
+.games__part .container .Game_gridview {
+  background-color: #151515;
+  padding-left: 15px;
+  margin-top: 70px;
+}
+
+.games__part .container .Game_gridview .gameImg_div {
   padding: 15px;
+  z-index: 9;
   cursor: pointer;
 }
 
-.cards .games__part .container .gameImg_div .blackjack_img_c {
+.games__part .container .Game_gridview .gameImg_div .blackjack_img_c {
   width: 210px;
 }
 
-.cards .games__part .container .gameImg_div .gameImg {
+.games__part .container .Game_gridview .gameImg_div .gameImg {
   display: block;
 }
 
-.cards .games__part .container .gameImg_div .gameImg_Hover {
+.games__part .container .Game_gridview .gameImg_div .gameImg_Hover {
   display: none;
 }
 
-.cards .games__part .container .gameImg_div:hover .gameImg {
+.games__part .container .Game_gridview .gameImg_div:hover .gameImg {
   display: none;
 }
 
-.cards .games__part .container .gameImg_div:hover .gameImg_Hover {
+.games__part .container .Game_gridview .gameImg_div:hover .gameImg_Hover {
   display: block;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
 
-.cards .games__part .container .search__banner_img_div {
-  padding: 15px 30px;
+@font-face {
+  font-family: hekou;
+  src: url(../fonts/Hikou/HikouRough.otf);
 }
 
-.cards .games__part .container .search__banner_img_div .search__banner_img {
-  height: 210px;
+@font-face {
+  font-family: embrima;
+  src: url(../fonts/ebrima.ttf) format("truetype");
 }
 
-.cards .games__part .in__games ul {
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/Roboto/Roboto-Light.ttf) format("truetype");
+}
+
+.cards .card__banner {
   padding: 0;
   margin: 0;
+  position: relative;
 }
 
-.cards .games__part .in__games ul li {
-  list-style: none;
+.cards .abs {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
 }
 
-.cards .games__part .in__games ul li:first-child a {
-  color: #ffd978;
-  background: #000;
-  margin-top: 0;
-}
-
-.cards .games__part .in__games ul li a {
+.cards .abs h3 {
   color: #ffffff;
-  background: #191919;
-  padding: 35px 8px;
-  font-family: "Roboto";
-  margin: 10px 0;
-  font-size: 16px;
-  display: block;
-  border-bottom: 1px solid #000;
-  margin: 0px;
-  text-transform: capitalize;
+  font-family: hekou;
+  font-size: 38px;
 }
 
-.cards .games__part .in__games ul li a img {
-  margin-right: 5px;
-  width: 50px;
+.cards .abs span {
+  text-transform: capitalize;
+  font-size: 16px;
+  color: #ffffff;
 }
 
 .form-control:focus {
