@@ -80,11 +80,16 @@ import Hover_0022_Belatra_European_Roulette_img_hover from './Assets/img/roulett
 
 import Roulette_0023_Amatic_img from './Assets/img/roulette/roulette_game/image/Roulette_0023_Amatic.jpg'
 import Hover_0023_Amatic_img_hover from './Assets/img/roulette/roulette_game/hover/Hover_0023_Amatic.jpg'
+import LoggedHeader from './LoggedHeader';
 
 const Roulette = () => {
+    let auth;
+    auth = JSON.parse(localStorage.getItem("auth"))
     return (
         <div className="cards">
-            <Header />
+             {
+              !auth ? <Header /> :  <LoggedHeader />
+            }
             <div className="card__banner">
                 <img src={banner} className="img-fluid" alt="" />
                 <div className="container">

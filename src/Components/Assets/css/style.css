@@ -2411,7 +2411,6 @@ header .navbar-nav i {
 
 .games__part .container .Game_gridview .gameImg_div {
   padding: 15px;
-  z-index: 9;
   cursor: pointer;
 }
 

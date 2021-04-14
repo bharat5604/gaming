@@ -71,11 +71,16 @@ import Hover_0019_Betgames_6_poker from './Assets/img/poker/poker_img/hover/Hove
 
 import Poker_0020_Betgames_Bet_on_Poker from './Assets/img/poker/poker_img/image/Poker_0020_Betgames_Bet_on_Poker.jpg'
 import Hover_0020_Betgames_Bet_on_Poker from './Assets/img/poker/poker_img/hover/Hover_0020_Betgames_Bet_on_Poker.jpg'
+import LoggedHeader from './LoggedHeader';
 
 const Roulette = () => {
+    let auth;
+    auth = JSON.parse(localStorage.getItem("auth"))
     return (
         <div className="cards">
-            <Header />
+            {
+                !auth ? <Header /> : <LoggedHeader />
+            }
             <div className="card__banner">
                 <img src={banner} className="img-fluid" alt="" />
                 <div className="container">

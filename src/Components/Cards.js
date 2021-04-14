@@ -138,11 +138,17 @@ import Andar_bahar_0006_Ezugi_AB_img_hover from './Assets/img/cards/Andar_Bahar/
 
 import Andar_bahar_0007_Ezugi_Andar_Bahar_Ott_img from './Assets/img/cards/Andar_Bahar/Andar_bahar_0007_Ezugi_Andar_Bahar_Ott.jpg'
 import Andar_bahar_0007_Ezugi_Andar_Bahar_Ott_img_hover from './Assets/img/cards/Andar_Bahar/hover/Hover_0007_Ezugi-Andar Bahar-Ott.jpg'
+import LoggedHeader from './LoggedHeader';
 
 const Cards = () => {
+    let auth;
+    auth = JSON.parse(localStorage.getItem("auth"))
     return (
         <div className="cards">
-            <Header />
+            {
+              !auth ? <Header /> :  <LoggedHeader />
+            }
+      
             <div className="card__banner">
                 <img src={banner} className="img-fluid" alt="" />
                 <div className="container">
@@ -155,7 +161,7 @@ const Cards = () => {
 
             <GameSection defaultTab="Black-Jack">
                 <GameSidebar>
-                    <GameSideBarItem sideItem="Black-Jack" name="Black Jack" ImgSrc={blackjack} />
+                    <GameSideBarItem sideItem="Black-Jack" name="Black Jack" ImgSrc={blackjack}  />
                     <GameSideBarItem sideItem="baccarat" name="baccarat" ImgSrc={baccarat} />
                     <GameSideBarItem sideItem="teen-pati" name="teenpati" ImgSrc={teenpati} />
                     <GameSideBarItem sideItem="andar-bahar" name="andar bahar" ImgSrc={andarbahar} />
@@ -163,7 +169,7 @@ const Cards = () => {
 
                 <GameListSection>
                     <GameList TabName="Black-Jack">
-                        <GameIndividual Alt="Black-Jack" GameImg={blackjack_img} GameImgHover={BJ_Platiplus_hover} />
+                        <GameIndividual Alt="Black-Jack" GameImg={blackjack_img} GameImgHover={BJ_Platiplus_hover} dataid="aad60e43266b22cf533ed73c720519f665d7fc0d"/>
                         <GameIndividual Alt="Evoplay BJ lucky sevens" GameImg={Evoplay_BJ_lucky_sevens_img} GameImgHover={Evoplay_BJ_lucky_sevens_hover} />
                         <div className="col-sm-6 gameImg_div">
                             <img src={Banner_2_Changeable_img} alt="Changeable" width="100%" height="210px" className="search__banner_img " />

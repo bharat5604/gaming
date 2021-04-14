@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Tabs, Tab, Nav, Row, Col } from 'react-bootstrap'
 import search_icon from './Assets/img/cards/search_icon.png'
+import LoginSignup from "./LoginSignup";
+
 
 // Banner
 export const GameSection = (props) => {
@@ -64,10 +66,66 @@ export const GameList = (props) => {
 }
 
 export const GameIndividual = (props) => {
+  const [status, setStatus] = useState("open");
+  const [open, setOpen] = useState("");
+  const [text, setText] = useState("sign in");
+  const handleClose = () => {
+    switch (status) {
+      case "open":
+        setOpen("");
+        setStatus("close");
+        break;
+      case "close":
+        setOpen("");
+        setStatus("open");
+        break;
+    }
+  };
+  const handleGames = async (e) => {
+
+    let getGames ={
+      GameUUId:e.target.dataset.id,
+      PlayerId:"ANU001",
+      PlayerName:"Anurag",
+      Currency:"EUR",
+      SessionId:"S001"
+    }
+    await fetch("http://gamepitara.globaldigitaz.com/api/LaunchGame", {
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify(getGames)
+    }).then(result=>{
+      result.json().then(res => {
+          console.log(res);
+        let result = JSON.parse(res)
+        let auth = localStorage.getItem('auth')
+        console.log(auth == null);
+        if(auth==null){
+          setOpen("active")
+        } else{
+          window.open(result.url, '_blank')
+        }
+        
+      })
+    })
+  }
     return (
         <div className="col-sm-3 gameImg_div">
             <img src={props.GameImg} alt={props.Alt} width="100%" className=" gameImg" />
-            <img src={props.GameImgHover} alt={props.Alt} width="100%" className="gameImg_Hover" />
+            <img src={props.GameImgHover} 
+            alt={props.Alt} width="100%"
+             className="gameImg_Hover"
+             data-id={props.dataid}
+            onClick={handleGames} />
+            <div className="loginsignup" id={open}>
+        <div className="heading">
+          <h3>{text}</h3>
+          <i className="fa fa-close" onClick={handleClose}></i>
+        </div>
+        <LoginSignup sign={text === "sign in"} signup={text === "sign up"} />
+      </div>
         </div>
     )
 }

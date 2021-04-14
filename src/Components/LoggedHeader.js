@@ -96,25 +96,25 @@ const LoggedHeader = () => {
                 </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">
+                <Link to="/cards">
                 <img src={cards} alt="home"/>
                 Cards
                 </Link>
               </Nav.Link>
-              <Nav.Link>
+              {/* <Nav.Link>
                 <Link to="">
                 <img src={jackpot} alt="home"/>
                 jackpot games
                 </Link>
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link>
-                <Link to="">
+                <Link to="/roulette">
                 <img src={roullete} alt="home"/>
                 roulette
                 </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="">
+                <Link to="/pocker">
                 <img src={poker} alt="home"/>
                 poker
                 </Link>

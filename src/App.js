@@ -13,9 +13,8 @@ import Pocker from "./Components/poker"
 
 function App() {
   let auth;
-  if (typeof window !== 'undefined') {
-    auth = JSON.parse(localStorage.getItem("auth"))
-  }
+  auth = JSON.parse(localStorage.getItem("auth"))
+
   return (
 
     <div className="App">
