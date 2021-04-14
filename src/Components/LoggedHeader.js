@@ -37,7 +37,8 @@ const LoggedHeader = () => {
   const handleLogout = () =>{
 
     localStorage.removeItem("auth")
-    if(localStorage.getItem("name")){ localStorage.removeItem("name") }
+    localStorage.removeItem("name")
+    // if(localStorage.getItem("name")){ localStorage.removeItem("name") }
     
     history.push("/")
     window.location.reload()

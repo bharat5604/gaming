@@ -47,9 +47,8 @@ const LoginSignup = (props) => {
       result.json().then((res)=>{
         if(res.UserName){
           history.push("/home")
-          if(typeof window !=='undefined'){
             localStorage.setItem("auth", res.RegId)
-          }
+          
           
         } else{
           setInvalid("Invalid userName or Password")
@@ -87,9 +86,7 @@ const LoginSignup = (props) => {
         setAlready(res.Result)
         if(res.Result=="Success" & password.Password == cpassword.cpassword){
           history.push('/home')
-          if(typeof window !=='undefined'){
             localStorage.setItem('auth', res.RegId)
-          }
         } else{
           
         }
@@ -134,10 +131,8 @@ const LoginSignup = (props) => {
     console.log(RegBy);
     if(response.accessToken){
       history.push("/home")
-      if(typeof window !=='undefined'){
         localStorage.setItem("auth", response.googleId)
       localStorage.setItem("name", response.profileObj.name)
-      }
     }
   }
   return (
@@ -154,7 +149,7 @@ const LoginSignup = (props) => {
                   onChange={(e) => {
                     setUser({ [e.target.name]: e.target.value });
                   }}
-                  onBlur={typeof window !=='undefined' ?localStorage.setItem("name", user.UserName) : null}
+                  onBlur={(e) =>{localStorage.setItem("name", e.target.value)}}
                   required
                 />
               </div>
@@ -223,7 +218,7 @@ const LoginSignup = (props) => {
             <form action="">
               <div className="form-group">
                 <label htmlFor="username">Username *</label>
-                <input type="text" name="UserName" onChange={(e)=> {setUser({ [e.target.name]: e.target.value })}} onBlur={typeof window !=='undefined' ? localStorage.setItem("name", user.UserName) : null} required />
+                <input type="text" name="UserName" onChange={(e)=> {setUser({ [e.target.name]: e.target.value })}} onBlur={localStorage.setItem("name", user.UserName)} required />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email *</label>
