@@ -400,6 +400,15 @@
   padding-left: 225px;
 }
 
+@media only screen and (max-width: 700px) {
+  .home .winning .video .content_section {
+    background: #1d1d1d;
+    margin-left: 0px;
+    z-index: 0;
+    padding: 30px 15px;
+  }
+}
+
 .home .winning .video .video__content {
   padding: 10px 0;
 }
@@ -977,6 +986,7 @@
   opacity: 0;
   -webkit-transition: 0.6s ease-in-out;
   transition: 0.6s ease-in-out;
+  z-index: 999;
 }
 
 .loginsignup#active {
@@ -1359,6 +1369,12 @@
   margin-bottom: 30px;
 }
 
+@media only screen and (max-width: 700px) {
+  .why .tabs nav {
+    padding-top: 50px;
+  }
+}
+
 .why .tabs nav a {
   color: #999;
   padding: 20px 10px;
@@ -1381,6 +1397,12 @@
   border: none;
 }
 
+@media only screen and (max-width: 700px) {
+  .why .tabs nav a {
+    width: 100%;
+  }
+}
+
 .why .tabs .images {
   margin-top: 40px;
   text-align: center;
@@ -1395,6 +1417,12 @@
   height: 53px;
 }
 
+@media only screen and (max-width: 700px) {
+  .why .search_tabs {
+    left: 15px;
+  }
+}
+
 .why .search_tabs .search_input {
   text-align: left;
   color: #ddd;
@@ -1404,6 +1432,12 @@
   outline: 0;
   -webkit-box-shadow: 0 0 0 0rem !important;
           box-shadow: 0 0 0 0rem !important;
+}
+
+@media only screen and (max-width: 700px) {
+  .why .search_tabs .search_input {
+    width: 80%;
+  }
 }
 
 .why .search_tabs img {
@@ -1757,6 +1791,12 @@ footer form {
   padding: 30px;
 }
 
+@media only screen and (max-width: 700px) {
+  footer form {
+    padding: 0px;
+  }
+}
+
 footer form .heading {
   margin: 0 !important;
 }
@@ -1823,6 +1863,13 @@ footer .container .row {
 .btm__footer .container .row {
   margin-left: 10%;
   margin-right: 10%;
+}
+
+@media only screen and (max-width: 700px) {
+  .btm__footer .container .row {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
 }
 
 .btm__footer .foot {
@@ -2436,6 +2483,24 @@ header .navbar-nav i {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0rem transparent;
           box-shadow: 0 0 0 0rem transparent;
+}
+
+.register_with_us .form-group {
+  padding-left: 5px;
+}
+
+@media only screen and (max-width: 700px) {
+  .register_with_us .form-group {
+    padding: 0px;
+    padding-left: 0px;
+    width: 100%;
+  }
+  .register_with_us .form-group .button_submit {
+    width: 100%;
+  }
+  .register_with_us .form-group .login_btn {
+    width: 100%;
+  }
 }
 
 * {

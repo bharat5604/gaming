@@ -46,6 +46,9 @@ footer {
   form {
     background: $lightBlack;
     padding: 30px;
+    @media only screen and (max-width: 700px) {
+      padding: 0px;
+    }
     .heading {
       h3 {
         @include heading;
@@ -103,6 +106,10 @@ footer {
     .row {
       margin-left: 10%;
       margin-right: 10%;
+      @media only screen and (max-width: 700px) {
+        margin-left: 0%;
+        margin-right: 0%;
+      }
     }
   }
   .foot {

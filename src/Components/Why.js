@@ -13,13 +13,28 @@ import pr3 from "./Assets/img/games/Blackjack.jpg";
 import pr4 from "./Assets/img/games/Casino-Hold.jpg";
 import pr5 from "./Assets/img/games/Roulette.jpg";
 import pr6 from "./Assets/img/games/Teen-Patti.jpg";
-import $ from "jquery"
+import LoginSignup from "./LoginSignup";
 import { useStateValue } from './StateProvider'
 import search_icon from './Assets/img/cards/search_icon.png'
 
 
 
 const Why = (props) => {
+  const [status, setStatus] = useState("open");
+  const [open, setOpen] = useState("");
+  const [text, setText] = useState("sign in");
+  const handleClose = () => {
+    switch (status) {
+      case "open":
+        setOpen("");
+        setStatus("close");
+        break;
+      case "close":
+        setOpen("");
+        setStatus("open");
+        break;
+    }
+  };
   const [{ signature }, dispatch] = useStateValue();
   console.log(signature);
   const handleGames = async (e) => {
@@ -40,7 +55,14 @@ const Why = (props) => {
     }).then(result=>{
       result.json().then(res => {
         let result = JSON.parse(res)
-        window.open(result.url, '_blank')
+        let auth = localStorage.getItem('auth')
+        console.log(auth == null);
+        if(auth==null){
+          setOpen("active")
+        } else{
+          window.open(result.url, '_blank')
+        }
+        
       })
     })
   }
@@ -141,78 +163,16 @@ const Why = (props) => {
               </div>
             </div>
           </div>
-          {/* <div className="col-sm-4">
-            {!props.rightPart ? (
-              <div className="why__us">
-                <div className="heading">
-                  <h3>why gamepitara?</h3>
-                </div>
-                <div className="img">
-                  <div className="row">
-                    <div className="col-6">
-                      <div className="img__in">
-                        <img src={whyImg1} className="img-fluid" alt="" />
-                        <div className="title">
-                          <span>innovative products</span>
-                          <h4>design to entertained</h4>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-6">
-                      <div className="img__in">
-                        <img src={whyImg2} className="img-fluid" alt="" />
-                        <div className="title">
-                          <span>licensed &</span>
-                          <h4>trusted</h4>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-6">
-                      <div className="img__in">
-                        <img src={whyImg3} className="img-fluid" alt="" />
-                        <div className="title">
-                          <span>Mobile, dekstop.</span>
-                          <h4>friendly</h4>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-6">
-                      <div className="img__in">
-                        <img src={whyImg4} className="img-fluid" alt="" />
-                        <div className="title">
-                          <span>award winning</span>
-                          <h4>content</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className="loggedRight">
-                <div className="rpb">
-                  <img src={rpb} alt="" />
-                  <span>7000</span>
-                  <h3>royality points</h3>
-                </div>
-                <div className="level">
-                  <img src={level} alt="" />
-                  <div className="level__content">
-                    <h3>gold</h3>
-                    <p>
-                      Next class after 3000 <img src={rpb} alt="" />
-                    </p>
-                  </div>
-                </div>
-                <div className="wallet">
-                  <Link to="">deposit</Link>
-                  <Link to="">withdraw</Link>
-                  <Link to="">profile</Link>
-                </div>
-              </div>
-            )}
-          </div> */}
+          
         </div>
+      </div>
+
+      <div className="loginsignup" id={open}>
+        <div className="heading">
+          <h3>{text}</h3>
+          <i className="fa fa-close" onClick={handleClose}></i>
+        </div>
+        <LoginSignup sign={text === "sign in"} signup={text === "sign up"} />
       </div>
     </div>
   );

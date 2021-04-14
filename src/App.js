@@ -9,6 +9,7 @@ import ProfileWallet from "./Components/ProfileWallet";
 import Hoc from './Components/Hoc';
 import Cards from "./Components/Cards";
 import Roulette from "./Components/Roulette";
+import Pocker from "./Components/poker"
 
 function App() {
   let auth;
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/roulette">
             <Roulette />
+          </Route>
+          <Route path="/pocker">
+            <Pocker />
           </Route>
           <Route path="/wallet">
             {/* <ProfileWallet /> */}

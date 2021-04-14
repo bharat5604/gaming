@@ -87,7 +87,7 @@ const Header = () => {
                 </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="/Poker">
+                <Link to="/pocker">
                   <img src={poker} alt="poker" />
                   poker
                 </Link>

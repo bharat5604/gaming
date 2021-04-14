@@ -24,19 +24,19 @@ const Experience = (props) => {
           <div className="row">
             <div className="col-sm-8">
               <div className="row">
-                <div className="col-sm-4">
+                <div className="col-sm-4 mb-2">
                   <div className="images__in">
                     <img src={img1} className="img-fluid" alt="" />
                     <a href="#!">the dog house</a>
                   </div>
                 </div>
-                <div className="col-sm-4">
+                <div className="col-sm-4 mb-2">
                   <div className="images__in">
                     <img src={img2} className="img-fluid" alt="" />
                     <a href="#!">jackpot express</a>
                   </div>
                 </div>
-                <div className="col-sm-4">
+                <div className="col-sm-4 mb-2">
                   <div className="images__in">
                     <img src={img3} className="img-fluid" alt="" />
                     <a href="#!">the dog house</a>
@@ -70,7 +70,7 @@ const Experience = (props) => {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="col-6">
                         <div className="img__in">
                           <img src={whyImg2} className="img-fluid" alt="" />
@@ -80,7 +80,7 @@ const Experience = (props) => {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="col-6">
                         <div className="img__in">
                           <img src={whyImg4} className="img-fluid" alt="" />

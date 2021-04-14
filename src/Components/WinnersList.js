@@ -28,13 +28,13 @@ const WinnersList = (props) => {
             <div className="col-sm-8">
               <div className="video">
                 <div className="row">
-                  <div className="col-md-7 video_section">
+                  <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 video_section">
                     {/* <iframe src={video} title="testing " className="video_frame" /> */}
                     <video width="100%" height="90%" controls>
                       <source src={video} type="video/mp4" />
                     </video>
                   </div>
-                  <div className="col-md-8 content_section">
+                  <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 content_section">
                     <div className="video__content pt-4">
                       <h3>more than games</h3>
                       <span>
@@ -52,7 +52,7 @@ const WinnersList = (props) => {
                 </div>
               </div>
             </div>
-            <div className="col-sm-4">
+            <div className="col-sm-4 mt-2">
               {!props.conditionRender ? (
                 <div className="winnings__days">
                   <h3>winnings of the day</h3>

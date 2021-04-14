@@ -21,7 +21,7 @@ const Testimonial = () => {
   return (
     <div>
       <footer>
-        <div className="container">
+        <div className="container pt-3 pb-3">
           <div className="row">
             <div className="col-sm-5">
               <div className="heading">
@@ -84,41 +84,43 @@ const Testimonial = () => {
             <div className="col-sm-7">
               <form action="">
 
-                <div className="row">
+                <div className="row register_with_us">
                   <div className="heading w-100">
                     <h3>register with us</h3>
                   </div>
-                  <div className="form-group col-sm-6 pl-0">
+                  <div className="form-group col-sm-6 p-1">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="Game Name"
                     />
                   </div>
-                  <div className="form-group col-sm-6">
+                  <div className="form-group col-sm-6 p-1">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="Email Address"
                     />
                   </div>
-                  <div className="form-group col-sm-6 pl-0">
+                  <div className="form-group col-sm-6 p-1">
                     <input
                       type="text"
                       className="form-control"
                       placeholder="Phone Number"
                     />
                   </div>
-                  <div className="form-group col-sm-6">
+                  <div className="form-group col-sm-6 p-1">
                     <input
                       type="password"
                       className="form-control"
                       placeholder="New Password"
                     />
                   </div>
+                  <div className="form-group btns p-1">
+                    <button className="button_submit" type="button">submit</button>
+                  </div>
                   <div className="form-group btns">
-                    <button type="button">submit</button>
-                    <Link to="">Login</Link>
+                    <Link to="" className="login_btn">Login</Link>
                     <a href="#!">
                       <img src={facebook} alt="" />
                     </a>
